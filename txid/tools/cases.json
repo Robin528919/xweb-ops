@@ -1,0 +1,38 @@
+[
+ {
+  "html": "loggedout.html",
+  "now": 1760000000000,
+  "rnd": 90,
+  "method": "GET",
+  "path": "/i/api/graphql/abc/UserByScreenName",
+  "id": "Wgr/MK9BX6rdVg4EHlwd2WkDrkblWrvCtSy0X/trEPwZYKdbOQ/MtEPLFvjCVtPrm8pOwl5BHbKEJxDB+XcTA9AJ2VaFWQ",
+  "animkey": "71d8ac100100"
+ },
+ {
+  "html": "case1.html",
+  "now": 1760000000000,
+  "rnd": 90,
+  "method": "GET",
+  "path": "/i/api/graphql/abc/UserByScreenName",
+  "id": "Wg3/MK9BX6rdVg4EHlwd2WkDrkblWrvCtSy0X/trEPwZYKdbOQ/MtEPLFvjCVtPrm8pOwl686LidoaiZb0L6g5MS2qOgWQ",
+  "animkey": "70ddb00fd70a3d70a3d7028f5c28f5c28f6028f5c28f5c28f60fd70a3d70a3d700"
+ },
+ {
+  "html": "loggedout.html",
+  "now": 1760090000123,
+  "rnd": 1,
+  "method": "POST",
+  "path": "/i/api/graphql/m5VX/followUserMutation",
+  "id": "AVGka/QaBPGGDVVfRQdGgjJY9R2+AeCZ7nfvBKAwS6dCO/wAYlSX7xiQTaOZDYiwwCF1mAUQ/9UgL+xIIokvmq0d+0oOAg",
+  "animkey": "71d8ac100100"
+ },
+ {
+  "html": "case1.html",
+  "now": 1760090000123,
+  "rnd": 1,
+  "method": "POST",
+  "path": "/i/api/graphql/m5VX/followUserMutation",
+  "id": "AVaka/QaBPGGDVVfRQdGgjJY9R2+AeCZ7nfvBKAwS6dCO/wAYlSX7xiQTaOZDYiwwCF1mAVaamxbVH0mUZ4UcIjoHJc4Ag",
+  "animkey": "70ddb00fd70a3d70a3d7028f5c28f5c28f6028f5c28f5c28f60fd70a3d70a3d700"
+ }
+]
