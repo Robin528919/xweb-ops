@@ -50,3 +50,15 @@ python3 monitor/monitor.py run --status-exit   # 有变化（或登录态客户�
 输出约定详见 [docs/monitor.md](docs/monitor.md)。清单内容变化时 `run` 额外输出一行 `MANIFEST_UPDATED: xweb-ops.json`。
 
 cookie、`secrets/`、`cache/`、`.env*` 均在 `.gitignore` 中，切勿提交。
+
+## 同步到 go-twitter-api
+
+```bash
+GO_TWITTER_API_REPO=/path/to/go-twitter-api python3 monitor/sync_sdk.py --check   # 用本仓库 xweb-ops.json 检查
+GO_TWITTER_API_REPO=/path/to/go-twitter-api monitor/auto_sync_sdk.sh [--dry-run]  # 定时自动同步
+```
+
+`monitor/auto_sync_sdk.sh`：在 go-twitter-api 最新默认分支的独立 worktree 里运行 `tools/websync/sync_sdk.py --manifest xweb-ops.json`；
+无差异输出 `NO_DIFF`；有差异则 gofmt / build / vet / `go test -race ./...`，通过后强推 `auto/web-sync` 分支并新开或更新**唯一**一个
+自动同步 PR（标签 `auto/web-sync`），输出 `PR_URL: …`。从不合并。退出码：0 正常，2 清单 / 同步错误，3 环境问题，4 检查失败（不推送）。
+`--dry-run` 只做到本地提交。需要 go、gh（已登录）、python3。
