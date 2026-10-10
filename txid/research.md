@@ -45,3 +45,4 @@ plugin 只给 `api|jf|grok|mobile.(twitter|x).com`（不含 caps）的请求加�
 ## 复现
 `txid/tools/`：`run.mjs`（jsdom 执行器，`NOW` / `RND` / `TXMETHOD` / `TXPATH` 环境变量）、`sens.py`（下标差分）、`cases.json`、`mini.html`。
 需要 `npm i jsdom@24`（在 `txid/tools/` 下执行，`node_modules/` 已 gitignore）；`run.mjs` 里的 jsdom 导入路径按需调整，sign.o 文件需自行下载为 `sign.mjs`。
+`run.mjs` 默认读、`sens.py` 固定读的 `loggedout.html`，以及 `cases.json` 引用的 `case1.html`，是保存下来的 x.com 页面 HTML，不入库，需自行保存到 `txid/tools/`；两个脚本都在 `txid/tools/` 下执行。
