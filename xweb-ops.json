@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-10-10T16:16:01+08:00",
+  "ops": {
+    "UserByScreenName": {
+      "provided_variables": {
+        "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true
+      },
+      "query_id": "WhithR1Ur_mqYZD16kdl7g",
+      "type": "query",
+      "variables": [
+        "screenName"
+      ]
+    },
+    "UserRepliesTimeline": {
+      "provided_variables": {
+        "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+      },
+      "query_id": "fuaWoqUpdl6G_UbAAQXKEA",
+      "type": "query",
+      "variables": [
+        "count",
+        "cursor",
+        "screenName"
+      ]
+    },
+    "bookmarkButtonAddMutation": {
+      "query_id": "d5cUgGn90np33i-G4PE12w",
+      "type": "mutation",
+      "variables": [
+        "tweetId"
+      ]
+    },
+    "followUserMutation": {
+      "query_id": "m5VXpPA-MH4DH7epCa7hCg",
+      "type": "mutation",
+      "variables": [
+        "targetUserId"
+      ]
+    },
+    "followersQuery": {
+      "provided_variables": {
+        "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+      },
+      "query_id": "UAPuQCGGkIklNk4y7aPFaQ",
+      "type": "query",
+      "variables": [
+        "count",
+        "cursor",
+        "screenName"
+      ]
+    },
+    "followingQuery": {
+      "provided_variables": {
+        "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+      },
+      "query_id": "6b2NBXZtgOl5zzL03A39Ww",
+      "type": "query",
+      "variables": [
+        "count",
+        "cursor",
+        "screenName"
+      ]
+    },
+    "intentFollowUserByRestIdQuery": {
+      "query_id": "GbnL6-2I4v2Axwh__6OkMg",
+      "type": "query",
+      "variables": [
+        "userId"
+      ]
+    },
+    "likeButtonFavoriteMutation": {
+      "query_id": "kD580ja7oRwK5qf7CFtyNA",
+      "type": "mutation",
+      "variables": [
+        "tweetId"
+      ]
+    }
+  },
+  "schema": 1,
+  "snapshot": "4b91b41be8"
+}
