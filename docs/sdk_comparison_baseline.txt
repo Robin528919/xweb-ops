@@ -1,0 +1,48 @@
+SDK github.com/Robin528919/go-twitter-api@9d142e2 vs 网页 2026-10-08T14:35:08+08:00 (app_version 27330b3dea)
+== web: 8 个 op，状态统计 {'changed': 1, 'removed_from_web': 4, 'same': 1, 'changed(name-variant)': 2}
+  [关注/关系] Followers: SDK JNyQdTISpzCkj_1fqxDvFg → changed(name-variant) (web followersQuery 3D6ZXTjhHqL1cgm9qEi5qw)；网页等价: followersQuery 3D6ZXTjhHqL1cgm9qEi5qw, userFollowersQuery staztj2DaW2WOEIod4TkZA, verifiedFollowersQuery mGEZDEQw-IDFC_v_zsmwcw；SDK 发 38 个 features，其中 36 个在网页 JS 中已不存在；网页该 op 的 provided 开关: xclientsfeaturesappviewerisloggedin, xclientsfeaturestranslationnoteautotranslationenabled；变量 网页多 ['screenName'] / SDK 多 ['includePromotedContent', 'userId', 'withGrokTranslatedBio']
+  [关注/关系] Following: SDK 6IJiAg6zPdS6WBldTIwdrQ → changed(name-variant) (web followingQuery Jv5IDoKxVXtNtASlhkzM-w)；网页等价: followingQuery Jv5IDoKxVXtNtASlhkzM-w；SDK 发 38 个 features，其中 36 个在网页 JS 中已不存在；网页该 op 的 provided 开关: xclientsfeaturesappviewerisloggedin, xclientsfeaturestranslationnoteautotranslationenabled；变量 网页多 ['screenName'] / SDK 多 ['includePromotedContent', 'userId', 'withGrokTranslatedBio']
+  [关注/关系] followUserMutation: SDK m5VXpPA-MH4DH7epCa7hCg → same (web followUserMutation m5VXpPA-MH4DH7epCa7hCg)；网页等价: followUserMutation m5VXpPA-MH4DH7epCa7hCg；SDK 发 0 个 features，其中 0 个在网页 JS 中已不存在；变量 网页多 [] / SDK 多 []
+  [帖子/推文/时间线] CreateBookmark: SDK aoDbu3RHznuiSkQ9aNM67Q → removed_from_web；网页等价: bookmarkButtonAddMutation d5cUgGn90np33i-G4PE12w；SDK 发 0 个 features，其中 0 个在网页 JS 中已不存在；变量 网页多 ['tweetId'] / SDK 多 ['tweet_id']
+  [帖子/推文/时间线] FavoriteTweet: SDK lI07N6Otwv1PhnEgXILM7A → removed_from_web；网页等价: likeButtonFavoriteMutation kD580ja7oRwK5qf7CFtyNA, intentModalFavoriteMutation GMT2cdsF3i-a0ZSqMJN1Gg；SDK 发 0 个 features，其中 0 个在网页 JS 中已不存在；变量 网页多 ['tweetId'] / SDK 多 ['tweet_id']
+  [帖子/推文/时间线] UserTweetsAndReplies: SDK qUpkZU6eN8MbtQb7rC_pYg → removed_from_web；网页等价: UserRepliesTimeline v5qQAg2OFXKf2xSBMPI3mQ, UserTweets bvW7Wjm4Px90tOwnrZJU_g；SDK 发 38 个 features，其中 36 个在网页 JS 中已不存在；网页该 op 的 provided 开关: xclientsfeaturesappviewerisloggedin, xclientsfeaturestranslationnoteautotranslationenabled；变量 网页多 ['screenName'] / SDK 多 ['includePromotedContent', 'userId', 'withCommunity', 'withVoice']
+  [用户资料] UserByRestId: SDK BwfFeYIM5H2lqDcLyU7c_Q → removed_from_web；网页等价: intentFollowUserByRestIdQuery GbnL6-2I4v2Axwh__6OkMg, userIdRedirectQuery mZ3UuKyePiVbTYLMbssanA；SDK 发 0 个 features，其中 0 个在网页 JS 中已不存在；变量 网页多 ['userId'] / SDK 多 ['rest_id']
+  [用户资料] UserByScreenName: SDK Gb-d6r0vxPOADdG62OEBpQ → changed (web UserByScreenName Zu20TKfZJzNRM5hKIb5jaw)；网页等价: UserByScreenName Zu20TKfZJzNRM5hKIb5jaw；SDK 发 12 个 features，其中 11 个在网页 JS 中已不存在；网页该 op 的 provided 开关: xclientsfeaturesappviewerisloggedin；变量 网页多 ['screenName'] / SDK 多 ['screen_name']
+== android: 374 个 op，状态统计 {'not_in_web': 361, 'changed(name-variant)': 12, 'changed': 1}
+  [关注/关系] AcceptFollowRequestMutation: SDK KL7zXK-ozlNd8GCyR41BAQ → changed(name-variant) (web acceptFollowRequestMutation 6JKptu7iKTYgNQ9QRSZZkA)
+  [关注/关系] CancelFollowRequest: SDK -BgQZRWg5XbQqOt_rOGk0w → changed(name-variant) (web cancelFollowRequestMutation 46LY_rIBJx7QNZ6ziF9ROg)
+  [关注/关系] DenyFollowRequestMutation: SDK PJKgUSzNd7IYTOZu-9IW3g → changed(name-variant) (web denyFollowRequestMutation p84eSehoKctjtH5ijUwAYA)
+  [关注/关系] FollowUser: SDK Q-ho_xpF4thBqirXZ1oenw → changed(name-variant) (web followUserMutation m5VXpPA-MH4DH7epCa7hCg)
+  [关注/关系] UnfollowUser: SDK y5iJ0kGxxk_9sIeYw6VAeg → changed(name-variant) (web unfollowUserMutation RjGnpAQuMmcqXSjoCR7t6w)
+  [帖子/推文/时间线] DeleteTweet: SDK kZyJ4Q1TNsZNByfrGX7Huw → changed(name-variant) (web deleteTweetMutation 6DqoQrCrai4VWFRVzm9pDg)
+  [帖子/推文/时间线] HomeTimeline: SDK zM7l2l6rhcrW6ZpOSLW0Tg → changed(name-variant) (web HomeTimelineQuery GpssogMcCO0kM1eF6nlDqg)
+  [帖子/推文/时间线] PinnedTimelinesQuery: SDK 8fBokmrr0GalIKhNWrWX9g → changed(name-variant) (web pinnedTimelinesQuery DfjAqjIlWC0Bj6aOSGsKoA)
+  [用户资料] BlockUser: SDK v3v6SwV3VqR1thrCKA9YaA → changed(name-variant) (web blockUserMutation aw6E7Cv9n4AoS9iv5jm-XA)
+  [用户资料] MuteUser: SDK rz-AMENdzoAR9wwOoSqfBQ → changed(name-variant) (web muteUserMutation wO8-iV6f6T3QR0suTrsIjA)
+  [用户资料] UnblockUser: SDK -6uBCpKY1zDTKuZMKa9OAw → changed(name-variant) (web unblockUserMutation A2MpLvDEQZ48_n2emniqsA)
+  [用户资料] UnmuteUser: SDK eCVBsC0LLcoYLIOx3pE4Kg → changed(name-variant) (web unmuteUserMutation _i-7CecEv9NZUgCV5PFc6g)
+  [其他] PremiumHubQuery: SDK 2aFrlRWOvfwVh7s4nJvf5w → changed (web PremiumHubQuery im8eq-cRpNXC3VPMDwqQrQ)
+  （其余 361 个 Android op 在网页 JS 中不存在，用 --all 查看）
+== REST
+  [web] POST api.x.com/1.1/account/update_profile.json: 网页 JS 仍引用
+  [web] POST api.x.com/1.1/account/update_profile_image.json: 网页 JS 仍引用
+  [web] POST api.x.com/1.1/account/update_profile_banner.json: 网页 JS 仍引用
+  [web] GET api.x.com/1.1/account/settings.json: 网页 JS 仍引用
+  [web] POST api.x.com/1.1/account/settings.json: 网页 JS 仍引用
+  [web] POST upload.x.com/i/media/upload.json: 网页 JS 仍引用
+  [web] GET upload.x.com/i/media/upload.json: 网页 JS 仍引用
+  [android] POST api.twitter.com/1.1/guest/activate.json: 网页 JS 仍引用
+  [android] POST api.x.com/oauth2/token: 网页 JS 中未出现
+  [android] GET api.x.com/1.1/account/settings.json: 网页 JS 仍引用
+  [android] GET api.x.com/1.1/help/settings.json: 网页 JS 仍引用
+  [android] GET api.x.com/2/badge_count/badge_count.json: 网页 JS 仍引用
+  [android] POST upload.x.com/1.1/media/upload2.json: 网页 JS 中未出现
+  [android] POST api.twitter.com/1.1/jot/client_event: 网页 JS 中未出现
+  [android] POST caps.twitter.com/v2/cards/create.json: 网页 JS 仍引用
+  [android] POST jf.x.com/onboarding: 网页 JS 仍引用
+  [android] GET jf.x.com/onboarding/components/steps/remotes/one_tap_action_responder: 网页 JS 中未出现
+  [android] POST jf.x.com/onboarding/login/username: 网页 JS 中未出现
+  [android] POST jf.x.com/onboarding/login/actions/username: 网页 JS 中未出现
+  [android] POST jf.x.com/onboarding/2fa2/select: 网页 JS 中未出现
+  [android] POST jf.x.com/onboarding/2fa/totp: 网页 JS 中未出现
+  [android] POST jf.x.com/onboarding/actions/2fa: 网页 JS 中未出现

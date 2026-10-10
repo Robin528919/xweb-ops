@@ -1,0 +1,7 @@
+secrets/
+cache/
+*.cookie
+.env*
+__pycache__/
+node_modules/
+*.pyc

@@ -1,0 +1,202 @@
+{
+ "from": "2026-10-08T14:34:16+08:00",
+ "to": "2026-10-09T08:21:41+08:00",
+ "app_version": [
+  "27330b3dea0e0f419d8a35a85537ec03629b89a6",
+  "8063dc2e55869d8eae1c30e18f913da88bca1582"
+ ],
+ "ops_added": [
+  {
+   "name": "DelegateNotSupportedSlotQuery",
+   "queryId": "dNui7XsJ12KLqoy8ifgWLw",
+   "operationType": "query",
+   "category": "other",
+   "variables": [],
+   "featureSwitches": []
+  },
+  {
+   "name": "NoteMatchPageQuery",
+   "queryId": "fWz0ptDrpWJIbury8zYEEg",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "noteId"
+   ],
+   "featureSwitches": [
+    "xclientsfeaturesappviewerisloggedin",
+    "xclientsfeaturestranslationnoteautotranslationenabled"
+   ]
+  },
+  {
+   "name": "NotificationSettingsPageQuery",
+   "queryId": "lzqA8wI0RwAEqIbubTxaZg",
+   "operationType": "query",
+   "category": "account",
+   "variables": [],
+   "featureSwitches": [
+    "notificationsettingsenabled"
+   ]
+  },
+  {
+   "name": "RevisionHistoryPageQuery",
+   "queryId": "6blDqUu-RMGf4mfsiURMhQ",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "noteId"
+   ],
+   "featureSwitches": [
+    "xclientsfeaturesappviewerisloggedin",
+    "xclientsfeaturestranslationnoteautotranslationenabled"
+   ]
+  },
+  {
+   "name": "WriteNotePrinciplesQuery",
+   "queryId": "tOY6_HRIr6bolVbgR60JAA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "tweetId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "noteMatchesNextPageQuery",
+   "queryId": "idQKR-iXq_vh4C0dwhVGsw",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "count",
+    "cursor",
+    "noteId"
+   ],
+   "featureSwitches": [
+    "xclientsfeaturesappviewerisloggedin",
+    "xclientsfeaturestranslationnoteautotranslationenabled"
+   ]
+  },
+  {
+   "name": "noteRequestCompleteSlotQuery",
+   "queryId": "fO3eHugpH3UzLhoh9jAjlg",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "tweetId"
+   ],
+   "featureSwitches": [
+    "xclientsfeaturesappviewerisloggedin",
+    "xclientsfeaturestranslationnoteautotranslationenabled"
+   ]
+  },
+  {
+   "name": "useLeaveProgramMutation",
+   "queryId": "M49RJDdGOARTZjnuIjlxpw",
+   "operationType": "mutation",
+   "category": "other",
+   "variables": [],
+   "featureSwitches": []
+  },
+  {
+   "name": "useNoteRequestDeletionMutation",
+   "queryId": "DieymkMK5OtmbX4Oeqzk7w",
+   "operationType": "mutation",
+   "category": "other",
+   "variables": [
+    "tweetId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "useNotificationFrequencyMutation",
+   "queryId": "0qlZJOjHEc5CBItScHXXPA",
+   "operationType": "mutation",
+   "category": "other",
+   "variables": [
+    "frequency"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "xPostPreviewQuery",
+   "queryId": "sV7GOPotk4C-McfVId9ZQQ",
+   "operationType": "query",
+   "category": "tweet",
+   "variables": [
+    "tweetId"
+   ],
+   "featureSwitches": []
+  }
+ ],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "TweetResultByRestId",
+   "category": "tweet",
+   "queryId": [
+    "gaGUd_4HagJdWEM0VDO0PA",
+    "T_czYYAp2VYH622hDzZBmw"
+   ]
+  },
+  {
+   "name": "tweetMediaViewerQuery",
+   "category": "tweet",
+   "queryId": [
+    "wQ8X7-_zwgNtP5u4W8Ko_Q",
+    "cVOptvx1bsH24-i9nmxSDg"
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switches_logged_out": {
+   "added": {},
+   "removed": [
+    "insights_ai_trends_enabled",
+    "insights_paginated_metrics_backend_enabled",
+    "responsive_web_gpc_enabled",
+    "responsive_web_nfl_sidebar_for_all_users_enabled",
+    "responsive_web_qp_boost_content_check_enabled",
+    "responsive_web_qp_boost_content_check_min_delay_seconds",
+    "responsive_web_qp_new_boost_analytics_enabled",
+    "responsive_web_quick_promote_high_budget_tier_enabled",
+    "responsive_web_verified_organizations_invoice_update_enabled",
+    "rweb_quick_promote_third_party_boost_enabled"
+   ],
+   "changed": {}
+  },
+  "feature_switch_defaults": {
+   "switches_added": [
+    "account_country_setting_countries_whitelist",
+    "complat_webview_migrate_on_web_enabled",
+    "responsive_web_birdwatch_notification_settings_enabled"
+   ],
+   "switches_removed": [],
+   "default_changed": {
+    "responsive_web_birdwatch_notification_settings_enabled": [
+     null,
+     true
+    ],
+    "account_country_setting_countries_whitelist": [
+     null,
+     "ad.ae.af.ag.ai.al.am.ao.ar.as.at.au.aw.ax.az.ba.bb.bd.be.bf.bg.bh.bi.bj.bl.bm.bn.bo.bq.br.bs.bt.bv.bw.by.bz.ca.cc.cd.cf.cg.ch.ci.ck.cl.cm.co.cr.cu.cv.cw.cx.cy.cz.de.dj.dk.dm.do.dz.ec.ee.eg.er.es.et.fi.fj.fk.fm.fo.fr.ga.gb.gd.ge.gf.gg.gh.gi.gl.gm.gn.gp.gq.gr.gs.gt.gu.gw.gy.hk.hn.hr.ht.hu.id.ie.il.im.in.io.iq.ir.is.it.je.jm.jo.jp.ke.kg.kh.ki.km.kn.kr.kw.ky.kz.la.lb.lc.li.lk.lr.ls.lt.lu.lv.ly.ma.mc.md.me.mf.mg.mh.mk.ml.mn.mo.mp.mq.mr.ms.mt.mu.mv.mw.mx.my.mz.na.nc.ne.nf.ng.ni.nl.no.np.nr.nu.nz.om.pa.pe.pf.pg.ph.pk.pl.pm.pn.pr.ps.pt.pw.py.qa.re.ro.rs.ru.rw.sa.sb.sc.se.sg.sh.si.sk.sl.sm.sn.so.sr.st.sv.sx.sz.tc.td.tf.tg.th.tj.tk.tl.tm.tn.to.tr.tt.tv.tw.tz.ua.ug.us.uy.uz.va.vc.ve.vi.vn.vu.wf.ws.xk.ye.yt.za.zm.zw"
+    ]
+   }
+  },
+  "js_files_added": 2193,
+  "js_files_removed": 2142,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-DWk-bhl8.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-CRLMZSwN.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}

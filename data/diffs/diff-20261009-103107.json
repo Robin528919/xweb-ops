@@ -1,0 +1,198 @@
+{
+ "from": "2026-10-09T08:21:41+08:00",
+ "to": "2026-10-09T10:31:07+08:00",
+ "app_version": [
+  "8063dc2e55869d8eae1c30e18f913da88bca1582",
+  "e9b82655819b239e9de923fddd58156f63f7c23c"
+ ],
+ "ops_added": [
+  {
+   "name": "communityNotificationSettingsButtonMutation",
+   "queryId": "6pjjBVUYcS6DMujyITTZxQ",
+   "operationType": "mutation",
+   "category": "account",
+   "variables": [
+    "communityId",
+    "settings"
+   ],
+   "featureSwitches": [
+    "xclientsfeaturesappviewerisloggedin"
+   ]
+  },
+  {
+   "name": "fetchNotificationBadgeCountsQuery",
+   "queryId": "lR8rBDx68u-17LC4q5OggA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [],
+   "featureSwitches": []
+  },
+  {
+   "name": "noteRequestIntroSlotQuery",
+   "queryId": "KHuuUyhWJSaJwFYHwlD2Tg",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "tweetId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "useNoteRequestFormMutation",
+   "queryId": "hTUvKwhbRaSUJaGt8Wu8_w",
+   "operationType": "mutation",
+   "category": "other",
+   "variables": [
+    "sourceLink",
+    "suggestion",
+    "tweetId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "useReportNotificationsSeenMutation",
+   "queryId": "qjVBYvf1WsIVu0SsR3jW_Q",
+   "operationType": "mutation",
+   "category": "user",
+   "variables": [
+    "cursor",
+    "timelineType"
+   ],
+   "featureSwitches": []
+  }
+ ],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "CommunityByRestId",
+   "category": "other",
+   "queryId": [
+    "W-SwcbF-3cTrPQcBNFX9Bw",
+    "XkHY2AhGVl6CVQfIOxAf-w"
+   ],
+   "selectionChanged": [
+    38,
+    42
+   ]
+  },
+  {
+   "name": "RevisionHistoryPageQuery",
+   "category": "other",
+   "queryId": [
+    "6blDqUu-RMGf4mfsiURMhQ",
+    "nJv0q1Jh8zNq75gUmQymLQ"
+   ],
+   "featureSwitches": {
+    "added": [
+     "fastnotesbadgeenabled",
+     "noteinternalinsightsenabled",
+     "urlnotesenabled"
+    ],
+    "removed": []
+   },
+   "selectionChanged": [
+    275,
+    276
+   ]
+  },
+  {
+   "name": "TweetNotesPageQuery",
+   "category": "tweet",
+   "queryId": [
+    "wptTmBuU3d4R04IXbOIUbw",
+    "rz7U87ZTgyuUAqNl_Z9wYQ"
+   ],
+   "featureSwitches": {
+    "added": [
+     "fastnotesbadgeenabled",
+     "noteinternalinsightsenabled",
+     "urlnotesenabled"
+    ],
+    "removed": []
+   },
+   "variables": {
+    "added": [],
+    "removed": [
+     "includeInternalInsights"
+    ]
+   }
+  },
+  {
+   "name": "communityJoinButtonJoinMutation",
+   "category": "other",
+   "queryId": [
+    "iXaVop2Exw2Yg3NB2L0MZg",
+    "LJqm55e7a65msuz6yrT8VA"
+   ],
+   "selectionChanged": [
+    36,
+    40
+   ]
+  },
+  {
+   "name": "communityJoinButtonLeaveMutation",
+   "category": "other",
+   "queryId": [
+    "5eT5qiaNvH666Czw0BpAyQ",
+    "p846idobOzALvetVVZsGEQ"
+   ],
+   "selectionChanged": [
+    36,
+    40
+   ]
+  },
+  {
+   "name": "tweetMediaViewerQuery",
+   "category": "tweet",
+   "queryId": [
+    "cVOptvx1bsH24-i9nmxSDg",
+    "Hna3XdAomeHddNnlyRiWBg"
+   ],
+   "featureSwitches": {
+    "added": [
+     "xclientsfeaturesappviewerisloggedin"
+    ],
+    "removed": []
+   },
+   "selectionChanged": [
+    37,
+    133
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [
+  "/2/notifications/{}/last_seen_cursor.json"
+ ],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switch_defaults": {
+   "switches_added": [
+    "complat_wv_web_gate_enabled"
+   ],
+   "switches_removed": [
+    "complat_webview_migrate_on_web_enabled"
+   ],
+   "default_changed": {
+    "complat_wv_web_gate_enabled": [
+     null,
+     false
+    ]
+   }
+  },
+  "js_files_added": 2238,
+  "js_files_removed": 2193,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-CRLMZSwN.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-CSq7ib90.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}

@@ -1,0 +1,48 @@
+{
+ "from": "2026-10-10T04:28:36+08:00",
+ "to": "2026-10-10T16:21:00+08:00",
+ "app_version": [
+  "4b91b41be88160d22769ff3ed5a693f9f6727519",
+  "4b91b41be88160d22769ff3ed5a693f9f6727519"
+ ],
+ "ops_added": [],
+ "ops_removed": [],
+ "ops_changed": [],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switches_logged_out": {
+   "added": {
+    "grok_xweb_connectors_enabled": true,
+    "grok_xweb_history_media_enabled": true,
+    "grok_xweb_skills_enabled": true,
+    "grok_xweb_voice_mode_enabled": true
+   },
+   "removed": [],
+   "changed": {}
+  },
+  "js_files_added": 0,
+  "js_files_removed": 0
+ },
+ "sdk_status_changes": [],
+ "changed": false,
+ "status": "NO_CHANGE",
+ "logged_in_client": {
+  "status": "OK",
+  "client": "old",
+  "previous": "old",
+  "facts": {
+   "entry_xweb": false,
+   "entry_client_web": true,
+   "ondemand_s_ref": true,
+   "sign_o_ref": false,
+   "xweb_mentioned": true,
+   "site_verification": true
+  },
+  "url": "https://x.com/home",
+  "changed": false,
+  "at": "2026-10-10T16:21:00+08:00"
+ }
+}

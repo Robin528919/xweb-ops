@@ -1,0 +1,2721 @@
+{
+ "sdk": "github.com/Robin528919/go-twitter-api",
+ "commit": "b7dd2442e4e0f5bb12473f6ba340a59ef1bf0198",
+ "note": "web = internal/client/web (x.com browser client, chrome144 profile). android = internal/client/xclient (TwitterAndroid 12.13) — included for completeness; android persisted queryIds are NOT expected to match web.",
+ "web": {
+  "graphql": {
+   "UserByScreenName": {
+    "queryId": "Gb-d6r0vxPOADdG62OEBpQ",
+    "method": "GET",
+    "host": "x.com/i/api/graphql",
+    "features": {
+     "hidden_profile_subscriptions_enabled": true,
+     "profile_label_improvements_pcf_label_in_post_enabled": true,
+     "responsive_web_profile_redirect_enabled": true,
+     "rweb_tipjar_consumption_enabled": false,
+     "verified_phone_label_enabled": false,
+     "subscriptions_verification_info_is_identity_verified_enabled": true,
+     "subscriptions_verification_info_verified_since_enabled": true,
+     "highlights_tweets_tab_ui_enabled": true,
+     "responsive_web_twitter_article_notes_tab_enabled": true,
+     "subscriptions_feature_can_gift_premium": true,
+     "creator_subscriptions_tweet_preview_api_enabled": true,
+     "responsive_web_graphql_timeline_navigation_enabled": true
+    },
+    "fieldToggles": {
+     "withAuxiliaryUserLabels": true
+    },
+    "variables": [
+     "screen_name"
+    ],
+    "web_equivalent_hint": [
+     "UserByScreenName"
+    ]
+   },
+   "UserTweetsAndReplies": {
+    "queryId": "qUpkZU6eN8MbtQb7rC_pYg",
+    "method": "GET",
+    "host": "x.com/i/api/graphql",
+    "features": {
+     "rweb_video_screen_enabled": false,
+     "rweb_cashtags_enabled": true,
+     "profile_label_improvements_pcf_label_in_post_enabled": true,
+     "responsive_web_profile_redirect_enabled": true,
+     "rweb_tipjar_consumption_enabled": false,
+     "verified_phone_label_enabled": false,
+     "creator_subscriptions_tweet_preview_api_enabled": true,
+     "responsive_web_graphql_timeline_navigation_enabled": true,
+     "premium_content_api_read_enabled": false,
+     "communities_web_enable_tweet_community_results_fetch": true,
+     "c9s_tweet_anatomy_moderator_badge_enabled": true,
+     "responsive_web_grok_analyze_button_fetch_trends_enabled": false,
+     "responsive_web_grok_analyze_post_followups_enabled": true,
+     "rweb_cashtags_composer_attachment_enabled": true,
+     "responsive_web_jetfuel_frame": true,
+     "responsive_web_grok_share_attachment_enabled": true,
+     "responsive_web_grok_annotations_enabled": true,
+     "articles_preview_enabled": true,
+     "responsive_web_edit_tweet_api_enabled": true,
+     "rweb_conversational_replies_downvote_enabled": false,
+     "graphql_is_translatable_rweb_tweet_is_translatable_enabled": true,
+     "view_counts_everywhere_api_enabled": true,
+     "longform_notetweets_consumption_enabled": true,
+     "responsive_web_twitter_article_tweet_consumption_enabled": true,
+     "content_disclosure_indicator_enabled": true,
+     "content_disclosure_ai_generated_indicator_enabled": true,
+     "responsive_web_grok_show_grok_translated_post": true,
+     "responsive_web_grok_analysis_button_from_backend": true,
+     "post_ctas_fetch_enabled": false,
+     "freedom_of_speech_not_reach_fetch_enabled": true,
+     "standardized_nudges_misinfo": true,
+     "tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled": true,
+     "longform_notetweets_rich_text_read_enabled": true,
+     "longform_notetweets_inline_media_enabled": false,
+     "responsive_web_grok_image_annotation_enabled": true,
+     "responsive_web_grok_imagine_annotation_enabled": true,
+     "responsive_web_grok_community_note_auto_translation_is_enabled": true,
+     "responsive_web_enhance_cards_enabled": false
+    },
+    "fieldToggles": {
+     "withArticlePlainText": false
+    },
+    "variables": [
+     "userId",
+     "count",
+     "cursor",
+     "includePromotedContent",
+     "withCommunity",
+     "withVoice"
+    ],
+    "pagination": "cursor-bottom-* entry value",
+    "web_equivalent_hint": [
+     "UserRepliesTimeline",
+     "UserTweets"
+    ]
+   },
+   "followUserMutation": {
+    "queryId": "m5VXpPA-MH4DH7epCa7hCg",
+    "method": "POST",
+    "host": "x.com/i/api/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "targetUserId"
+    ],
+    "web_equivalent_hint": [
+     "followUserMutation"
+    ]
+   },
+   "FavoriteTweet": {
+    "queryId": "lI07N6Otwv1PhnEgXILM7A",
+    "method": "POST",
+    "host": "x.com/i/api/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "tweet_id"
+    ],
+    "web_equivalent_hint": [
+     "likeButtonFavoriteMutation",
+     "intentModalFavoriteMutation"
+    ]
+   },
+   "CreateBookmark": {
+    "queryId": "aoDbu3RHznuiSkQ9aNM67Q",
+    "method": "POST",
+    "host": "x.com/i/api/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "tweet_id"
+    ],
+    "web_equivalent_hint": [
+     "bookmarkButtonAddMutation"
+    ]
+   },
+   "UserByRestId": {
+    "queryId": "BwfFeYIM5H2lqDcLyU7c_Q",
+    "method": "GET",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "rest_id"
+    ],
+    "web_equivalent_hint": [
+     "intentFollowUserByRestIdQuery",
+     "userIdRedirectQuery"
+    ]
+   },
+   "Followers": {
+    "queryId": "JNyQdTISpzCkj_1fqxDvFg",
+    "method": "GET",
+    "host": "x.com/i/api/graphql",
+    "features": {
+     "rweb_video_screen_enabled": false,
+     "rweb_cashtags_enabled": true,
+     "profile_label_improvements_pcf_label_in_post_enabled": true,
+     "responsive_web_profile_redirect_enabled": true,
+     "rweb_tipjar_consumption_enabled": false,
+     "verified_phone_label_enabled": false,
+     "creator_subscriptions_tweet_preview_api_enabled": true,
+     "responsive_web_graphql_timeline_navigation_enabled": true,
+     "premium_content_api_read_enabled": false,
+     "communities_web_enable_tweet_community_results_fetch": true,
+     "c9s_tweet_anatomy_moderator_badge_enabled": true,
+     "responsive_web_grok_analyze_button_fetch_trends_enabled": false,
+     "responsive_web_grok_analyze_post_followups_enabled": true,
+     "rweb_cashtags_composer_attachment_enabled": true,
+     "responsive_web_jetfuel_frame": true,
+     "responsive_web_grok_share_attachment_enabled": true,
+     "responsive_web_grok_annotations_enabled": true,
+     "articles_preview_enabled": true,
+     "responsive_web_edit_tweet_api_enabled": true,
+     "rweb_conversational_replies_downvote_enabled": false,
+     "graphql_is_translatable_rweb_tweet_is_translatable_enabled": true,
+     "view_counts_everywhere_api_enabled": true,
+     "longform_notetweets_consumption_enabled": true,
+     "responsive_web_twitter_article_tweet_consumption_enabled": true,
+     "content_disclosure_indicator_enabled": true,
+     "content_disclosure_ai_generated_indicator_enabled": true,
+     "responsive_web_grok_show_grok_translated_post": true,
+     "responsive_web_grok_analysis_button_from_backend": true,
+     "post_ctas_fetch_enabled": false,
+     "freedom_of_speech_not_reach_fetch_enabled": true,
+     "standardized_nudges_misinfo": true,
+     "tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled": true,
+     "longform_notetweets_rich_text_read_enabled": true,
+     "longform_notetweets_inline_media_enabled": false,
+     "responsive_web_grok_image_annotation_enabled": true,
+     "responsive_web_grok_imagine_annotation_enabled": true,
+     "responsive_web_grok_community_note_auto_translation_is_enabled": true,
+     "responsive_web_enhance_cards_enabled": false
+    },
+    "fieldToggles": {},
+    "variables": [
+     "userId",
+     "count",
+     "cursor",
+     "includePromotedContent",
+     "withGrokTranslatedBio"
+    ],
+    "web_equivalent_hint": [
+     "followersQuery",
+     "userFollowersQuery",
+     "verifiedFollowersQuery"
+    ]
+   },
+   "Following": {
+    "queryId": "6IJiAg6zPdS6WBldTIwdrQ",
+    "method": "GET",
+    "host": "x.com/i/api/graphql",
+    "features": {
+     "rweb_video_screen_enabled": false,
+     "rweb_cashtags_enabled": true,
+     "profile_label_improvements_pcf_label_in_post_enabled": true,
+     "responsive_web_profile_redirect_enabled": true,
+     "rweb_tipjar_consumption_enabled": false,
+     "verified_phone_label_enabled": false,
+     "creator_subscriptions_tweet_preview_api_enabled": true,
+     "responsive_web_graphql_timeline_navigation_enabled": true,
+     "premium_content_api_read_enabled": false,
+     "communities_web_enable_tweet_community_results_fetch": true,
+     "c9s_tweet_anatomy_moderator_badge_enabled": true,
+     "responsive_web_grok_analyze_button_fetch_trends_enabled": false,
+     "responsive_web_grok_analyze_post_followups_enabled": true,
+     "rweb_cashtags_composer_attachment_enabled": true,
+     "responsive_web_jetfuel_frame": true,
+     "responsive_web_grok_share_attachment_enabled": true,
+     "responsive_web_grok_annotations_enabled": true,
+     "articles_preview_enabled": true,
+     "responsive_web_edit_tweet_api_enabled": true,
+     "rweb_conversational_replies_downvote_enabled": false,
+     "graphql_is_translatable_rweb_tweet_is_translatable_enabled": true,
+     "view_counts_everywhere_api_enabled": true,
+     "longform_notetweets_consumption_enabled": true,
+     "responsive_web_twitter_article_tweet_consumption_enabled": true,
+     "content_disclosure_indicator_enabled": true,
+     "content_disclosure_ai_generated_indicator_enabled": true,
+     "responsive_web_grok_show_grok_translated_post": true,
+     "responsive_web_grok_analysis_button_from_backend": true,
+     "post_ctas_fetch_enabled": false,
+     "freedom_of_speech_not_reach_fetch_enabled": true,
+     "standardized_nudges_misinfo": true,
+     "tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled": true,
+     "longform_notetweets_rich_text_read_enabled": true,
+     "longform_notetweets_inline_media_enabled": false,
+     "responsive_web_grok_image_annotation_enabled": true,
+     "responsive_web_grok_imagine_annotation_enabled": true,
+     "responsive_web_grok_community_note_auto_translation_is_enabled": true,
+     "responsive_web_enhance_cards_enabled": false
+    },
+    "fieldToggles": {},
+    "variables": [
+     "userId",
+     "count",
+     "cursor",
+     "includePromotedContent",
+     "withGrokTranslatedBio"
+    ],
+    "web_equivalent_hint": [
+     "followingQuery"
+    ]
+   }
+  },
+  "rest": [
+   {
+    "method": "POST",
+    "host": "api.x.com",
+    "path": "/1.1/account/update_profile.json",
+    "sdk_op": "update_profile"
+   },
+   {
+    "method": "POST",
+    "host": "api.x.com",
+    "path": "/1.1/account/update_profile_image.json",
+    "sdk_op": "update_profile_image"
+   },
+   {
+    "method": "POST",
+    "host": "api.x.com",
+    "path": "/1.1/account/update_profile_banner.json",
+    "sdk_op": "update_profile_banner"
+   },
+   {
+    "method": "GET",
+    "host": "api.x.com",
+    "path": "/1.1/account/settings.json",
+    "sdk_op": "account_settings"
+   },
+   {
+    "method": "POST",
+    "host": "api.x.com",
+    "path": "/1.1/account/settings.json",
+    "sdk_op": "update_account_settings"
+   },
+   {
+    "method": "POST",
+    "host": "upload.x.com",
+    "path": "/i/media/upload.json",
+    "sdk_op": "media_init/append/finalize"
+   },
+   {
+    "method": "GET",
+    "host": "upload.x.com",
+    "path": "/i/media/upload.json",
+    "sdk_op": "media_status"
+   }
+  ],
+  "bootstrap": {
+   "page": "https://x.com/messages",
+   "ondemand_regex": "(\\d+):\"ondemand\\.s\"  ->  https://abs.twimg.com/responsive-web/client-web/ondemand.s.<hash>a.js",
+   "html_needs": [
+    "meta twitter-site-verification",
+    "4x svg id=loading-x-anim-N"
+   ],
+   "note": "x-client-transaction-id material (internal/client/web/txid.go)"
+  },
+  "user_fields_requested": [
+   "include_profile_interstitial_type",
+   "include_can_dm",
+   "include_blocking",
+   "include_blocked_by",
+   "include_followed_by",
+   "include_want_retweets",
+   "include_mute_edge",
+   "include_can_media_tag",
+   "include_ext_is_blue_verified",
+   "include_ext_verified_type",
+   "include_ext_profile_image_shape"
+  ],
+  "xweb_graphql": {
+   "UserByScreenName": {
+    "queryId": "WhithR1Ur_mqYZD16kdl7g",
+    "method": "GET",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "screenName"
+    ],
+    "providedVariables": {
+     "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true
+    },
+    "sdk_const": "WebXOpUserByScreenName",
+    "web_equivalent_hint": [
+     "UserByScreenName"
+    ]
+   },
+   "UserRepliesTimeline": {
+    "queryId": "fuaWoqUpdl6G_UbAAQXKEA",
+    "method": "GET",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "count",
+     "cursor",
+     "screenName"
+    ],
+    "providedVariables": {
+     "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+     "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+    },
+    "sdk_const": "WebXOpUserRepliesTimeline",
+    "web_equivalent_hint": [
+     "UserRepliesTimeline"
+    ]
+   },
+   "bookmarkButtonAddMutation": {
+    "queryId": "d5cUgGn90np33i-G4PE12w",
+    "method": "POST",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "tweetId"
+    ],
+    "providedVariables": {},
+    "sdk_const": "WebXOpCreateBookmark",
+    "web_equivalent_hint": [
+     "bookmarkButtonAddMutation"
+    ]
+   },
+   "followUserMutation": {
+    "queryId": "m5VXpPA-MH4DH7epCa7hCg",
+    "method": "POST",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "targetUserId"
+    ],
+    "providedVariables": {},
+    "sdk_const": "WebXOpFollowUser",
+    "web_equivalent_hint": [
+     "followUserMutation"
+    ]
+   },
+   "followersQuery": {
+    "queryId": "UAPuQCGGkIklNk4y7aPFaQ",
+    "method": "GET",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "count",
+     "cursor",
+     "screenName"
+    ],
+    "providedVariables": {
+     "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+     "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+    },
+    "sdk_const": "WebXOpFollowers",
+    "web_equivalent_hint": [
+     "followersQuery"
+    ]
+   },
+   "followingQuery": {
+    "queryId": "6b2NBXZtgOl5zzL03A39Ww",
+    "method": "GET",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "count",
+     "cursor",
+     "screenName"
+    ],
+    "providedVariables": {
+     "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+     "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+    },
+    "sdk_const": "WebXOpFollowing",
+    "web_equivalent_hint": [
+     "followingQuery"
+    ]
+   },
+   "intentFollowUserByRestIdQuery": {
+    "queryId": "GbnL6-2I4v2Axwh__6OkMg",
+    "method": "GET",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "userId"
+    ],
+    "providedVariables": {},
+    "sdk_const": "WebXOpUserByRestID",
+    "web_equivalent_hint": [
+     "intentFollowUserByRestIdQuery"
+    ]
+   },
+   "likeButtonFavoriteMutation": {
+    "queryId": "kD580ja7oRwK5qf7CFtyNA",
+    "method": "POST",
+    "host": "api.x.com/graphql",
+    "features": {},
+    "fieldToggles": {},
+    "variables": [
+     "tweetId"
+    ],
+    "providedVariables": {},
+    "sdk_const": "WebXOpFavoriteTweet",
+    "web_equivalent_hint": [
+     "likeButtonFavoriteMutation"
+    ]
+   }
+  }
+ },
+ "android": {
+  "graphql": {
+   "CreatePost": {
+    "queryId": "KxhHNNwNmxjqospYaO2rCQ",
+    "features": {
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "DeleteTweet": {
+    "queryId": "kZyJ4Q1TNsZNByfrGX7Huw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FavoriteTweet": {
+    "queryId": "lI07N6Otwv1PhnEgXILM7A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnfavoriteTweet": {
+    "queryId": "ZYKSe-w7KEslx3JhSIk5LA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateRetweet": {
+    "queryId": "ghj-EbF5LFOULByyH4aM0Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeleteRetweet": {
+    "queryId": "r1IaAd_GIEunlPjVWVlD_w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PinPostMutation": {
+    "queryId": "CI6pwIZEbYUtj8W87yIOvw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnpinPostMutation": {
+    "queryId": "vPbA2205OffyUP8aLyqXgw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DislikePost": {
+    "queryId": "OSB5kqUzP8rkq-fsb3EyXQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UndoDislikePost": {
+    "queryId": "3L8QlxVi4lyAfr6EFX32Rw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateMediaMetadata": {
+    "queryId": "ad1kK7aIYBbd-SEMpO34sg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GifSearchQuery": {
+    "queryId": "1UIUhclXMiyrjWzCV_Y4kA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GifEnumerateCategoryQuery": {
+    "queryId": "f51CbT1DbEBNOYvgYr24Nw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetEmbedMediaPreview": {
+    "queryId": "iruzpAVBE4yOixcpmrngzw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetCardPreviewOrJetfuelFromUrlQuery": {
+    "queryId": "jWj8JuEgooIC5ihAYrgypw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetJetfuelAttachmentComposer": {
+    "queryId": "oodcvPVHHWw6MUz0CtUBWw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GrokMediaHistory": {
+    "queryId": "15sTe_Vdwf9QjasIRsXE2A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateUserPreferencesVideoDownloads": {
+    "queryId": "YzsMMPFaTbyg4Y3Rr0y-_g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPostById": {
+    "queryId": "KE4RUXfPox4gwVsgDG0tLw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "TranslatePostQuery": {
+    "queryId": "lOmaQ8yekkKLw9I810zVWg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "RepostersTimelineQuery": {
+    "queryId": "Gig2FBNq03V18yBUlDImvA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "EditHistoryTimeline": {
+    "queryId": "WEfVEXZ7-O0clAftJBK_Yw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "IsPostHighlighted": {
+    "queryId": "wiQ2upx63BaQXl_rjWDKhA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetConversationControlSettings": {
+    "queryId": "uSS1UZnreGvtXo8463kSxQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PostHighlightsAddMutation": {
+    "queryId": "NKILeDXo6b8UwkctZLpUgg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PostHighlightsDeleteMutation": {
+    "queryId": "jP_TsMKHDC8T68usNnQYlw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ConversationControlDeleteMutation": {
+    "queryId": "aoDYRrSTn8kcoi_tyzhWNg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnmentionUserMutation": {
+    "queryId": "lltuMcgima71jdyqGrcbGg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeleteContentDisclosure": {
+    "queryId": "YeIV-eqGwEZXDtYaDsJz2Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ExclusivePostFollowMutation": {
+    "queryId": "oCw-icru3XwSVMUGTJoZLg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ExclusivePostUnfollowMutation": {
+    "queryId": "ghDh6X4v5tppBJQnUHj0CA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FollowRetweets": {
+    "queryId": "uf0_A5qqAsAnaHxCVUJxWg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnfollowRetweets": {
+    "queryId": "0lH6PXkfRA8fgm188pqHlQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ReplyDeviceFollowMutation": {
+    "queryId": "7nrTpgUDhtWzuPG46m2Nvw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ReplyDeviceUnfollowMutation": {
+    "queryId": "U25GT8cD4fRAzbYwMfMQGQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetDraftPosts": {
+    "queryId": "EUbeNMtSi2xMwwrb-iJCWw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetEditablePosts": {
+    "queryId": "uU0TR6YdLSilqKDL4-nv8w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetParodyLabelSettings": {
+    "queryId": "iJP6r2pS3ELTigK9OksHMA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetUnsyncedDraftPosts": {
+    "queryId": "QuNzWZnqWKiH4WRP-H4SYQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PinnableTimelinesQuery": {
+    "queryId": "FRXSxaim5jOtQq6CsLoVig",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PinnedTimelinesQuery": {
+    "queryId": "8fBokmrr0GalIKhNWrWX9g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserWithProfileTweetsQueryV2": {
+    "queryId": "PCyyjXxXGAkwlF8EUVtG2w",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "DeletePostMutation": {
+    "queryId": "1EVIme6zMCgTO7F95wuElA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeleteDraftPost": {
+    "queryId": "H5X7wWyPPpfDm1JLLLZ1tQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetAutoTranslateLanguageEnabled": {
+    "queryId": "HAtOBJEFOxRfoJeGrNH0Dg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateAutoTranslateLanguageControl": {
+    "queryId": "MOBXiVZqIvwpNFlU3vh5KA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateParodyLabel": {
+    "queryId": "Ga_AMMg0IPfZM4M5HLG-zw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AddContentDisclosure": {
+    "queryId": "D1nwFlsu_qHsX92YzoRaaA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ConversationControlPutMutation": {
+    "queryId": "phwf1bHwFPaF7t2buWRIUw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateDraftPost": {
+    "queryId": "pnN3C7RumBcC2Txg-7T_Cw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "EditDraftPost": {
+    "queryId": "xai5SSKcZfGA3Dpjrf0OQw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateNotePost": {
+    "queryId": "WzQqugnxTku0kM-oCwuKtA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PinTimeline": {
+    "queryId": "GDoud3VwaAfr-HSsGfXpwQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnpinTimeline": {
+    "queryId": "2Qu5XeiUO_qLePLN4N_MyQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdatePinnedTimelines": {
+    "queryId": "cApBzz2YB_UiwdWHmb0BEw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FavoriteMutation": {
+    "queryId": "2hbLv7zarSqzkOQX24htlw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnfavoriteMutation": {
+    "queryId": "oMLqPFjJe7lMOCnqc2rNoA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateRepostMutation": {
+    "queryId": "-xPzT3t5JtcohA31EUrZgA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeleteRepostMutation": {
+    "queryId": "w1Bo2Whh4f4lha5Djgnpvg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeviceFollowPostsTimelineQuery": {
+    "queryId": "Yyx8pyRiNJQKX1J-cp4F7Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FollowUser": {
+    "queryId": "Q-ho_xpF4thBqirXZ1oenw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnfollowUser": {
+    "queryId": "y5iJ0kGxxk_9sIeYw6VAeg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BlockUser": {
+    "queryId": "v3v6SwV3VqR1thrCKA9YaA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnblockUser": {
+    "queryId": "-6uBCpKY1zDTKuZMKa9OAw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "MuteUser": {
+    "queryId": "rz-AMENdzoAR9wwOoSqfBQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnmuteUser": {
+    "queryId": "eCVBsC0LLcoYLIOx3pE4Kg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CancelFollowRequest": {
+    "queryId": "-BgQZRWg5XbQqOt_rOGk0w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeviceFollowMutation": {
+    "queryId": "I56GX9RLd-GQTuUBoD8lOw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeviceUnfollowMutation": {
+    "queryId": "GxjZ8oXqC4zixbaU2wdtLQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "LiveFollowMutation": {
+    "queryId": "qVFLzigXD8qAUlF0oas-5Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "LiveUnfollowMutation": {
+    "queryId": "Yc3DQ7jMg-KThlGowcuBnA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AcceptFollowRequestMutation": {
+    "queryId": "KL7zXK-ozlNd8GCyR41BAQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DenyFollowRequestMutation": {
+    "queryId": "PJKgUSzNd7IYTOZu-9IW3g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AddSuperFollowerPrivacyMutation": {
+    "queryId": "UskMEgP78ZsyM4OWJz_TBg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "RemoveSuperFollowerPrivacyMutation": {
+    "queryId": "LWGX4IU7G9bgrM-SS_FeTA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "HomeTimeline": {
+    "queryId": "zM7l2l6rhcrW6ZpOSLW0Tg",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "HomeTimelineLatest": {
+    "queryId": "s3QKjii8dIA1r9JpiBEWig",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "HomeTimelineFilters": {
+    "queryId": "zkN_wFrwwh7dX1qEPvX0oQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ViewerUserQuery": {
+    "queryId": "UbkoVglSiBRQbEsZxSIEaQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserResultByIdQuery": {
+    "queryId": "KuNjgcMGPgZsC-jLH_pNbQ",
+    "features": {
+     "profile_label_improvements_pcf_label_in_profile_enabled": true,
+     "verified_phone_label_enabled": false,
+     "super_follow_badge_privacy_enabled": true,
+     "subscriptions_verification_info_enabled": true,
+     "super_follow_user_api_enabled": true,
+     "blue_business_profile_image_shape_enabled": true,
+     "profile_label_improvements_pcf_label_in_post_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "super_follow_exclusive_tweet_notifications_enabled": true
+    },
+    "host": "api.x.com/graphql"
+   },
+   "GetProfileModules": {
+    "queryId": "9IkNN5j6UihVPASWorajow",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ProfileAnalyticsQuery": {
+    "queryId": "L2HMuwnicuiVmPM-EQP-rA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetUserByScreenNameQuery": {
+    "queryId": "TW2Xb_WxL5_2AyucdZqKIQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetUsersByIds": {
+    "queryId": "AjCvize9lrJ8BLib2wtzwg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AboutProfileQuery": {
+    "queryId": "lxMJqOkwFsfRkVG73xWciw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AboutProfileByScreenNameQuery": {
+    "queryId": "HIynt5JR8LxNmexRTYFn0w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetUserQuery": {
+    "queryId": "cMCFxwLtvsAfJb2F_ejUdQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetProfileConnectionPage": {
+    "queryId": "rHMndJbY5kmPmsvYrie8vQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetProfileConnectionPageByScreenName": {
+    "queryId": "lVirdkP7HA-Nw0jz2IcTqg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetUsersAvatarsByIds": {
+    "queryId": "7XvrZonZweCaBlZfRNdQMw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteAdAccountsQuery": {
+    "queryId": "LwLKHyAp-m1v2lNeCaqrAw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserPreferencesGet": {
+    "queryId": "jJ0d3JNI-wVDaRvXfGAHKQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetVerificationInfoQuery": {
+    "queryId": "BOSHY5nZ4dwlnr2gjX37Vg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AdsStatsForViewerQuery": {
+    "queryId": "YQRvq65Rq7KU3OoXXIRvXQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetUsernameAvailabilityAndSuggestions": {
+    "queryId": "MJQbsJyehvttZ239UXQadQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateUserPreferencesForYouRecommendations": {
+    "queryId": "6YVmE6wNNdj_Az7y99D7TA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateUserPreferencesXaiDataSharing": {
+    "queryId": "V1mH_jdZW60S55bnNJeetg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateUserPreferencesXaiPersonalization": {
+    "queryId": "OnfrRrvvW4w9NHpKCrJQig",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateHideVerificationInfoPreference": {
+    "queryId": "vu34FokF9hrKz-y7atV2Fg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "WriteUserInstalledApps": {
+    "queryId": "1DcyUE73GTWLbuBy1PQ8-Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileOriginalsTimelineQuery": {
+    "queryId": "DrzofioYW1wX4d-pk1t5LA",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileHighlightsTimelineQuery": {
+    "queryId": "2WT-Pne4ipPEhBBNw7IIhQ",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "GetFriendsFollowingTimeline": {
+    "queryId": "Gr6cTX-h9YOmqS7OyWqtmg",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileRepliesTimelineQuery": {
+    "queryId": "gJvx7IZocmOTT9JDMdTa7A",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileNewRepliesTimelineQuery": {
+    "queryId": "wRHudUb2ywniv60KhQ0Pnw",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfilePhotosTimelineQuery": {
+    "queryId": "6nGYPaNPzHM-pzOD448SIg",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileArticlesTimelineQuery": {
+    "queryId": "KiI5FJhaZOFOXq18gcvbUg",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileAffiliatesTimelineQuery": {
+    "queryId": "l6hPBzJg0pTN7cF8zpd6Cg",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileSuperFollowersTimelineQuery": {
+    "queryId": "spwHpD52MrMHofkv3EDuWQ",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "ProfileUserPromotedTimelineQuery": {
+    "queryId": "5V-UxfAqxuvP7-c6IN5ewg",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileMediaTimelineQuery": {
+    "queryId": "ZDdKZhV29KwRtzGHYweHNQ",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileVideosTimelineQuery": {
+    "queryId": "UUPgv6Nm6OfWRzDSOKWkTw",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "ViewerBlockingTimeline": {
+    "queryId": "QjwRqxbDhTVKv7bgg7ZtEw",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "ViewerMutingTimeline": {
+    "queryId": "_McfMJZrFMp_0ixalibb7w",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileFavoritesTimelineQuery": {
+    "queryId": "CLjIAL4sqQAHrVyxoE5tgg",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserProfileRepostsTimelineQuery": {
+    "queryId": "9g44HwnNMJqxOJnYvBo7-g",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "BookmarkAddMutation": {
+    "queryId": "IjefskW4Kr2i-6XRdshQEg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BookmarkRemoveMutation": {
+    "queryId": "K5KIqVnds5iJ00WdHb8Nmw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateBookmarkCollection": {
+    "queryId": "I0RFuaQ-f9WABQbMH01_gA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeleteBookmarkCollectionMutation": {
+    "queryId": "I70di7obdATAFgd7oLfCRw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "TweetAddToBookmarkCollectionMutation": {
+    "queryId": "dR_-Ps-4E2cRtZMrnGAvqg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateBookmarkCollectionMutation": {
+    "queryId": "dZoHmPLT71mTRxG6_72hNQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BookmarksTimelineQuery": {
+    "queryId": "souHmjOjxJr0HpJIlw_q9A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BookmarkCollectionTimelineQuery": {
+    "queryId": "xFOo9o6bBOiZ9HWL3r3ZsQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BookmarksSearchTimelineQuery": {
+    "queryId": "EYtVcxs3bz9-_aT1Q8LcHQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetBookmarkCollectionsQuery": {
+    "queryId": "zJ_1QK8z3Oh_8VTjRDzMbA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ModerateTweetMutation": {
+    "queryId": "HtVAbsY7AjobpCIkOdQ_GQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnmoderateTweetMutation": {
+    "queryId": "Gk3SsjXxbKPZyTAjGN_bMQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ReportSpamPost": {
+    "queryId": "VgwZFY4mXcZFTta_Uog1Qg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BirdwatchHomePageQuery": {
+    "queryId": "PP-gbF9OPishBMpiccHeuA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ModeratedTweetTimelineQuery": {
+    "queryId": "53v88rPLFbBReh1_gIvMQw",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "CreateFeedbackReport": {
+    "queryId": "XgoTfsTBr617s9xe3sq0Ng",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SendUrtFeedback": {
+    "queryId": "qTtj2vIZQnnYXkldJFc-tQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ResetPasscodeMutation": {
+    "queryId": "tmN0Hq8qLWhk3OEKHbpekA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "TwoFactorAuthSettingsQuery": {
+    "queryId": "iq6WFMUPY_-dczmrgBE2yQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateInferredLocationResolutionPreference": {
+    "queryId": "nvFzrRdAm4kgvFkhohdCYQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SubscriberConsentMutation": {
+    "queryId": "ucTwqphFoG1_kIfxrTKmyw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateBusinessLocationPreference": {
+    "queryId": "MsCbPg-D0jwvbm-03s7tyA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateCustomerConsents": {
+    "queryId": "4Nm5qaWwbNoqXCnQ3iE3rA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateDmSettingsMutation": {
+    "queryId": "o-vPPkcEbljw4E6iDtXG_A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SearchTypeahead": {
+    "queryId": "JW8SLDT4Q6WRKYSvG-nA-A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "TypeaheadUsersSearchQuery": {
+    "queryId": "_SjLCTWBeFIjU7VEez1L7A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SearchHashtagTypeahead": {
+    "queryId": "lQDOqbBAOzNgvbsgE2jitw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SearchComposerMentionTypeaheadQuery": {
+    "queryId": "qaihuaftb3CqFAp54mE3zg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "LocationTypeAhead": {
+    "queryId": "wHtSPtuS5TAvc2Yw_x0RAg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SearchPlaceName": {
+    "queryId": "Qz41aBP4_Jzr7_5d8mKJ3w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinanceSearchTags": {
+    "queryId": "lvFFUNrncNZCd9I5mKzv6A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "JobSearchQuery": {
+    "queryId": "dhhLu0M1_FEgyvT2FKTiMw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteLocationSearchQuery": {
+    "queryId": "MeYvi7ScoOMlQmjX9aFb6g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AudiospaceByRestId": {
+    "queryId": "qe9olbjyLrwLCd3nIRerGw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BroadcastByRestId": {
+    "queryId": "b0Nl3eo9xCo3MIRmsC7ayg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AudioSpacesSearch": {
+    "queryId": "KgSzBTlzhkEHvJaXxWUcIg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AudioSpaceSharings": {
+    "queryId": "aqGS_T2t9OoxZHejDv6HvA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BrowseSpaceTopics": {
+    "queryId": "nt1vFWYFrF183zsC6juQwA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AuthenticatePeriscope": {
+    "queryId": "r7VUmxbfqNkx7uwjgONSNw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SubscribeToScheduledSpaceMutation": {
+    "queryId": "y6G8O_sB8FoLaPSYAvFHJg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnsubscribeFromScheduledSpaceMutation": {
+    "queryId": "xy8lFezgksLtp8ElMHkQAA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AudioSpaceAddSharingMutation": {
+    "queryId": "PO1wqSHYBX5siPesVLL9vA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AudioSpaceDeleteSharingMutation": {
+    "queryId": "5KXhSwVe9o8BKnCPu0CLHQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "JoinCommunity": {
+    "queryId": "l_QqznbYl_KuiOzpuoQ89w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "LeaveCommunityMutation": {
+    "queryId": "KZB11UoS1eJyb68Yyb3-Ag",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetCommunity": {
+    "queryId": "9WJBXrTpJJeXKuT_AjjXOg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetJoinedCommunities": {
+    "queryId": "m_Bnb49pzFjZfOpqZvXwDA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CommunitiesSearchQuery": {
+    "queryId": "V3ReW3E5PhQKdowOXgGWsQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CommunitiesTimelineQuery": {
+    "queryId": "15ufaIYchwzXAHLXXcOJEw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CommunityDetailTimelineQuery": {
+    "queryId": "iGty3bydCi-vuhNg9ToUcQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CommunityMediaTimelineQuery": {
+    "queryId": "YFLnwZFJ-J2lDwfNbhLSCQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CommunityHashtagSearchQuery": {
+    "queryId": "epNGNxLX34GsJ--p97DM5w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ExploreCommunitiesTimelineQuery": {
+    "queryId": "F4oZA2-VJYfYlGeT7Je_ZQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FetchPopularCommunitiesByTopicQuery": {
+    "queryId": "aFUUqOUUpzVjXhai-5I8gw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FetchUserCommunityTopicsQuery": {
+    "queryId": "uzBFxx7IcgMx8XCLmV6lfQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "RankedCommunitiesTimelineQuery": {
+    "queryId": "_O0OFEIKxzoDoHbkpIb10g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListCreate": {
+    "queryId": "lDQDPdM4ZrHql-l7-KFDkg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListDelete": {
+    "queryId": "GaNPVF9EcFNrK01zcocfjQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListUpdate": {
+    "queryId": "cqSMmfKXSXLK0g2-BuiIfA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListMemberAdd": {
+    "queryId": "LwhLxXpWofhBMtLVf5w2zQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListMemberRemove": {
+    "queryId": "h2jJhWpKL84wKUH0PTow1g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListPutBannerMedia": {
+    "queryId": "yEGq6mSMMFM1qFGy38goSQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListDeleteBannerMedia": {
+    "queryId": "RiCK_ernueI0vB3Si_UCzA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserListSubscribe": {
+    "queryId": "LknzqBSbe1OjYnt6LdYYsg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserListUnsubscribe": {
+    "queryId": "jy3_Nuy7c-RFDLiAJTABcg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserListMute": {
+    "queryId": "706Hnj2UKNqAJOZJXT0ZqQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserListUnmute": {
+    "queryId": "bS5Ku2wVQGyKU2rhr_B8fg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetXListById": {
+    "queryId": "CTb2swShJYvy01JuYukKjg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListsTimelineQuery": {
+    "queryId": "JfUB1JHqaok-bA01JA6p0A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListMembersTimelineQuery": {
+    "queryId": "_P91bvENigWCZpgrzIDzLw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListMembershipQuery": {
+    "queryId": "QVppuXh_YNMr6tQbz4nNAw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListSubscribersTimelineQuery": {
+    "queryId": "xQZNkVu2-uJiyyHexxCjcQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AllSubscribedListsTimelineQuery": {
+    "queryId": "ZUPB00eRvaS8kL-0o7WzyA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListOwnershipsTimelineQuery": {
+    "queryId": "jSy3QD0_YKdJ84RwwFt7ZA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListManagementTimelineQuery": {
+    "queryId": "IVpFccYIYL_QlypQVb-JnQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SuggestedListsTimelineQuery": {
+    "queryId": "KqCPWLne6JyBc7GljBE86w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListProductSubscriptions": {
+    "queryId": "HGHDFXxiElIbBv_hYkR1VA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListCreateRecommendedUsersTimeline": {
+    "queryId": "QfLvk3zneBS9l9aNFlq_ZA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ListEditRecommendedUsersTimeline": {
+    "queryId": "AGQLAy0d4ws7WQN71Fh19w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GrokHomeQuery": {
+    "queryId": "opUCqyZctNFnUSoWe67kkw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GrokHistory": {
+    "queryId": "Czhyr--zWmwFHEHnCyqK2A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetGrokComposePromptRevisions": {
+    "queryId": "j6mxA5MB2UKGjL3x0_DNlg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SetGrokPreferences": {
+    "queryId": "vkpqVJp2-rJtZxV1q0f6aw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateUserPreferencesGrokMemory": {
+    "queryId": "ifLarnxtkqfTDwQ4QINq_A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinanceAssetData": {
+    "queryId": "FVWioewTLVCjprWRgt-hcg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinanceChartData": {
+    "queryId": "V_5peJG_R5GZhTL-Jwou7Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinanceChartDataCandlesBatch": {
+    "queryId": "SfMyuNmlOsghzooARtj3fQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinanceChartDataLinesBatch": {
+    "queryId": "uJ3AkkuWoA-Gg_tWfF8_kQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteBudgetsQuery": {
+    "queryId": "cDN5u1Bu3jgAKifpTm0dBQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteDefaultLocationQuery": {
+    "queryId": "NLU39shTO3y7d39Wazqq0A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteAudienceEstimatesQuery": {
+    "queryId": "e1l9_22vYgh08mlqjKR3ug",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteCampaignMutation": {
+    "queryId": "FkiLtQ_qhyHm_RwhhbL2DQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "Explore": {
+    "queryId": "DmgI-1YuFGqI0U1wZ_wfwA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetAiTrendById": {
+    "queryId": "3j_5-IlL3aDpSr85efsAoQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetTopicPage": {
+    "queryId": "Zb35_ZEq1OwaV_IOMTsVGA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "EmailNotificationSettingsQuery": {
+    "queryId": "5GqRcl7bSLtJldQTFxSFXA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateEmailNotificationSettingsMutation": {
+    "queryId": "Xz06HC6l0GjDk7Pa0Av6zw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PublicJobsOfCompanyQuery": {
+    "queryId": "5Kj6Lh-7OMZiG1uzRh7g4g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPasskeysQuery": {
+    "queryId": "VCfEMFG6D-D8APSKFfOooA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPublicKeysQuery": {
+    "queryId": "nyLCqvDlxI4YoEBf-2ARmQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BeginBiometricLivenessSessionMutation": {
+    "queryId": "hBg-Wr0nuEaX9Z_NNON53g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinishBiometricLivenessSessionMutation": {
+    "queryId": "8zOKLRm211gccfw5jXjxcg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateFaceLivenessSession": {
+    "queryId": "ZACPtXKkMW3SQtOvDuHKAw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetFaceLivenessSessionResults": {
+    "queryId": "uaBffKBFw6eNH7YQIgTn2Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SelfCustodyBackupStatusQuery": {
+    "queryId": "9g4bcLsRF3sXaSud9b3zDA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FetchSelfCustodyBackupQuery": {
+    "queryId": "W31ToTUKEssJ8CEtwCfALQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UploadSelfCustodyBackupMutation": {
+    "queryId": "-9ZUuQd2-bQvY8jL3S6ySw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeleteSelfCustodyBackupMutation": {
+    "queryId": "6W-iizyckkakySwpd2_5ng",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GenerateBarcodeForCashDeposit": {
+    "queryId": "YrADWdanbvSY7hgu2ARARQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "BeginPalmVerificationMutation": {
+    "queryId": "3loX4kHyfEKg-cHuxIdrgQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinishPalmVerificationMutation": {
+    "queryId": "yiIyZnJQyZZdAkndaIz03g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "StartIdentityVerification": {
+    "queryId": "zHBisKvEH1UlhgmAiTTbNw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "StartSelfieAgeVerificationMutation": {
+    "queryId": "IaR8FyVGxG1NIgWNlWlDSQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "StartSelfieAgeVerificationStatus": {
+    "queryId": "I4trXExYAZlLD-xUZSM_FA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "LogActionsMutation": {
+    "queryId": "I8qHqtDBX8uZyYFJ4-GK7g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SaveClientEvents": {
+    "queryId": "UH4dIEACxzQhRDaZt1h2pg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ConnectTabTimelineQuery": {
+    "queryId": "igNIO2byRCbFh7KXWr6IaA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ConversationTimeline": {
+    "queryId": "Bb3FB1humGi0GQuGNzesKQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DmAvPermissionsQuery": {
+    "queryId": "sZHGGwf5IwBHqrBzdEDPrA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DmSettingsQuery": {
+    "queryId": "jr8PVMRdhyJcEsDlNL87Vg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetConnectPage": {
+    "queryId": "ApOSugJYDEsZ_Cx0n2aiLA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetConversationKeyChangeEventsQuery": {
+    "queryId": "Y3mUp0hPH1fL2MLRQ4oUEg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetConversationPageQuery": {
+    "queryId": "GX9ZijkxG8AqRMQVD7hMnQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetGroupJoinRequestsQuery": {
+    "queryId": "wwQzkiPnm-KafXczYi6wLA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetInboxPageConversationDataQuery": {
+    "queryId": "AdDBeQ6Tjybb1-_mnkVhOQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetInboxPageRequestQuery": {
+    "queryId": "4QJlNf-8j_0rjIeNFegsMQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetInitialXChatPageQuery": {
+    "queryId": "Owb5IWDR2WCjU4De29Jm_Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetMessageEventsBySequenceIdQuery": {
+    "queryId": "WU1OOeTQbDQX8sc-HdCk8g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetMessageEventsPageQuery": {
+    "queryId": "TFvMfwNFybz0JNW-a7MxpQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetMessageReadTimestampsQuery": {
+    "queryId": "AOomju6YIYHWl2XjC55-Cg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetMessageRequestsPageQuery": {
+    "queryId": "9ZPeVUiUU2_iLiGecVDydg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetUsersByIdsForXChat": {
+    "queryId": "WESYk3iex4jYRkXbeQgLrg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetUsersByScreenNameForXChat": {
+    "queryId": "T-daLvokYBc2X7aAuQqTXg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GroupInviteDetailsQuery": {
+    "queryId": "wubTkA5DWZXuf3ugyqStPg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "TypeaheadXChatQuery": {
+    "queryId": "ufb9QfU-0zkudBGZ6e_h4w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatGrokSearchPageQuery": {
+    "queryId": "fViyRu-_mQfM3rS0ZvRxFQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ActivateIssuedCardsWithChallenge": {
+    "queryId": "etHkpe1_tzVOMDjFNnV3MQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AddPaymentMethod": {
+    "queryId": "FwUlfGbQbwLYuyb3bOTXig",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CancelPaymentRequestTransfer": {
+    "queryId": "c7xYY3U35nnQusk1MhnZ5Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CancelPaymentTransactionById": {
+    "queryId": "Nvn3_QNJWQ-soKNbmXNJgA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CancelPaymentTransfer": {
+    "queryId": "Af_8O-J9KmEZMzCM7QsIww",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ClaimPaymentTransfer": {
+    "queryId": "h0GPUouT2Er8RtTqe84dUA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ClaimPaymentTransferLink": {
+    "queryId": "nLqSvGAgnd_2NOodLId84Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ConfirmUnrecognizedPayment": {
+    "queryId": "WnupyijmRd6GDgZs5n4vSQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateCheckDeposit": {
+    "queryId": "_bvuQJGqeUKYoYVvq2J78A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateCheckUploadSession": {
+    "queryId": "by5JMyrK7WO9s8tMdpHNqg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateDepositPaymentTransaction": {
+    "queryId": "hZcYh7H--vZKQqespdFL-w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateDirectDepositSwitchingSession": {
+    "queryId": "0pskgKUSH8xx4UYYvi9SEw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateInternalTransferPaymentTransaction": {
+    "queryId": "rU-URb356eTbqQYVKS5Q3w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateIssuedCheck": {
+    "queryId": "5COS-HYIaQLEg3CMU8uQfg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateOutgoingInternationalWire": {
+    "queryId": "EOoPXcbc9IxGx0jMTSrVDw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateOutgoingWire": {
+    "queryId": "9FugJ7QCAD-KUgE2MLX92A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreatePaymentAuthToken": {
+    "queryId": "X9SrSin9IKwEEdj0l7Ur2g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreatePaymentBankCardLinkingSession": {
+    "queryId": "4aEbVvK3K4RRPDgEWYKfPA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreatePaymentFinancialInstitutionLinkingSession": {
+    "queryId": "WpFPmQhFc5SdcPoPgiATtA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreatePaymentFinancialInstitutionUpdateSession": {
+    "queryId": "gpJ9VQVsTcV2m8WBaq2O_Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreatePaymentMethodSession": {
+    "queryId": "DLnWlWr-L0j_VoMaiwpOQA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateTransferLinkTransaction": {
+    "queryId": "3tTGTy1RaBPMKg-gZ1lvCw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateTransferPaymentTransaction": {
+    "queryId": "aYkPWBkCVJL1wb4kNNQf9Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreateWithdrawalPaymentTransaction": {
+    "queryId": "exiTT9AuoMHG32trZqiNnw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreatorSubsManageInfoQuery": {
+    "queryId": "aXf6x68EH9qg51Bcc3s-Cw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "CreatorSubsProductQuery": {
+    "queryId": "DrUnLfluCvvL8wDGboC4qQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeletePaymentMethod": {
+    "queryId": "9kYXM7k5u-9JJyZy_F_DRQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinishPaymentTwoFactorAuthChallenge": {
+    "queryId": "uvFJA13eQwJwFhPdXaUUGg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetClaims": {
+    "queryId": "vnhJIluHl3t7H8Bjh9T2Eg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentBankCardLinkingSession": {
+    "queryId": "iU4mhlLgon7Fi08aW7yq3A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentCustomerActions": {
+    "queryId": "kJpC9gDPf_zgX6KWT-GI5A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentCustomerPendingConsents": {
+    "queryId": "TLMsDg6uGI3oDfOXAEqLMQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentEligibility": {
+    "queryId": "WuuoE0LvjaxLt7b1OUiHfA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentHomeData": {
+    "queryId": "eqi_CxcKlgRcmoJ44rUvfg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentInvitationDetails": {
+    "queryId": "eKwJ_Vlk-6FAgd3h7v2dag",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentNearestPlaces": {
+    "queryId": "b8ZHtcrWFsJ2yY9pwBwWww",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentRecentParticipants": {
+    "queryId": "yl_ezFdj51uXvripF8KCIg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentTransactionResultById": {
+    "queryId": "rgouTsXVhp0WsYXPdHuwRQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentTransactionStatusUpdateById": {
+    "queryId": "t1B0cofkyFOGkYEvyblC_w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentTransactions": {
+    "queryId": "yafy1wAFWxAXDiM87dwDNQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentTransferLinkDetails": {
+    "queryId": "SunUsh22Ud65_3I-NHnzEw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentUser": {
+    "queryId": "E2oaKnHR0u_tJnc6rkbKmQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GetPaymentWireBankDetails": {
+    "queryId": "w2rdZwRKhMoHSoPu41HiiA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "HomeTimelineSubscriptions": {
+    "queryId": "AcyQuGzR1zNdi8TFP1gjog",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "InAppPurchaseIntentCreate": {
+    "queryId": "4efNhmH42T2PIeBFGSI68Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "InAppPurchaseRedeemOffer": {
+    "queryId": "TIR_NFYkSaidb9SgTE-w1w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "LockIssuedCard": {
+    "queryId": "Ya0Cj5jnlEHCMrnRMfdYWg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "MarkDirectDepositSwitchingSessionCompleted": {
+    "queryId": "JQ4LqeQpI8hqLcI1Rd0xsQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentGetGrokTransactionSearchById": {
+    "queryId": "M-IduIBxNiEEsKQQHPer2g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentInitiateGrokTransactionSearch": {
+    "queryId": "Dl3xhBUSCi1Va0CoG75I6w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentOffboard": {
+    "queryId": "rokA3IhVdLZccdgfSCswNA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentReonboard": {
+    "queryId": "9W6QBfmRaJd86u7cR-qFZQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentsActiveCardPaymentAuthentications": {
+    "queryId": "VpI-hH7GFinhZfJbWjsGxg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentsLinkPayoutAccount": {
+    "queryId": "q7IJTH0aTarkYtkZRB2-vQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentsRespondToCardPaymentAuthentication": {
+    "queryId": "lOuCj-cEjqUsLWaFI1uhaQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentsSendPhoneVerificationCode": {
+    "queryId": "hhsx-zqd1C_ItBfoePlTPg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PaymentsVerifyPhone": {
+    "queryId": "9cFgoDRUewKE4AsOSL7qjg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PrefillPaymentCustomerInfo": {
+    "queryId": "WMbr2xMBMund0QJCHvv2WQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PremiumHubQuery": {
+    "queryId": "2aFrlRWOvfwVh7s4nJvf5w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PremiumObfuscatedIdQuery": {
+    "queryId": "GEvCIW6euron8TgmS4bc0A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "PremiumProductCatalogQuery": {
+    "queryId": "ahAisU4tSmKrY7tFSN6dmA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteBillingConfirmCardMutation": {
+    "queryId": "Ov1kNKar_j3pd6NTSiMoxA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteBillingDeletePaymentMethodMutation": {
+    "queryId": "4IXFr-lF9xTAl2pIY9_dvA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteBillingPaymentMethodsQuery": {
+    "queryId": "-xjDkFqSy10kh7bGn5Nr6A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteBillingSetupIntentMutation": {
+    "queryId": "AtvepGTEa-derYvsN_Wdxg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteBillingSwitchDefaultCardMutation": {
+    "queryId": "qCKstg11wdAdeZ74GcHQvw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteIapProductsQuery": {
+    "queryId": "ij0U84ML06m2Skler8QxpQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "QuickPromoteIapRedeemMutation": {
+    "queryId": "V22op1JAOiENtcSt3GRi4Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "RequestTransferPaymentTransaction": {
+    "queryId": "Uw59it9ouapRCNYYAyjbnQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "RespondToPaymentRequestTransfer": {
+    "queryId": "dcI0Z00ams7FWRX_zDaWRQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SearchPaymentTypeahead": {
+    "queryId": "Mp4AkWz-HtFpnkUmM4WJXA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "StartPaymentTwoFactorAuthChallenge": {
+    "queryId": "uCVH3Ijacw4Xi6UJySlNWg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SubscriptionJourneyConfig": {
+    "queryId": "ROnWSqazzipaXeWp7hfZhQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SubscriptionPaywallDataQuery": {
+    "queryId": "yfdZ57lx7iEt7h9wZ79BvA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UnlockIssuedCard": {
+    "queryId": "eCkHHmv6OwRB-IqPeFqyPA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateAudienceRewardsEntity": {
+    "queryId": "GqO6c2uizn8Nr_5s_cZOlw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdatePaymentMethodLinkage": {
+    "queryId": "LxfJcXbXkkRTMY-OFoK6qg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UserInAppPurchaseRedeemV2": {
+    "queryId": "i8GbiJ3QnMYYZlkR2V2-1Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AcceptMessageRequestMutation": {
+    "queryId": "4YtAUhUwROL6ejia63Lj6Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AddWelcomeMessageToConversationMutation": {
+    "queryId": "0yz6RicGNMDjytAMmAP57w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "AddXChatPublicKeyMutation": {
+    "queryId": "CQsk6GRuWAVabyXqqEG1sA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ClearGrokConversations": {
+    "queryId": "FTeIfhZIaUWvjDis10MZ7w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DeleteXChatPublicKeyMutation": {
+    "queryId": "W5iiIL1MVw4vomq-zLPHUQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DmBlockMutation": {
+    "queryId": "8OFwIC6-G-KVg4LCu7V0oQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "DmUnblockMutation": {
+    "queryId": "n3osFDAfkxHJks7mvmni1g",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FinalizeXChatMediaUploadMutation": {
+    "queryId": "3O4jPQ2hwW9LbqCc-wFmqA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GenerateXChatTokenMutation": {
+    "queryId": "Qh3fZRjPPtPoHYR_2sCZsA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GrokDeleteConversationMutation": {
+    "queryId": "j-FMvEZdtS0n2yiEh4p5Uw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GrokDeleteMessageMutation": {
+    "queryId": "EOCGs-1goClK6y5-4q3wuw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GrokRenameConversationMutation": {
+    "queryId": "9tEM1M2iTR2a0TdIGKapEw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "InitializeGroupConversationMutation": {
+    "queryId": "5zG9k_50ppvLTtPZbOC1NQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "InitializeXChatMediaUploadMutation": {
+    "queryId": "6M543IPabOfZm7-yyIczdw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "MarkMessageRequestsSeenMutation": {
+    "queryId": "g0Mnn1Y0LcHWhkmn0aQMnA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ReportFrankedMessageMutation": {
+    "queryId": "Bxe96FqdAIre_Mvgr8KPeg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SendMessageCreateMutation": {
+    "queryId": "TWRPP7gnKwV_R8-tE-Dd3Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "SendMessageEventMutation": {
+    "queryId": "G7WwJGKvTBVb-BXhZNSVMw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateXChatUserRealmStateMutation": {
+    "queryId": "B4iU-NL0I05KoyZzh9E2sw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatAcceptEnrollmentMutation": {
+    "queryId": "3OqnkNBoD_u-WQ3vYF3MwA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatCompleteEnrollmentMutation": {
+    "queryId": "_z_jittTpDl2zvg2e_iI4w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatCreateEnrollmentSessionMutation": {
+    "queryId": "sAkeiiKaXEGVI7X2zuADqg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatDenyEnrollmentMutation": {
+    "queryId": "7WqlOYn720k4XH8f3-_8Xw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatGetEnrollmentSessionMutation": {
+    "queryId": "KOvF0kG8ItHUyG0LRcKZWg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatInitiatePasscodeRetrievalMutation": {
+    "queryId": "nTsYB72LJ1it6qlLt0EexQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatSendEnrollmentEncryptedKeysMutation": {
+    "queryId": "nXbEKrcM_Gq5Q0fx0U3JBw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatSendEnrollmentPublicKeyMutation": {
+    "queryId": "aS0916UCJ9VUkwucQoUYow",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "XChatSendGrokMessagePlaintextMutation": {
+    "queryId": "LyfNWNROyAudWEnnx2zE1Q",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "FavouritersTimelineQuery": {
+    "queryId": "4t__4znjNVLJYgPKe5lZow",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "ImmersiveViewerExploreMixerTimeline": {
+    "queryId": "wIEDout7HGjnFCEFPXOgaQ",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "ImmersiveViewerProfileMixerTimeline": {
+    "queryId": "32XijpdYsaT-o8JJy6rNMQ",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "NotificationDetailTimelineQuery": {
+    "queryId": "TiamphMrI03NMPUWFKsIcw",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "NotificationTimelineQuery": {
+    "queryId": "NUxNrdwf62W53nXdmSU-8A",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "SearchTimelineQuery": {
+    "queryId": "UFzZP3BaHARGYP9CvocmIA",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "SetNotificationLastSeenCursor": {
+    "queryId": "SUBaI6GOwjOJcI7U8aZWPA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "TimelineByIdQuery": {
+    "queryId": "OKGJzeJG0ABCKN-hMLL5GA",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "UserIncomingFriendshipsQuery": {
+    "queryId": "Agvy0dpXCeA472UcoAWt_A",
+    "features": {
+     "android_home_timeline_status_injections_facepile_enabled": false,
+     "grok_translations_community_note_auto_translation_is_enabled": true,
+     "grok_translations_community_note_translation_is_enabled": true,
+     "grok_translations_post_auto_translation_is_enabled": true,
+     "immersive_video_status_linkable_timestamps": true,
+     "reply_dislike_android_enabled": true,
+     "search_features_ios_relevance_prompt_inline_variant_enabled": false,
+     "subscriptions_feature_can_gift_premium": false,
+     "x_lite_quick_promote_analytics_banner_enabled": false
+    },
+    "host": "api.x.com/graphql"
+   },
+   "GetCardPreview": {
+    "queryId": "RoZFUQtJfP49TSfepPrNNw",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateBankCardLinkingSessionSubmissionStatus": {
+    "queryId": "jMS7dhQQgpYPscLnirWaxA",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "UpdateCardPin": {
+    "queryId": "8LbpB-uf2jNXrjyNwkW4qg",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GenerateAttestationNonce": {
+    "queryId": "zzQeVYqY0YBwSsAob6OW0A",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "GenerateAttestationTokenV2": {
+    "queryId": "kIZuMiSO-bVnDaehC_cN7w",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "VerifyAndroidAttestationKeysMutation": {
+    "queryId": "v6CsrFXQ7FPp4sYx_HoHoQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   },
+   "ExchangeClientDataForAttestationTokenMutation": {
+    "queryId": "dEq8__uuPra7tYj1S8TVZQ",
+    "features": {},
+    "host": "api.x.com/graphql"
+   }
+  },
+  "rest": [
+   {
+    "method": "POST",
+    "host": "api.twitter.com",
+    "path": "/1.1/guest/activate.json"
+   },
+   {
+    "method": "POST",
+    "host": "api.x.com",
+    "path": "/oauth2/token"
+   },
+   {
+    "method": "GET",
+    "host": "api.x.com",
+    "path": "/1.1/account/settings.json"
+   },
+   {
+    "method": "GET",
+    "host": "api.x.com",
+    "path": "/1.1/help/settings.json"
+   },
+   {
+    "method": "GET",
+    "host": "api.x.com",
+    "path": "/2/badge_count/badge_count.json"
+   },
+   {
+    "method": "POST",
+    "host": "upload.x.com",
+    "path": "/1.1/media/upload2.json"
+   },
+   {
+    "method": "POST",
+    "host": "api.twitter.com",
+    "path": "/1.1/jot/client_event"
+   },
+   {
+    "method": "POST",
+    "host": "caps.twitter.com",
+    "path": "/v2/cards/create.json"
+   },
+   {
+    "method": "POST",
+    "host": "jf.x.com",
+    "path": "/onboarding"
+   },
+   {
+    "method": "GET",
+    "host": "jf.x.com",
+    "path": "/onboarding/components/steps/remotes/one_tap_action_responder"
+   },
+   {
+    "method": "POST",
+    "host": "jf.x.com",
+    "path": "/onboarding/login/username"
+   },
+   {
+    "method": "POST",
+    "host": "jf.x.com",
+    "path": "/onboarding/login/actions/username"
+   },
+   {
+    "method": "POST",
+    "host": "jf.x.com",
+    "path": "/onboarding/2fa2/select"
+   },
+   {
+    "method": "POST",
+    "host": "jf.x.com",
+    "path": "/onboarding/2fa/totp"
+   },
+   {
+    "method": "POST",
+    "host": "jf.x.com",
+    "path": "/onboarding/actions/2fa"
+   }
+  ]
+ },
+ "web_graphql_source": "internal/clientprofile/web_chrome144.go GENERATED web-sync block (sync_sdk.py)"
+}

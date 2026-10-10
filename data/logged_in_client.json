@@ -1,0 +1,13 @@
+{
+ "client": "old",
+ "facts": {
+  "entry_xweb": false,
+  "entry_client_web": true,
+  "ondemand_s_ref": true,
+  "sign_o_ref": false,
+  "xweb_mentioned": true,
+  "site_verification": true
+ },
+ "url": "https://x.com/home",
+ "at": "2026-10-10T16:21:00+08:00"
+}

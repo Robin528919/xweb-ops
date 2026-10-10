@@ -1,0 +1,85 @@
+{
+ "from": "2026-10-09T21:44:39+08:00",
+ "to": "2026-10-09T23:46:37+08:00",
+ "app_version": [
+  "6294c0169895d0b2711d5587842d0bbd2724f223",
+  "60fcf468b3ac2e3f676bd59676b34745ec498e3c"
+ ],
+ "ops_added": [],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "NotePageQuery",
+   "category": "other",
+   "queryId": [
+    "9VwRCUTDlueen0vmnZGMSQ",
+    "x7C4rTD7QLELN7_U8K2y-A"
+   ],
+   "featureSwitches": {
+    "added": [
+     "notewritingenabled",
+     "ratingcrowdenabled",
+     "signuppromptenabled"
+    ],
+    "removed": []
+   },
+   "selectionChanged": [
+    272,
+    274
+   ]
+  },
+  {
+   "name": "UserByScreenName",
+   "category": "user",
+   "queryId": [
+    "5iATEtKlwaKT88hnDJzSIw",
+    "QyPaB76dHGs9-8Fihpi2pg"
+   ],
+   "sdk_related": true
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switch_defaults": {
+   "switches_added": [
+    "responsive_web_birdwatch_signup_prompt_enabled"
+   ],
+   "switches_removed": [],
+   "default_changed": {
+    "responsive_web_birdwatch_signup_prompt_enabled": [
+     null,
+     true
+    ]
+   }
+  },
+  "js_files_added": 2257,
+  "js_files_removed": 2252,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-M5Lu0y3n.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-DOCc-fCn.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [
+  {
+   "side": "web",
+   "sdk_op": "UserByScreenName",
+   "before": [
+    "changed",
+    "5iATEtKlwaKT88hnDJzSIw"
+   ],
+   "after": [
+    "changed",
+    "QyPaB76dHGs9-8Fihpi2pg"
+   ]
+  }
+ ],
+ "changed": true,
+ "status": "CHANGED"
+}
