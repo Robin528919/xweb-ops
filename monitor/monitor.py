@@ -16,8 +16,8 @@ Output contract for `run` / `diff`:
     if the logged-in page switched client since last run, an extra FIRST line
     `LOGGED_IN_CLIENT_CHANGED: old->xweb` precedes NO_CHANGE/CHANGED (exit 10 with --status-exit);
     otherwise a LAST line `LOGGED_IN_CLIENT: old|xweb|unknown` or `LOGGED_IN_CHECK_SKIPPED: <reason>`.
-    Cookie file: $XWEB_COOKIE_FILE / $TWITTER_WEB_COOKIE_FILE / <repo>/secrets/web-cookie.txt. `--no-login-check` disables.
-  Machine-readable result: diffs/latest_diff.json  ({"status": ..., "changed": bool, ...})
+    Cookie file: $XWEB_COOKIE_FILE / $TWITTER_WEB_COOKIE_FILE (env only; unset -> skipped). `--no-login-check` disables.
+  Machine-readable result: data/diffs/latest_diff.json  ({"status": ..., "changed": bool, ...})
 """
 import argparse, concurrent.futures as cf, datetime as dt, glob, hashlib, json, os, re, sys, time
 from urllib.parse import urljoin, urlparse

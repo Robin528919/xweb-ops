@@ -1,11 +1,12 @@
-import base64,re,subprocess,json,os
+import base64,re,subprocess,json,os,tempfile
 html=open('loggedout.html',encoding='utf8').read()
+MUT=os.path.join(tempfile.gettempdir(),'xweb-txid-mut.html')
 m=re.search(r'(name="twitter-site-verification"[^>]*content=")([^"]+)"',html)
 key=bytearray(base64.b64decode(m.group(2)))
 def run(k):
     h=html.replace(m.group(2),base64.b64encode(bytes(k)).decode())
-    open('/tmp/mut.html','w').write(h)
-    p=subprocess.run(['node','run.mjs','/tmp/mut.html'],capture_output=True,text=True)
+    open(MUT,'w').write(h)
+    p=subprocess.run(['node','run.mjs',MUT],capture_output=True,text=True)
     a=[l for l in p.stderr.splitlines() if l.startswith('ANIMATE') or 'currentTime' in l]
     return tuple(a)
 base=run(key)
