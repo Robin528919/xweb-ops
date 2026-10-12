@@ -1,13 +1,39 @@
 {
  "from": "2026-10-11T07:22:06+08:00",
- "to": "2026-10-13T00:47:33+08:00",
+ "to": "2026-10-13T01:30:59+08:00",
  "app_version": [
   "45d810c9865404d97dd5799e2b0b1b84dd01bd16",
-  "9b5a1bad9c0698f2c9c1e027b6eec3c8d423e24d"
+  "d31e5fc3e6ada55400bbc436fade63f58a3676fc"
  ],
- "ops_added": [],
+ "ops_added": [
+  {
+   "name": "relevantPeopleSidebarUsersQuery",
+   "queryId": "mK_5BCGZoiE-n_RFgPxk5A",
+   "operationType": "query",
+   "category": "user",
+   "variables": [
+    "userIds"
+   ],
+   "featureSwitches": [
+    "xclientsfeaturesappviewerisloggedin"
+   ]
+  }
+ ],
  "ops_removed": [],
- "ops_changed": [],
+ "ops_changed": [
+  {
+   "name": "TweetResultByRestId",
+   "category": "tweet",
+   "queryId": [
+    "vEO-5QkqZwFZlJZoNTs6fA",
+    "SzBGXeCwWDtONuSdaVgZKw"
+   ],
+   "selectionChanged": [
+    79,
+    86
+   ]
+  }
+ ],
  "rest_added": [],
  "rest_removed": [],
  "tracked_fields_changed": [],
@@ -25,7 +51,9 @@
    "changed": {}
   },
   "feature_switch_defaults": {
-   "switches_added": [],
+   "switches_added": [
+    "complat_manage_migration_card_enabled"
+   ],
    "switches_removed": [],
    "default_changed": {
     "complat_paywall_bundle_tiers_arm": [
@@ -34,20 +62,20 @@
     ]
    }
   },
-  "js_files_added": 2356,
+  "js_files_added": 2336,
   "js_files_removed": 2357,
   "txid_signer_scripts": [
    [
     "https://abs.twimg.com/x-web/x-web/assets/sign.o-CaaduMJe.js"
    ],
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-BSOBL4WJ.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-Dnju_YFm.js"
    ]
   ]
  },
  "sdk_status_changes": [],
- "changed": false,
- "status": "NO_CHANGE",
+ "changed": true,
+ "status": "CHANGED",
  "logged_in_client": {
   "status": "OK",
   "client": "old",
@@ -62,6 +90,6 @@
   },
   "url": "https://x.com/home",
   "changed": false,
-  "at": "2026-10-13T00:48:20+08:00"
+  "at": "2026-10-13T01:31:00+08:00"
  }
 }
