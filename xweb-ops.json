@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T07:22:06+08:00",
+  "generated_at": "2026-10-12T14:29:18+08:00",
   "ops": {
     "UserByScreenName": {
       "provided_variables": {
@@ -80,5 +80,5 @@
     }
   },
   "schema": 1,
-  "snapshot": "45d810c986"
+  "snapshot": "69d5a6bb41"
 }
