@@ -1,0 +1,107 @@
+{
+ "from": "2026-10-13T05:32:38+08:00",
+ "to": "2026-10-13T06:25:08+08:00",
+ "app_version": [
+  "0b6835689f565d43ffc435ef6d3de7299131d214",
+  "7e1347ce7c7edb543b9c57a28d60aed3181eaf74"
+ ],
+ "ops_added": [
+  {
+   "name": "premiumAdsBenefitStatsQuery",
+   "queryId": "zkYZY6RUMB8QCKO5GUOCvQ",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "endMs",
+    "startMs"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "premiumAdsBenefitSubscriptionQuery",
+   "queryId": "KU4FuRyX1bbNdykVTwAQcA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [],
+   "featureSwitches": []
+  }
+ ],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "manageSubscriptionFlowQuery",
+   "category": "other",
+   "queryId": [
+    "s7bBepMV5KuRiSL129o17Q",
+    "ZpPhsiVebTm1x_-IVmG65g"
+   ],
+   "selectionChanged": [
+    33,
+    34
+   ]
+  },
+  {
+   "name": "manageSubscriptionQuery",
+   "category": "other",
+   "queryId": [
+    "LYEnzovaxyoamLveEh2iXQ",
+    "xBjXduZ5SYcycAWjO59LLw"
+   ],
+   "selectionChanged": [
+    27,
+    28
+   ]
+  },
+  {
+   "name": "premiumSignUpPageQuery",
+   "category": "other",
+   "queryId": [
+    "S6czrKVL0iDfsTUY2ASfdQ",
+    "b7TlrQ7uDEJ2uNz3eamTaQ"
+   ],
+   "selectionChanged": [
+    46,
+    47
+   ]
+  },
+  {
+   "name": "tweetMediaViewerQuery",
+   "category": "tweet",
+   "queryId": [
+    "c8Qb9jq_xFWsFUsvmcYctg",
+    "qDs7jumSU3YUr4psHyCwgQ"
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switch_defaults": {
+   "switches_added": [
+    "subscriptions_premium_hub_ad_free_link_enabled"
+   ],
+   "switches_removed": [],
+   "default_changed": {
+    "subscriptions_premium_hub_ad_free_link_enabled": [
+     null,
+     true
+    ]
+   }
+  },
+  "js_files_added": 2347,
+  "js_files_removed": 2340,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-S670wlMZ.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-Cy2-C5EE.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}
