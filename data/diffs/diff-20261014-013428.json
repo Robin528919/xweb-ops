@@ -1,0 +1,251 @@
+{
+ "from": "2026-10-13T10:26:06+08:00",
+ "to": "2026-10-14T01:34:28+08:00",
+ "app_version": [
+  "2649263d2d9cd5abce70d23b2da7efe248584bbd",
+  "ec7d5a310ae7a5db4a4cc6d2076d721135c8cb77"
+ ],
+ "ops_added": [
+  {
+   "name": "CachedFocalTweetQuery",
+   "queryId": "G9_9Ii6SqTBwp1pL6XxyVA",
+   "operationType": "query",
+   "category": "tweet",
+   "variables": [
+    "restId",
+    "withFocalTweet"
+   ],
+   "featureSwitches": [
+    "xclientsfeaturesappviewerisloggedin",
+    "xclientsfeaturestranslationnoteautotranslationenabled"
+   ]
+  },
+  {
+   "name": "bookmarksAddToFolderPutMutation",
+   "queryId": "k8FaJ9UXGKp9jwr-IMXJfA",
+   "operationType": "mutation",
+   "category": "tweet",
+   "variables": [
+    "folderId",
+    "tweetId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "bookmarksAddToFolderQuery",
+   "queryId": "LE8lIBtLUcyP-W7Mvug_5Q",
+   "operationType": "query",
+   "category": "tweet",
+   "variables": [
+    "tweetId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "bookmarksAddToFolderRemoveMutation",
+   "queryId": "9ZUjJYrFnFD-nq7E6BXohg",
+   "operationType": "mutation",
+   "category": "tweet",
+   "variables": [
+    "folderId",
+    "tweetId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "spaceCardSubscribeMutation",
+   "queryId": "6OcG5XCZ_U7ab6I7pwAlMw",
+   "operationType": "mutation",
+   "category": "other",
+   "variables": [
+    "audioSpaceId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "spaceCardUnsubscribeMutation",
+   "queryId": "DJ4lpmwhlzH2YHvyx3x2aQ",
+   "operationType": "mutation",
+   "category": "other",
+   "variables": [
+    "audioSpaceId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "spaceCommunitySelectQuery",
+   "queryId": "Q1BLORK4xkXlC-Ggyomqww",
+   "operationType": "query",
+   "category": "other",
+   "variables": [],
+   "featureSwitches": []
+  },
+  {
+   "name": "xmoneyApiLinkAccountExchangePreviewQuery",
+   "queryId": "SY3RcsE7fteNeI-A74Do9g",
+   "operationType": "query",
+   "category": "account",
+   "variables": [
+    "token"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "xmoneyApiLinkCheckoutSessionPreviewQuery",
+   "queryId": "Gc1TiBFhnkwBEz3ZLvKryQ",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "token"
+   ],
+   "featureSwitches": []
+  }
+ ],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "AudioSpaceById",
+   "category": "other",
+   "queryId": [
+    "LZjpGG-nriyqjag74_GqrA",
+    "gDxUSDBJzO9cFQF5gZwmCg"
+   ],
+   "selectionChanged": [
+    57,
+    88
+   ]
+  },
+  {
+   "name": "createTweetMutation",
+   "category": "tweet",
+   "queryId": [
+    "xNjJ5R6zQ23rUT9tnFglDA",
+    "adomP8hFRyJEqw_8DLVHQA"
+   ]
+  }
+ ],
+ "rest_added": [
+  "/1.1/users/phone_number_available.json"
+ ],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switch_defaults": {
+   "switches_added": [
+    "arkose_challenge_lo_web_notification_dev",
+    "arkose_challenge_lo_web_notification_mobile_prod",
+    "arkose_challenge_lo_web_notification_prod",
+    "arkose_challenge_login_web_devel",
+    "arkose_challenge_login_web_prod",
+    "arkose_challenge_onboard_prod",
+    "arkose_challenge_open_app_dev",
+    "arkose_challenge_open_app_prod",
+    "arkose_challenge_signup_mobile_dev",
+    "arkose_challenge_signup_mobile_prod",
+    "arkose_challenge_signup_web_dev",
+    "arkose_challenge_signup_web_prod",
+    "spaces_video_creation_enabled",
+    "voice_rooms_employee_only_enabled"
+   ],
+   "switches_removed": [
+    "rweb_spaces_invite_search_enabled",
+    "spaces_2022_h2_clipping",
+    "spaces_2022_h2_clipping_duration_seconds",
+    "voice_rooms_cohosts_enabled",
+    "voice_rooms_web_space_creation"
+   ],
+   "default_changed": {
+    "voice_rooms_employee_only_enabled": [
+     null,
+     false
+    ],
+    "arkose_challenge_lo_web_notification_dev": [
+     null,
+     "BF5FA6C8-9668-4AF9-AFA2-E362F56E5B71"
+    ],
+    "spaces_2022_h2_clipping": [
+     true,
+     null
+    ],
+    "arkose_challenge_onboard_prod": [
+     null,
+     "4CB8C8B0-40FF-439C-9D0D-9A389ADA18CB"
+    ],
+    "spaces_2022_h2_clipping_duration_seconds": [
+     "30",
+     null
+    ],
+    "arkose_challenge_lo_web_notification_mobile_prod": [
+     null,
+     "6A2FD110-7C1A-47CD-82EE-D01FFB4810D7"
+    ],
+    "arkose_challenge_signup_mobile_prod": [
+     null,
+     "867D55F2-24FD-4C56-AB6D-589EDAF5E7C5"
+    ],
+    "arkose_challenge_login_web_prod": [
+     null,
+     "2F4F0B28-BC94-4271-8AD7-A51662E3C91C"
+    ],
+    "arkose_challenge_signup_web_dev": [
+     null,
+     "DF58DD3B-DFCC-4502-91FA-EDC0DC385CFF"
+    ],
+    "voice_rooms_web_space_creation": [
+     true,
+     null
+    ],
+    "arkose_challenge_open_app_dev": [
+     null,
+     "560C66A3-C8EB-4D11-BE53-A8232734AA62"
+    ],
+    "arkose_challenge_signup_mobile_dev": [
+     null,
+     "006B5E87-7497-403E-9E0C-8FFBAAC6FA67"
+    ],
+    "voice_rooms_cohosts_enabled": [
+     true,
+     null
+    ],
+    "arkose_challenge_lo_web_notification_prod": [
+     null,
+     "50706BFE-942C-4EEC-B9AD-03F7CD268FB1"
+    ],
+    "arkose_challenge_login_web_devel": [
+     null,
+     "DF58DD3B-DFCC-4502-91FA-EDC0DC385CFF"
+    ],
+    "arkose_challenge_open_app_prod": [
+     null,
+     "6E8D3D6E-30D4-45F1-9838-BA3D9651AAA1"
+    ],
+    "spaces_video_creation_enabled": [
+     null,
+     false
+    ],
+    "arkose_challenge_signup_web_prod": [
+     null,
+     "2CB16598-CB82-4CF7-B332-5990DB66F3AB"
+    ],
+    "rweb_spaces_invite_search_enabled": [
+     true,
+     null
+    ]
+   }
+  },
+  "js_files_added": 1905,
+  "js_files_removed": 2476,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-_997kvG0.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-CZgvIefF.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}
