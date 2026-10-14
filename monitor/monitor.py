@@ -438,7 +438,7 @@ def do_fetch():
         "generated_at": ts.isoformat(timespec="seconds"),
         "meta": dict(info, client_build="x-web (Vite/Relay)" if any("/x-web/" in u for u in roots) else "responsive-web (webpack)",
                      root_scripts=roots, js_file_count=len(texts), js_total_bytes=sum(len(t) for t in texts.values()),
-                     js_fetch_failed=failed, cache_hits=cached_hits, txid_signer_scripts=signer,
+                     js_fetch_failed=failed, cache_hits=cached_hits, txid_signer_scripts=signer, txid_signer=txid_signer_facts(texts, roots, signer),
                      elapsed_s=round(time.time() - t0, 1)),
         "counts": {"graphql_total": len(graphql), "graphql_by_type": types,
                    "graphql_by_source": {s: sum(1 for o in graphql.values() if o["source"] == s) for s in {o["source"] for o in graphql.values()}},
@@ -566,6 +566,9 @@ def diff_snapshots(a, b, sdk):
     res["info"]["js_files_added"] = len(jb - ja); res["info"]["js_files_removed"] = len(ja - jb)
     sa, sb = a["meta"].get("txid_signer_scripts", []), b["meta"].get("txid_signer_scripts", [])
     if sa != sb: res["info"]["txid_signer_scripts"] = [sa, sb]
+    tf = b["meta"].get("txid_signer")
+    if tf is not None and (not tf.get("sdk_discovery") or len(tf.get("key_indices") or []) < 2):
+        res["info"]["txid_signer_broken"] = tf
     # SDK impact
     ca, cb = sdk_compare(a, sdk), sdk_compare(b, sdk)
     sdk_names, sdk_qids = set(), set()
@@ -662,8 +665,35 @@ def summarize_zh(d, max_other=25):
     if d["info"].get("feature_switch_defaults"):
         L.append(f"（信息）网页内置 feature switch 列表/默认值变化: {json.dumps(d['info']['feature_switch_defaults'], ensure_ascii=False)[:500]}")
     if d["info"].get("txid_signer_scripts"):
-        L.append("（信息）x-client-transaction-id 签名脚本 (sign.o) 换了版本 — SDK txid 生成可能需复核")
+        L.append("（信息）x-client-transaction-id 签名脚本 (sign.o) 换了版本 — SDK 运行时自动发现并提取下标，无需改代码")
+    if d["info"].get("txid_signer_broken"):
+        L.append(f"⚠ sign.o 按 SDK 规则发现或提取下标失败，SDK 的 sign.o txid 需要改代码: {json.dumps(d['info']['txid_signer_broken'], ensure_ascii=False)}")
     return "\n".join(L)
+
+# SDK（go-twitter-api internal/client/web/txid_signo.go）的 sign.o 发现规则与密钥下标规则，保持同步。
+SIGNO_RE = re.compile(r"sign\.o-[A-Za-z0-9_-]+\.js")
+TX_CARRIER_RE = re.compile(r"(?:client-transaction-id-plugin|startup-dynamic)-[A-Za-z0-9_-]+\.js")
+TX_INDICES_RE = re.compile(r"\(\w\[(\d{1,2})\],\s*16\)")
+
+def txid_signer_facts(texts, roots, signer):
+    """按 SDK 的发现链检查 sign.o 能否被找到、密钥下标能否被提取；只看已抓到的 JS，不额外请求。"""
+    by_name = {u.rsplit("/", 1)[-1]: t for u, t in texts.items()}
+    facts = {"sdk_discovery": None, "key_indices": None}
+    for root in roots:
+        entry = texts.get(root)
+        if entry is None or "/x-web/" not in root:
+            continue
+        if SIGNO_RE.search(entry):
+            facts["sdk_discovery"] = "entry"; break
+        for name in dict.fromkeys(TX_CARRIER_RE.findall(entry)):
+            if SIGNO_RE.search(by_name.get(name, "")):
+                facts["sdk_discovery"] = "startup-dynamic" if name.startswith("startup-dynamic") else "client-transaction-id-plugin"; break
+        if facts["sdk_discovery"]:
+            break
+    for u in signer:
+        if "sign.o" in u and u in texts:
+            facts["key_indices"] = [int(x) for x in TX_INDICES_RE.findall(texts[u])]
+    return facts
 
 # ---------------------------------------------------------------- commands
 def write_diff(d, text):
