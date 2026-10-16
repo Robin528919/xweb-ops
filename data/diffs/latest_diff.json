@@ -1,13 +1,54 @@
 {
  "from": "2026-10-16T10:18:05+08:00",
- "to": "2026-10-16T13:22:02+08:00",
+ "to": "2026-10-16T21:27:46+08:00",
  "app_version": [
   "51db59c9d3ed4f3947fb9773a2a84e85adc9320e",
-  "142708a82f5b2f5f7d9cd468085c4183aff77b44"
+  "9e8c03448dca18aa18cd80dfc4d022a10e3f644f"
  ],
  "ops_added": [],
  "ops_removed": [],
- "ops_changed": [],
+ "ops_changed": [
+  {
+   "name": "draftPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "ahdnpxz_1HjQnd0sx5nP6w",
+    "TwJ3s0po4XTEg4ZKwWcMMg"
+   ]
+  },
+  {
+   "name": "draftTweetComposerQuery",
+   "category": "tweet",
+   "queryId": [
+    "HqA1woXZRmJH-XhiiaAw_g",
+    "V-GNGod_FMDBseG4Cwg5ug"
+   ],
+   "selectionChanged": [
+    37,
+    56
+   ]
+  },
+  {
+   "name": "scheduledPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "mfiFjhEn_X6uE29bV6Fs6w",
+    "FZcjPNydUUq_Ll85ytLsHQ"
+   ]
+  },
+  {
+   "name": "scheduledTweetComposerQuery",
+   "category": "tweet",
+   "queryId": [
+    "DT8PBBePQzunFWXvlWw6fw",
+    "5Ua5KAfS5W19F17vtWbJuw"
+   ],
+   "selectionChanged": [
+    39,
+    40
+   ]
+  }
+ ],
  "rest_added": [],
  "rest_removed": [],
  "tracked_fields_changed": [],
@@ -22,11 +63,18 @@
    "changed": {}
   },
   "feature_switch_defaults": {
-   "switches_added": [],
+   "switches_added": [
+    "complat_webview_grok_token_persist_enabled",
+    "complat_x_grant_opt_in_enabled"
+   ],
    "switches_removed": [],
    "default_changed": {
     "complat_wv_web_gate_enabled": [
      false,
+     true
+    ],
+    "complat_x_grant_opt_in_enabled": [
+     null,
      true
     ],
     "complat_manage_migration_card_enabled": [
@@ -42,13 +90,13 @@
     "https://abs.twimg.com/x-web/x-web/assets/sign.o-B3MCN0oE.js"
    ],
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-BkUlokmQ.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-5-EyWyeR.js"
    ]
   ]
  },
  "sdk_status_changes": [],
- "changed": false,
- "status": "NO_CHANGE",
+ "changed": true,
+ "status": "CHANGED",
  "logged_in_client": {
   "status": "OK",
   "client": "old",
@@ -63,6 +111,6 @@
   },
   "url": "https://x.com/home",
   "changed": false,
-  "at": "2026-10-16T13:22:02+08:00"
+  "at": "2026-10-16T21:27:46+08:00"
  }
 }
