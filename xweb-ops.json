@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T04:19:27+08:00",
+  "generated_at": "2026-10-17T07:18:02+08:00",
   "ops": {
     "UserByScreenName": {
       "provided_variables": {
@@ -16,7 +16,7 @@
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "AySoqCK_8x8_EB6rXuIGOQ",
+      "query_id": "3xo8CzmoWhF8M_W0lesoEw",
       "type": "query",
       "variables": [
         "count",
@@ -43,7 +43,7 @@
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "zfLZ5dTIBnlXhAY_9Y6zVw",
+      "query_id": "3SJNouvd0RuPqvj9NrWSTg",
       "type": "query",
       "variables": [
         "count",
@@ -56,7 +56,7 @@
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "OwALTTiXkAWqoZkhIbhZuA",
+      "query_id": "egB-j7QJD1CM3nR6EE4Y4A",
       "type": "query",
       "variables": [
         "count",
@@ -80,5 +80,5 @@
     }
   },
   "schema": 1,
-  "snapshot": "ea62765e94"
+  "snapshot": "cd3412cd29"
 }
