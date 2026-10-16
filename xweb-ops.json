@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T05:24:52+08:00",
+  "generated_at": "2026-10-16T08:18:55+08:00",
   "ops": {
     "UserByScreenName": {
       "provided_variables": {
@@ -16,7 +16,7 @@
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "6-W2tOomT-Jyu0_uTzLVUw",
+      "query_id": "PtDzaIaLy2VsgXX9_IGAiA",
       "type": "query",
       "variables": [
         "count",
@@ -43,7 +43,7 @@
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "Linik-n-jPqmKVqhIWN46Q",
+      "query_id": "wPC6rJfnfxEedOBsIfguHQ",
       "type": "query",
       "variables": [
         "count",
@@ -56,7 +56,7 @@
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "fsqpHKhLybuchICvBMvNDQ",
+      "query_id": "TeH0Mr8crWgKCyOXJFFN6Q",
       "type": "query",
       "variables": [
         "count",
@@ -72,13 +72,14 @@
       ]
     },
     "likeButtonFavoriteMutation": {
-      "query_id": "kD580ja7oRwK5qf7CFtyNA",
+      "query_id": "i9VOuSqJJf59jkZ0zVNZMQ",
       "type": "mutation",
       "variables": [
+        "engagementRequest",
         "tweetId"
       ]
     }
   },
   "schema": 1,
-  "snapshot": "9ea54dd21d"
+  "snapshot": "e85ebd32a1"
 }
