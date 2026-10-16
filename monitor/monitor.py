@@ -802,14 +802,37 @@ PROVIDERS = {
         ("fs", "responsive_web_grok_community_note_auto_translation_is_enabled", True),
 }
 
-def build_manifest(snap):
+# 变量集合必须和 go-twitter-api 内置请求一致，否则服务端拒绝该条并让发布验收失败。
+# 网页端变量变了就沿用清单里上一条兼容记录，不发布对不上的 query id。
+HELD_VARIABLES = {
+    "likeButtonFavoriteMutation": ["tweetId"],
+}
+HELD_FALLBACK = {
+    "likeButtonFavoriteMutation": {
+        "query_id": "kD580ja7oRwK5qf7CFtyNA",
+        "type": "mutation",
+        "variables": ["tweetId"],
+    },
+}
+
+def build_manifest(snap, previous=None):
     fs = (snap.get("meta") or {}).get("feature_switches_logged_out") or {}
+    prev_ops = (previous or {}).get("ops") or {}
     ops = {}
     for name in MANIFEST_OPS:
         o = snap["api"]["graphql"].get(name)
         if not o:
             continue
-        entry = {"query_id": o["queryId"], "type": o.get("operationType"), "variables": sorted(o.get("variables") or [])}
+        variables = sorted(o.get("variables") or [])
+        held = HELD_VARIABLES.get(name)
+        if held and variables != held:
+            old = prev_ops.get(name)
+            if old and sorted(old.get("variables") or []) == held:
+                ops[name] = old
+            else:
+                ops[name] = HELD_FALLBACK[name]
+            continue
+        entry = {"query_id": o["queryId"], "type": o.get("operationType"), "variables": variables}
         pv = {}
         for flag in o.get("featureSwitches") or []:
             rule = PROVIDERS.get(flag)
@@ -825,12 +848,12 @@ def build_manifest(snap):
 
 def write_manifest(snap):
     """返回 True 表示清单内容有变化并已重写。"""
-    new = build_manifest(snap)
     try:
         with open(MANIFEST_FILE) as f:
             old = json.load(f)
     except (OSError, ValueError):
         old = None
+    new = build_manifest(snap, old)
     if old and {k: old.get(k) for k in ("schema", "snapshot", "ops")} == new:
         return False
     new["generated_at"] = now().isoformat(timespec="seconds")

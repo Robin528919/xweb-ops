@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T13:22:02+08:00",
+  "generated_at": "2026-10-16T16:39:03+08:00",
   "ops": {
     "UserByScreenName": {
       "provided_variables": {
@@ -72,10 +72,9 @@
       ]
     },
     "likeButtonFavoriteMutation": {
-      "query_id": "i9VOuSqJJf59jkZ0zVNZMQ",
+      "query_id": "kD580ja7oRwK5qf7CFtyNA",
       "type": "mutation",
       "variables": [
-        "engagementRequest",
         "tweetId"
       ]
     }
