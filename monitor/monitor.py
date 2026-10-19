@@ -793,7 +793,7 @@ def attach_login(res):
 
 # ---------------------------------------------------------------- xweb-ops.json manifest (schema 1)
 # 公开清单：只收 SDK 用到的 x-web op。内容（ops / snapshot）不变时不重写，generated_at 保持不变。
-MANIFEST_OPS = ["UserByScreenName", "UserRepliesTimeline", "bookmarkButtonAddMutation", "followUserMutation",
+MANIFEST_OPS = ["UserByScreenName", "UserRepliesTimeline", "bookmarkStateAddMutation", "followUserMutation",
                 "followersQuery", "followingQuery", "intentFollowUserByRestIdQuery", "likeButtonFavoriteMutation"]
 # Relay provided variable → 取值：("const", v) 固定；("fs", feature switch, 默认值)。
 PROVIDERS = {
