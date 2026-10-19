@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-19T08:25:00+08:00",
+  "generated_at": "2026-10-19T23:43:33+08:00",
   "ops": {
     "UserByScreenName": {
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true
       },
-      "query_id": "yvm61GcJCIpqEwe_3RBccw",
+      "query_id": "B-9GpnY6vgUP-CmyHdG5Nw",
       "type": "query",
       "variables": [
         "screenName"
@@ -14,14 +14,22 @@
     "UserRepliesTimeline": {
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestranslationgroktranslatedpostenabledrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "M2d-csK3kpYiFZzwJIgp-Q",
+      "query_id": "VgeAvqcuZOA5pGHUPjdUeA",
       "type": "query",
       "variables": [
         "count",
         "cursor",
         "screenName"
+      ]
+    },
+    "bookmarkStateAddMutation": {
+      "query_id": "x8uBHu4J_1PIqsrIxFQAvg",
+      "type": "mutation",
+      "variables": [
+        "tweetId"
       ]
     },
     "followUserMutation": {
@@ -34,9 +42,10 @@
     "followersQuery": {
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestranslationgroktranslatedpostenabledrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "cixhHy-4gbM-pqOdLD94AA",
+      "query_id": "JswqL3usJQygpE1VwYFZnA",
       "type": "query",
       "variables": [
         "count",
@@ -47,9 +56,10 @@
     "followingQuery": {
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestranslationgroktranslatedpostenabledrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
       },
-      "query_id": "I5LPV3f1ZCoa0RWch5HXVQ",
+      "query_id": "nOIbS1SsvJQS-JiVYpVQPQ",
       "type": "query",
       "variables": [
         "count",
@@ -73,5 +83,5 @@
     }
   },
   "schema": 1,
-  "snapshot": "ecf9dcef40"
+  "snapshot": "36afb3a8ee"
 }

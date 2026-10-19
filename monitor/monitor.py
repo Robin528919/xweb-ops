@@ -248,6 +248,11 @@ REST_RE = re.compile(r'(?:(?<=[`"\'])|https://((?:api|upload|caps|jf|mobile|grok
 FS_NAMES_RE = re.compile(r'`([a-z0-9_]+(?:\.[a-z0-9_]+){20,})`\.split\(`\.`\)')
 FS_PAIR_RE = re.compile(r'(\w+):(!0|!1|-?\d+(?:\.\d+)?|`[^`]*`|"[^"]*"|null|\[[^\]]*\])')
 HASH_SUFFIX_RE = re.compile(r'-[A-Za-z0-9_-]{8}\.js$')
+# Relay provided variable 的取值来源：网页端用 `X=factory(`feature_switch`[,默认])` 声明 provider，
+# 再在 Relay 制品里写 providedVariables:{__relay_internal__pv__<flag>relayprovider:X}。
+PV_BLOCK_RE = re.compile(r'providedVariables:\{([^{}]*)\}')
+PV_BIND_RE = re.compile(r'__relay_internal__pv__(\w+?)relayprovider:([\w$]+)')
+FS_PROVIDER_RE = re.compile(r'(?<![\w$.])([\w$]+)=[\w$]+\(`([a-z0-9_]+)`(?:,(!0|!1))?\)')
 
 def module_name(url):
     base = os.path.basename(urlparse(url).path)
@@ -275,6 +280,7 @@ def extract(texts, sdk):
     probes.update({k: set() for k in rest_probe_res})
     signer = []
     fs_defaults = None
+    pv_cands = {}  # flag -> {(feature switch, 默认值)}；最后按已知 feature switch 过滤
 
     def add_op(name, rec, mod):
         cur = graphql.get(name)
@@ -354,6 +360,15 @@ def extract(texts, sdk):
             e = rest.setdefault(path, {"hosts": set(), "modules": set()})
             e["modules"].add(mod)
             if host: e["hosts"].add(host)
+        uses = {}
+        for b in PV_BLOCK_RE.findall(t):
+            for flag, var in PV_BIND_RE.findall(b):
+                uses.setdefault(var, set()).add(flag)
+                pv_cands.setdefault(flag, set())
+        if uses:
+            for pm in FS_PROVIDER_RE.finditer(t):
+                for flag in uses.get(pm.group(1), ()):
+                    pv_cands[flag].add((pm.group(2), pm.group(3) == "!0"))
         for mm in FS_NAMES_RE.finditer(t):
             cand = {"module": mod, "known_switches": sorted(mm.group(1).split(".")), "defaults": {}}
             tk = re.search(r",[\w$]+=`([0-9a-f]{40})`", t[mm.end():mm.end() + 200])
@@ -390,7 +405,17 @@ def extract(texts, sdk):
         if tg: rec["tags"] = tg
     for p, rec in rest.items():
         rec["category"] = rest_category(p)
-    return fin(graphql), fin(rest), fin(tracked), {k: sorted(v) for k, v in probes.items()}, sorted(set(signer)), fs_defaults
+    known = set((fs_defaults or {}).get("known_switches") or [])
+    providers = {}
+    for flag, cands in sorted(pv_cands.items()):
+        # 压缩后的变量名会在同一文件里复用，只认名字在网页 feature switch 列表里的候选。
+        good = sorted({c for c in cands if c[0] in known})
+        if len({c[0] for c in good}) == 1 and len(good) == 1:
+            providers[flag] = {"feature_switch": good[0][0], "default": good[0][1]}
+        else:
+            providers[flag] = {"unresolved": True, "candidates": [c[0] for c in good]}
+    return (fin(graphql), fin(rest), fin(tracked), {k: sorted(v) for k, v in probes.items()}, sorted(set(signer)),
+            fs_defaults, providers)
 
 # ---------------------------------------------------------------- snapshot io
 def now():
@@ -423,7 +448,7 @@ def do_fetch():
     sdk = load_sdk()
     roots, info = discover()
     texts, failed, cached_hits = crawl(roots)
-    graphql, rest, tracked, probes, signer, fs_defaults = extract(texts, sdk)
+    graphql, rest, tracked, probes, signer, fs_defaults, providers = extract(texts, sdk)
     if len(graphql) < 50:
         raise FetchError(f"extraction suspect: only {len(graphql)} GraphQL operations found in {len(texts)} JS files")
     ts = now()
@@ -446,7 +471,8 @@ def do_fetch():
         "js_files": js_files,                 # file URLs/hashes kept separate from API data
         "api": {"graphql": graphql, "rest": rest, "tracked_fields": tracked,
                 "feature_switches_logged_out": info.get("feature_switches_logged_out"),
-                "feature_switch_defaults": fs_defaults},
+                "feature_switch_defaults": fs_defaults,
+                "relay_providers": providers},
         "probes": probes,
     }
     os.makedirs(SNAP_DIR, exist_ok=True)
@@ -796,10 +822,14 @@ def attach_login(res):
 MANIFEST_OPS = ["UserByScreenName", "UserRepliesTimeline", "bookmarkStateAddMutation", "followUserMutation",
                 "followersQuery", "followingQuery", "intentFollowUserByRestIdQuery", "likeButtonFavoriteMutation"]
 # Relay provided variable → 取值：("const", v) 固定；("fs", feature switch, 默认值)。
+# 这里登记的优先；没登记的按快照 api.relay_providers（从网页 JS 的 provider 声明自动解析）取值，
+# 两边都解析不了的只跳过受影响的 op（沿用清单里上一条记录），并输出 MANIFEST_WARNING，其余 op 照常生成。
 PROVIDERS = {
     "xclientsfeaturesappviewerisloggedin": ("const", True),
     "xclientsfeaturestranslationnoteautotranslationenabled":
         ("fs", "responsive_web_grok_community_note_auto_translation_is_enabled", True),
+    "xclientsfeaturestranslationgroktranslatedpostenabled":
+        ("fs", "responsive_web_grok_show_grok_translated_post", True),
 }
 
 # 变量集合必须和 go-twitter-api 内置请求一致，否则服务端拒绝该条并让发布验收失败。
@@ -815,13 +845,33 @@ HELD_FALLBACK = {
     },
 }
 
-def build_manifest(snap, previous=None):
+def resolve_provider(flag, snap):
+    """返回 (取值, 来源说明)；无法解析时返回 (None, 原因)。"""
     fs = (snap.get("meta") or {}).get("feature_switches_logged_out") or {}
+    rule = PROVIDERS.get(flag)
+    if rule is not None:
+        return (rule[1] if rule[0] == "const" else fs.get(rule[1], rule[2])), None
+    auto = ((snap.get("api") or {}).get("relay_providers") or {}).get(flag)
+    if not auto or auto.get("unresolved"):
+        cands = (auto or {}).get("candidates") or []
+        return None, "not in PROVIDERS and not auto-resolvable" + (f" (candidates {cands})" if cands else "")
+    name = auto["feature_switch"]
+    defaults = ((snap.get("api") or {}).get("feature_switch_defaults") or {}).get("defaults") or {}
+    val = fs.get(name, defaults.get(name, auto["default"]))
+    if not isinstance(val, (bool, int, float, str)):
+        return None, f"feature switch {name} is not a scalar ({type(val).__name__})"
+    return val, f"auto-resolved from feature switch {name}={json.dumps(val)}; register it in PROVIDERS"
+
+def build_manifest(snap, previous=None, warnings=None):
+    """warnings（可选 list）收集 MANIFEST_WARNING 文本；未知 provider 只影响用到它的 op。"""
+    if warnings is None:
+        warnings = []
     prev_ops = (previous or {}).get("ops") or {}
     ops = {}
     for name in MANIFEST_OPS:
         o = snap["api"]["graphql"].get(name)
         if not o:
+            warnings.append(f"{name}: not found in web client; dropped from manifest")
             continue
         variables = sorted(o.get("variables") or [])
         held = HELD_VARIABLES.get(name)
@@ -833,27 +883,36 @@ def build_manifest(snap, previous=None):
                 ops[name] = HELD_FALLBACK[name]
             continue
         entry = {"query_id": o["queryId"], "type": o.get("operationType"), "variables": variables}
-        pv = {}
+        pv, bad = {}, []
         for flag in o.get("featureSwitches") or []:
-            rule = PROVIDERS.get(flag)
-            if rule is None:
-                raise FetchError(f"unknown Relay provided variable {flag} on {name}; register it in PROVIDERS")
-            val = rule[1] if rule[0] == "const" else fs.get(rule[1], rule[2])
+            val, note = resolve_provider(flag, snap)
+            if val is None:
+                bad.append(f"{flag}: {note}")
+                continue
+            if note:
+                warnings.append(f"{name}: provider {flag} {note}")
             pv[f"__relay_internal__pv__{flag}relayprovider"] = val
+        if bad:
+            old = prev_ops.get(name)
+            keep = "kept previous entry " + old["query_id"] if old else "omitted (consumers keep built-in value)"
+            warnings.append(f"{name}: skipped new queryId {o['queryId']}, {keep}; unresolved provider " + "; ".join(bad))
+            if old:
+                ops[name] = old
+            continue
         if pv:
             entry["provided_variables"] = pv
         ops[name] = entry
     app = (snap.get("meta") or {}).get("app_version") or ""
     return {"schema": 1, "snapshot": app[:10], "ops": ops}
 
-def write_manifest(snap):
+def write_manifest(snap, warnings=None):
     """返回 True 表示清单内容有变化并已重写。"""
     try:
         with open(MANIFEST_FILE) as f:
             old = json.load(f)
     except (OSError, ValueError):
         old = None
-    new = build_manifest(snap, old)
+    new = build_manifest(snap, old, warnings)
     if old and {k: old.get(k) for k in ("schema", "snapshot", "ops")} == new:
         return False
     new["generated_at"] = now().isoformat(timespec="seconds")
@@ -866,8 +925,10 @@ def cmd_run(args):
     rc, lines = _cmd_run(args)
     try:
         latest_snap = load(os.path.join(SNAP_DIR, "latest.json"))
-        if write_manifest(latest_snap):
+        warns = []
+        if write_manifest(latest_snap, warns):
             lines.append("MANIFEST_UPDATED: xweb-ops.json")
+        lines.extend(f"MANIFEST_WARNING: {w}" for w in warns)
     except (OSError, ValueError, FetchError, KeyError) as e:
         print(f"manifest not updated: {e}", file=sys.stderr)
     if getattr(args, 'no_login_check', False):

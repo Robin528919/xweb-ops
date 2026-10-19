@@ -48,6 +48,7 @@ python3 monitor/monitor.py run --status-exit   # 有变化（或登录态客户�
 | `GO_TWITTER_API_REPO` | `monitor/sync_sdk.py` 用的 go-twitter-api checkout | 必填（仅 sync_sdk） |
 
 输出约定详见 [docs/monitor.md](docs/monitor.md)。清单内容变化时 `run` 额外输出一行 `MANIFEST_UPDATED: xweb-ops.json`。
+遇到未在 `PROVIDERS` 登记的 Relay provided variable 时，先按网页 JS 里的 provider 声明自动从 feature switch 取值（输出 `MANIFEST_WARNING: ... auto-resolved ...`，提示补登记）；仍解析不了的只跳过受影响的 op、沿用清单里上一条记录（`MANIFEST_WARNING: ... skipped ...`），其余 op 照常生成。
 
 cookie、`secrets/`、`cache/`、`.env*` 均在 `.gitignore` 中，切勿提交。
 
