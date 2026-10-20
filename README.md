@@ -44,6 +44,7 @@ python3 monitor/monitor.py run --status-exit   # 有变化（或登录态客户�
 | --- | --- | --- |
 | `XWEB_OPS_DIR` | 状态目录（data/、sdk/、xweb-ops.json 所在） | 仓库根目录 |
 | `XWEB_OPS_CACHE` | JS 缓存目录（约 300 MB，不入库） | `<仓库>/cache` |
+| （XChat）| 监控会额外读取公开清单 `https://chat.x.com/embed-v1.json` 抓取 x.com/i/chat 的远程包，结果在快照 `api.xchat`，见 data/chat-protocols.md | — |
 | `XWEB_COOKIE_FILE` | 登录态检测用的 cookie 文件（一行 `auth_token=…; ct0=…`）。**只从环境变量读取**，值不会打印或落盘 | 未设置 → `LOGGED_IN_CHECK_SKIPPED` |
 | `GO_TWITTER_API_REPO` | `monitor/sync_sdk.py` 用的 go-twitter-api checkout | 必填（仅 sync_sdk） |
 

@@ -46,6 +46,10 @@ PRIMARY_SEEDS = ["https://x.com/", "https://x.com/home", "https://twitter.com/",
 EXTRA_SEEDS = ["https://x.com/XDevelopers"]  # profile page SSR pulls a few more entry modules (best-effort)
 SCRIPT_RE = re.compile(r'https://abs\.twimg\.com/(?:x-web/x-web|responsive-web/client-web(?:-legacy)?)/[A-Za-z0-9_./~@+-]+?\.js')
 MAX_FILES = 6000
+# x.com/i/chat（新版私信 XChat）不在 x-web 主包里：x-web 的 xchat-embed 按 Module Federation 从这个公开清单加载远程包。
+# 未登录访问 /i/chat 会跳登录页，但清单和 abs.twimg.com/x-web/xchat/embed/<build>/ 下的 JS 都是公开静态资源。
+XCHAT_MANIFEST_URL = "https://chat.x.com/embed-v1.json"
+XCHAT_LOCALE_RE = re.compile(r"^assets/(?:ar(?:-x-fm)?|bg|bn|ca|cs|cy|da|de|el|en(?:-gb|-ss|-xx)?|es|eu|fa|fi|fil|fr|ga|gl|gu|he|hi|hr|hu|id|it|ja|kn|ko|mr|ms|msa|nb|nl|no|pl|pt|ro|ru|sk|sr|sv|ta|th|tr|uk|ur|vi|zh(?:-cn|-tw|-hk)?)-[\w-]{8}\.js$")
 
 TRACKED_FIELDS = ["can_dm", "follow_request_sent", "profile_interstitial_type"]
 # substrings probed in raw JS each run (presence = still referenced by web JS)
@@ -58,7 +62,7 @@ CAT_ZH = {"follow": "关注/关系", "tweet": "帖子/推文/时间线", "dm": "
           "account": "账号设置 AccountSettings", "user": "用户资料", "other": "其他"}
 
 def is_dm_name(name):
-    return bool(re.search(r"(^|[a-z_])(Dm|DM)([A-Z_]|$)|^dm[A-Z_]|DirectMessage|direct_message|Inbox|inbox|XChat|xchat|xChat|^[Cc]hat[A-Z]|Message(s)?(Query|Mutation|Request|Event|Page|Timeline)|[Mm]essageRequest|SendMessage|^Conversation(?!Control)[A-Z]|GetConversation(?!Control)|ConnectTab|GetConnectPage|GroupConversation|GroupInvite|GroupJoin|FrankedMessage|WelcomeMessage", name))
+    return bool(re.search(r"(^|[a-z_])(Dm|DM)([A-Z_]|$)|^dm[A-Z_]|DirectMessage|direct_message|Inbox|inbox|XChat|xchat|xChat|^[Cc]hat[A-Z]|Message(s)?(Query|Mutation|Request|Event|Page|Timeline)|[Mm]essageRequest|SendMessage|^Conversation(?!Control)[A-Z]|GetConversation(?!Control)|ConnectTab|GetConnectPage|GroupConversation|GroupInvite|GroupJoin|FrankedMessage|WelcomeMessage|^xCalls|DirectCall|^call(Popup|Video)User", name))
 
 def op_category(name):
     n = name.lower()
@@ -161,11 +165,33 @@ def discover():
                 scripts += extra; seeds_used.append(url)
         except FetchError as e:
             errors.append(f"(non-fatal) {e}")
+    xroots, xinfo = discover_xchat(errors)
+    scripts += xroots
+    info["xchat"] = xinfo
     info["seeds_used"] = seeds_used
     info["seed_errors"] = errors
     return sorted(set(scripts)), info
 
+def discover_xchat(errors):
+    """读取 XChat 远程包清单，返回非语言包的入口 JS；失败不致命（只记录到 seed_errors）。"""
+    try:
+        d = http_get(XCHAT_MANIFEST_URL, accept="application/json", retries=2).json()
+        pp = d["metaData"]["publicPath"]
+        if not pp.startswith("https://abs.twimg.com/"):
+            raise FetchError(f"unexpected xchat publicPath {pp}")
+        roots = [pp + d["metaData"]["remoteEntry"]["name"]]
+        for e in d.get("exposes", []):
+            for k in ("sync", "async"):
+                roots += [pp + a for a in e.get("assets", {}).get("js", {}).get(k, []) if not XCHAT_LOCALE_RE.match(a)]
+        build = pp.rstrip("/").rsplit("/", 1)[-1]
+        return list(dict.fromkeys(roots)), {"manifest_url": XCHAT_MANIFEST_URL, "public_path": pp, "build": build,
+                                             "exposes": sorted(e.get("name") for e in d.get("exposes", []))}
+    except Exception as e:
+        errors.append(f"(non-fatal) xchat manifest: {e}")
+        return [], {"manifest_url": XCHAT_MANIFEST_URL, "error": str(e)[:300]}
+
 REL_IMPORT_RE = re.compile(r'["\'`](\.{1,2}/[A-Za-z0-9_./~@+-]+?\.js)["\'`]')
+META_URL_JS_RE = re.compile(r'new URL\(`(?:\./)?([\w.~-]+\.js)`,import\.meta\.url\)')  # web worker / worklet 入口
 LOCALE_IMPORT_RE = re.compile(r'"\.\./messages/[\w-]+\.json":\(\)=>\w+\(\(\)=>import\(`\./([\w.~-]+\.js)`\)')
 LEGACY_NAME_RE = re.compile(r'(\d+):"([\w.~-]+)"')
 LEGACY_HASH_RE = re.compile(r'(\d+):"([0-9a-f]{7,10})"')
@@ -216,8 +242,13 @@ def crawl(roots):
                     if "/messages/" in rel:
                         continue
                     nu = urljoin(u, rel)
+                    if "/x-web/xchat/" in nu and XCHAT_LOCALE_RE.match("assets/" + nu.rsplit("/", 1)[-1]):
+                        continue  # XChat 语言包
                     if nu.startswith("https://abs.twimg.com/") and nu not in texts and nu not in skip:
                         todo.append(nu)
+                if "/x-web/xchat/" in u:
+                    for w in META_URL_JS_RE.findall(txt):
+                        todo.append(urljoin(u, "./" + w))
                 if "/responsive-web/client-web" in u:  # legacy webpack client fallback (best-effort)
                     names = dict(LEGACY_NAME_RE.findall(txt)); hashes = dict(LEGACY_HASH_RE.findall(txt))
                     basedir = u.rsplit("/", 1)[0] + "/"
@@ -248,6 +279,46 @@ REST_RE = re.compile(r'(?:(?<=[`"\'])|https://((?:api|upload|caps|jf|mobile|grok
 FS_NAMES_RE = re.compile(r'`([a-z0-9_]+(?:\.[a-z0-9_]+){20,})`\.split\(`\.`\)')
 FS_PAIR_RE = re.compile(r'(\w+):(!0|!1|-?\d+(?:\.\d+)?|`[^`]*`|"[^"]*"|null|\[[^\]]*\])')
 HASH_SUFFIX_RE = re.compile(r'-[A-Za-z0-9_-]{8}\.js$')
+
+# XChat（Kotlin/JS + Apollo Kotlin）：每个 operation 类里有 operationId + operationName，以及完整的 GraphQL 文本。
+# 请求发到 https://api.x.com/graphql/{operationId}/{operationName}。
+APOLLO_ID_RE = re.compile(r'=`([A-Za-z0-9_-]{22})`,this\.[\w$]+=`(\w+)`\}')
+APOLLO_DOC_RE = re.compile(r'return`(query|mutation|subscription) (\w+)(?:\(([^)]*)\))? ?\{ ?(\w+)')
+APOLLO_VAR_RE = re.compile(r'\$(\w+):')
+KT_CLASS_RE = re.compile(r'F\([\w$]+,`([A-Z]\w+)Adapter`')   # Kotlin 线上结构（thrift/JSON 编解码 Adapter）
+XCHAT_URL_RE = re.compile(r'(wss?://[a-z0-9.-]+\.(?:x|twitter|grok)\.com[\w/.?=-]*'
+                          r'|https://(?:realm-[a-z0-9]+\.x\.com|[a-z0-9]+\.cloudfront\.net|chat(?:-ws)?\.x\.com|call\.x\.com|ton\.x\.com/i/ton/data/xchat_media|upload\.x\.com/1\.1/media/upload\.json|api\.x\.com/graphql)[\w/.-]*)')
+WASM_RE = re.compile(r'new URL\(`([\w.~-]+\.wasm)`,import\.meta\.url\)')
+WORKER_RE = re.compile(r'new URL\(`([\w.~-]+\.(?:worker|worklet)-[\w-]+\.js)`,import\.meta\.url\)')
+
+def xchat_endpoint_kind(u):
+    if u.startswith("ws"): return "websocket"
+    if "realm-" in u or "cloudfront" in u: return "juicebox_realm"
+    if "xchat_media" in u or "upload.x.com" in u: return "media"
+    if "/graphql" in u: return "graphql_host"
+    return "other"
+
+def extract_xchat(texts):
+    ops, wire, endpoints, wasm, workers = {}, set(), {}, set(), set()
+    for url, t in texts.items():
+        if "/x-web/xchat/" not in url:
+            continue
+        docs = {m.group(2): m.groups() for m in APOLLO_DOC_RE.finditer(t)}
+        for qid, name in APOLLO_ID_RE.findall(t):
+            if name not in docs:
+                continue
+            kind, _, vs, root = docs[name]
+            ops[name] = {"queryId": qid, "operationType": kind, "rootField": root, "source": "xchat-apollo",
+                         "variables": sorted(set(APOLLO_VAR_RE.findall(vs or ""))), "category": "dm",
+                         "module": module_name(url)}
+        wire.update(KT_CLASS_RE.findall(t))
+        for u in XCHAT_URL_RE.findall(t):
+            endpoints.setdefault(u.rstrip("/.?"), set()).add(module_name(url))
+        wasm.update(re.sub(r"-[\w-]{8}\.wasm$", ".wasm", w) for w in WASM_RE.findall(t))
+        workers.update(module_name(w) for w in WORKER_RE.findall(t))
+    return {"graphql": ops,
+            "endpoints": {u: {"kind": xchat_endpoint_kind(u), "modules": sorted(m)} for u, m in sorted(endpoints.items())},
+            "wire_types": sorted(wire), "wasm": sorted(wasm), "workers": sorted(workers)}
 
 def module_name(url):
     base = os.path.basename(urlparse(url).path)
@@ -424,6 +495,7 @@ def do_fetch():
     roots, info = discover()
     texts, failed, cached_hits = crawl(roots)
     graphql, rest, tracked, probes, signer, fs_defaults = extract(texts, sdk)
+    xchat = dict(info.get("xchat") or {}, **extract_xchat(texts))
     if len(graphql) < 50:
         raise FetchError(f"extraction suspect: only {len(graphql)} GraphQL operations found in {len(texts)} JS files")
     ts = now()
@@ -442,11 +514,14 @@ def do_fetch():
                      elapsed_s=round(time.time() - t0, 1)),
         "counts": {"graphql_total": len(graphql), "graphql_by_type": types,
                    "graphql_by_source": {s: sum(1 for o in graphql.values() if o["source"] == s) for s in {o["source"] for o in graphql.values()}},
-                   "rest_paths": len(rest), "js_files": len(texts)},
+                   "rest_paths": len(rest), "js_files": len(texts),
+                   "xchat_graphql": len(xchat["graphql"]), "xchat_endpoints": len(xchat["endpoints"]),
+                   "xchat_wire_types": len(xchat["wire_types"])},
         "js_files": js_files,                 # file URLs/hashes kept separate from API data
         "api": {"graphql": graphql, "rest": rest, "tracked_fields": tracked,
                 "feature_switches_logged_out": info.get("feature_switches_logged_out"),
-                "feature_switch_defaults": fs_defaults},
+                "feature_switch_defaults": fs_defaults,
+                "xchat": xchat},
         "probes": probes,
     }
     os.makedirs(SNAP_DIR, exist_ok=True)
@@ -562,6 +637,8 @@ def diff_snapshots(a, b, sdk):
     if na_ != nb_ or va_ != vb_:
         res["info"]["feature_switch_defaults"] = {"switches_added": sorted(nb_ - na_), "switches_removed": sorted(na_ - nb_),
                                                   "default_changed": {k: [va_.get(k), vb_.get(k)] for k in set(va_) | set(vb_) if va_.get(k) != vb_.get(k)}}
+    xa, xb = a["api"].get("xchat"), b["api"].get("xchat")
+    res["xchat"] = diff_xchat(xa, xb) if xa is not None and xb is not None else {}
     ja, jb = set(a.get("js_files", {})), set(b.get("js_files", {}))
     res["info"]["js_files_added"] = len(jb - ja); res["info"]["js_files_removed"] = len(ja - jb)
     sa, sb = a["meta"].get("txid_signer_scripts", []), b["meta"].get("txid_signer_scripts", [])
@@ -595,9 +672,29 @@ def diff_snapshots(a, b, sdk):
             if ra_.get((r["side"], r["path"])) != r["in_web_js"]:
                 res["sdk_status_changes"].append({"side": r["side"], "sdk_rest": r["path"], "in_web_js": [ra_.get((r["side"], r["path"])), r["in_web_js"]]})
     res["changed"] = bool(res["ops_added"] or res["ops_removed"] or res["ops_changed"] or res["rest_added"]
-                          or res["rest_removed"] or res["tracked_fields_changed"] or res["sdk_status_changes"])
+                          or res["rest_removed"] or res["tracked_fields_changed"] or res["sdk_status_changes"]
+                          or res["xchat"].get("changed"))
     res["status"] = "CHANGED" if res["changed"] else "NO_CHANGE"
     return res
+
+def diff_xchat(xa, xb):
+    """XChat 远程包的协议差异：Apollo op、端点、线上结构、wasm/worker。只换 JS 哈希不算变化。"""
+    ga, gb = xa.get("graphql", {}), xb.get("graphql", {})
+    r = {"build": [xa.get("build"), xb.get("build")],
+         "ops_added": [dict(name=n, **gb[n]) for n in sorted(set(gb) - set(ga))],
+         "ops_removed": [dict(name=n, **ga[n]) for n in sorted(set(ga) - set(gb))], "ops_changed": []}
+    for n in sorted(set(ga) & set(gb)):
+        oa, ob, ch = ga[n], gb[n], {"name": n}
+        for k in ("queryId", "operationType", "rootField"):
+            if oa.get(k) != ob.get(k): ch[k] = [oa.get(k), ob.get(k)]
+        if set(oa.get("variables", [])) != set(ob.get("variables", [])):
+            ch["variables"] = {"added": sorted(set(ob["variables"]) - set(oa["variables"])), "removed": sorted(set(oa["variables"]) - set(ob["variables"]))}
+        if len(ch) > 1: r["ops_changed"].append(ch)
+    for k in ("endpoints", "wire_types", "wasm", "workers"):
+        sa, sb = set(xa.get(k, [])), set(xb.get(k, []))
+        r[k + "_added"], r[k + "_removed"] = sorted(sb - sa), sorted(sa - sb)
+    r["changed"] = any(r[k] for k in r if k.endswith(("_added", "_removed", "_changed")))
+    return r
 
 def _sortkey(o):
     cat = o.get("category") or op_category(o["name"])
@@ -639,6 +736,17 @@ def summarize_zh(d, max_other=25):
         tags = o.get("tags") or op_tags(o["name"])
         L.append("  " + line + tag + (f" [{'/'.join(tags)}]" if tags else ""))
     if other_count > max_other: L.append(f"  …其他类另有 {other_count - max_other} 项（见 JSON）")
+    x = d.get("xchat") or {}
+    if x.get("changed"):
+        L.append(f"【私信 DM/XChat 远程包】构建 {str(x['build'][0])[:10]} → {str(x['build'][1])[:10]}；"
+                 f"GraphQL 新增 {len(x['ops_added'])}，删除 {len(x['ops_removed'])}，变更 {len(x['ops_changed'])}")
+        for o in x["ops_added"]: L.append(f"  ＋ {o['name']} ({o['operationType']} {o['rootField']}, queryId {o['queryId']})")
+        for o in x["ops_removed"]: L.append(f"  － {o['name']} (原 queryId {o['queryId']})")
+        for o in x["ops_changed"]:
+            L.append(f"  ～ {o['name']}: " + "；".join(f"{k} {v[0]} → {v[1]}" if isinstance(v, list) else f"变量 +{','.join(v['added'])} -{','.join(v['removed'])}" for k, v in o.items() if k != "name"))
+        for k, zh in (("endpoints", "端点"), ("wire_types", "线上结构"), ("wasm", "wasm"), ("workers", "worker")):
+            if x[k + "_added"] or x[k + "_removed"]:
+                L.append(f"  {zh}: " + " ".join(["＋" + i for i in x[k + "_added"][:20]] + ["－" + i for i in x[k + "_removed"][:20]]))
     if d["possible_renames"]:
         L.append("【疑似改名（queryId 相同）】")
         for a_, b_, q in d["possible_renames"]: L.append(f"  {a_} → {b_} ({q})")
