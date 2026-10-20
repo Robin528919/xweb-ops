@@ -830,6 +830,8 @@ PROVIDERS = {
         ("fs", "responsive_web_grok_community_note_auto_translation_is_enabled", True),
     "xclientsfeaturestranslationgroktranslatedpostenabled":
         ("fs", "responsive_web_grok_show_grok_translated_post", True),
+    "xclientsfeaturestweetcomponentsgrokanalyzepost":
+        ("fs", "grok_xweb_analyze_post_enabled", True),
 }
 
 # 变量集合必须和 go-twitter-api 内置请求一致，否则服务端拒绝该条并让发布验收失败。

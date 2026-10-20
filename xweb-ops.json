@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-19T23:43:33+08:00",
+  "generated_at": "2026-10-20T09:20:33+08:00",
   "ops": {
     "UserByScreenName": {
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true
       },
-      "query_id": "B-9GpnY6vgUP-CmyHdG5Nw",
+      "query_id": "nNeI4QzfDgeo0_Z256R3IQ",
       "type": "query",
       "variables": [
         "screenName"
@@ -15,9 +15,10 @@
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationgroktranslatedpostenabledrelayprovider": true,
-        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestweetcomponentsgrokanalyzepostrelayprovider": true
       },
-      "query_id": "VgeAvqcuZOA5pGHUPjdUeA",
+      "query_id": "ImlErXLfvlT1XYqiaDURqQ",
       "type": "query",
       "variables": [
         "count",
@@ -43,9 +44,10 @@
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationgroktranslatedpostenabledrelayprovider": true,
-        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestweetcomponentsgrokanalyzepostrelayprovider": true
       },
-      "query_id": "JswqL3usJQygpE1VwYFZnA",
+      "query_id": "B84MX7G2We_VxLLEu7jEGA",
       "type": "query",
       "variables": [
         "count",
@@ -57,9 +59,10 @@
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestranslationgroktranslatedpostenabledrelayprovider": true,
-        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true
+        "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true,
+        "__relay_internal__pv__xclientsfeaturestweetcomponentsgrokanalyzepostrelayprovider": true
       },
-      "query_id": "nOIbS1SsvJQS-JiVYpVQPQ",
+      "query_id": "m7RabhcYnvy3hM1xuz30oA",
       "type": "query",
       "variables": [
         "count",
@@ -83,5 +86,5 @@
     }
   },
   "schema": 1,
-  "snapshot": "36afb3a8ee"
+  "snapshot": "0a94029241"
 }
