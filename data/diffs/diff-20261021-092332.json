@@ -1,0 +1,276 @@
+{
+ "from": "2026-10-21T05:22:37+08:00",
+ "to": "2026-10-21T09:23:32+08:00",
+ "app_version": [
+  "fc5d739f0b164e78eab2a8cadf1673231aaf293e",
+  "b9de409efc4f6c1c3fce838d639fca1625781ea3"
+ ],
+ "ops_added": [
+  {
+   "name": "MLBLeaders",
+   "queryId": "FM9fpWxUwHFpTTQwQr2MDQ",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "league",
+    "limit",
+    "season_year"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "MLBSchedule",
+   "queryId": "y5V42LUEbERV66G9cBtKaQ",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "end_ms",
+    "includeOdds",
+    "limit",
+    "start_ms"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "MLBScheduleDays",
+   "queryId": "OvvdHWdMw2_QpTjYO0_5Wg",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "end_ms",
+    "limit",
+    "start_ms"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "MLBStandings",
+   "queryId": "TT0b1hig7ST6Cc3FH_BAFA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "season_type",
+    "season_year"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "NCAAFBSchedule",
+   "queryId": "O0EYlpY6rwJehWh1-2u8Rg",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "end_time",
+    "start_time"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "NCAAFBStandings",
+   "queryId": "mQ3vWzyZhmc7EXiVapFarA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [],
+   "featureSwitches": []
+  },
+  {
+   "name": "SportsHubBySport",
+   "queryId": "Bp5OOLQwA4tQLut4seu6NQ",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "league"
+   ],
+   "featureSwitches": []
+  }
+ ],
+ "ops_removed": [
+  {
+   "name": "ListIdBlockOwnerMutation",
+   "queryId": "FPqxPtDaLTxCoyzIZaAE4A",
+   "operationType": "mutation",
+   "category": "other"
+  },
+  {
+   "name": "ListIdUnblockOwnerMutation",
+   "queryId": "asgo27KLUEOgEnq42JGN2A",
+   "operationType": "mutation",
+   "category": "other"
+  }
+ ],
+ "ops_changed": [
+  {
+   "name": "AiTrendById",
+   "category": "other",
+   "queryId": [
+    "v2BRrXcYPTFJd-A3qF__rw",
+    "cNxLlzLNHESlkX0cNUmwlg"
+   ],
+   "selectionChanged": [
+    86,
+    88
+   ]
+  },
+  {
+   "name": "ListIdTitleQuery",
+   "category": "other",
+   "queryId": [
+    "6cA8dKc8B5A8CoIjxOAd_A",
+    "V-aYM2VeT0wKltFyZ2TAeg"
+   ]
+  },
+  {
+   "name": "electionRacesQuery",
+   "category": "other",
+   "queryId": [
+    "esWqWwJ9L_YnzWPogTp-vg",
+    "nmBvlGFhxv_2TqsU21KEAA"
+   ]
+  },
+  {
+   "name": "listsTitleQuery",
+   "category": "other",
+   "queryId": [
+    "h-brvf7hBR86tml6HJDSpg",
+    "DerWI5X-ThU66hEiWhjJ-A"
+   ],
+   "selectionChanged": [
+    8,
+    10
+   ]
+  },
+  {
+   "name": "paymentsSessionCreateAuthTokenMutation",
+   "category": "other",
+   "queryId": [
+    "lm1obVU-SNNURnXiwEuoAA",
+    "Aa7UhvJ4lm0rBh8gnZzY3Q"
+   ],
+   "selectionChanged": [
+    10,
+    11
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switch_defaults": {
+   "switches_added": [
+    "media_async_upload_longer_video_max_video_duration",
+    "media_async_upload_longer_video_max_video_size",
+    "media_async_upload_max_video_duration",
+    "media_async_upload_max_video_size",
+    "responsive_web_mlb_athlete_tray_enabled",
+    "responsive_web_mlb_enabled",
+    "responsive_web_mlb_favorite_teams_enabled",
+    "responsive_web_mlb_hub_home_tab_enabled",
+    "responsive_web_mlb_hub_media_tab_enabled",
+    "responsive_web_mlb_reminder_snooze_enabled",
+    "responsive_web_mlb_reminders_enabled",
+    "responsive_web_mlb_scorecard_odds_enabled",
+    "responsive_web_mlb_sidebar_enabled",
+    "responsive_web_mlb_team_picker_enabled",
+    "responsive_web_ncaafb_enabled",
+    "subscriptions_feature_create_premium_content",
+    "subscriptions_inapp_grok",
+    "subscriptions_long_video_upload",
+    "x_sports_ncaafb_scorecard_odds_disabled"
+   ],
+   "switches_removed": [],
+   "default_changed": {
+    "responsive_web_ncaafb_enabled": [
+     null,
+     true
+    ],
+    "subscriptions_feature_create_premium_content": [
+     null,
+     false
+    ],
+    "media_async_upload_max_video_size": [
+     null,
+     "512"
+    ],
+    "responsive_web_mlb_favorite_teams_enabled": [
+     null,
+     true
+    ],
+    "responsive_web_mlb_athlete_tray_enabled": [
+     null,
+     true
+    ],
+    "subscriptions_long_video_upload": [
+     null,
+     true
+    ],
+    "media_async_upload_longer_video_max_video_size": [
+     null,
+     "16384"
+    ],
+    "x_sports_ncaafb_scorecard_odds_disabled": [
+     null,
+     false
+    ],
+    "responsive_web_mlb_scorecard_odds_enabled": [
+     null,
+     true
+    ],
+    "responsive_web_mlb_sidebar_enabled": [
+     null,
+     true
+    ],
+    "responsive_web_mlb_reminders_enabled": [
+     null,
+     true
+    ],
+    "media_async_upload_longer_video_max_video_duration": [
+     null,
+     "21660"
+    ],
+    "responsive_web_mlb_hub_home_tab_enabled": [
+     null,
+     true
+    ],
+    "responsive_web_mlb_team_picker_enabled": [
+     null,
+     true
+    ],
+    "media_async_upload_max_video_duration": [
+     null,
+     "1200"
+    ],
+    "responsive_web_mlb_hub_media_tab_enabled": [
+     null,
+     true
+    ],
+    "responsive_web_mlb_reminder_snooze_enabled": [
+     null,
+     true
+    ],
+    "subscriptions_inapp_grok": [
+     null,
+     true
+    ],
+    "responsive_web_mlb_enabled": [
+     null,
+     true
+    ]
+   }
+  },
+  "js_files_added": 1753,
+  "js_files_removed": 1721,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-BO1-1u4w.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-Dy70mlVx.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}
