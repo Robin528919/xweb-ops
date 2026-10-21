@@ -1,0 +1,1045 @@
+{
+ "from": "2026-10-22T04:25:11+08:00",
+ "to": "2026-10-22T05:23:21+08:00",
+ "app_version": [
+  "77867bb86dcc76039ca263d28c3087915ac4571e",
+  "031e78e3be37ca3ecab2e138c58be638dcab7573"
+ ],
+ "ops_added": [
+  {
+   "name": "NCAAFBGameHydrate",
+   "queryId": "erxLy26Roajh6kvKp5dSoQ",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "rest_id"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "NCAAFBGameOdds",
+   "queryId": "TG6dMayFwN-IQkyjbN-_Jw",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "rest_id"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "NCAAFBLiveGame",
+   "queryId": "l5cZ9llljRwJt6nUQzSwHA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "rest_id"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "SportsGameUnfurlMlbQuery",
+   "queryId": "NN6FJhQygqyHjFSuTS4adQ",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "restId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "SportsGameUnfurlNbaQuery",
+   "queryId": "KIVnX30jATc42yK0gAyszg",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "restId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "SportsGameUnfurlNcaafbQuery",
+   "queryId": "WOhNz_LwL7QjVTmm7NTsYA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "restId"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "screenNameMessagesCreateQuery",
+   "queryId": "X2KRoXwiJviNoLn7VhKoNA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "screenName"
+   ],
+   "featureSwitches": []
+  }
+ ],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "AiTrendById",
+   "category": "other",
+   "queryId": [
+    "SEXT7V7gV7CCoQKdWcshrA",
+    "8aTk-wHsbuyviGm_yNEMfQ"
+   ]
+  },
+  {
+   "name": "ArticleByTweetId",
+   "category": "tweet",
+   "queryId": [
+    "vF8v7mQ-mXiKnnzj3r1hIQ",
+    "yX_y0GAdL6csxLJYK0Z5Tg"
+   ]
+  },
+  {
+   "name": "CachedFocalTweetQuery",
+   "category": "tweet",
+   "queryId": [
+    "AxhT4Xq0sdJ98Rhe3qmeZg",
+    "yq3vG2ha46HsO8KmSNa5Lg"
+   ]
+  },
+  {
+   "name": "CommunityNotesHomePageQuery",
+   "category": "other",
+   "queryId": [
+    "MVPub_mZSPSQOiohWd9N1g",
+    "Zj1ZyLcUTIaA6Cxj4FbW2g"
+   ]
+  },
+  {
+   "name": "ContributorProfileNotesListQuery",
+   "category": "other",
+   "queryId": [
+    "OYrN8deU2_8zyvT0-2TYVg",
+    "4ztROGjFUELM6ckwQCBpzg"
+   ]
+  },
+  {
+   "name": "ContributorProfileSuggestionsListQuery",
+   "category": "other",
+   "queryId": [
+    "A-3aAf79GnP9FeCsjileUw",
+    "7xm7JOBADfcHzynzy3-NFQ"
+   ]
+  },
+  {
+   "name": "GlobalTrendingSearchTimelineLoggedOut",
+   "category": "tweet",
+   "queryId": [
+    "BonG5k4jnt1LCLLqQELSug",
+    "jlDxMKqjMN7bUB9EW1UJ6g"
+   ]
+  },
+  {
+   "name": "GlobalTrendingTimelineLoggedOut",
+   "category": "tweet",
+   "queryId": [
+    "GEK-RqcxExKFjGfjUkvi0Q",
+    "8uE4upvIj94MYXfEr1uFoA"
+   ]
+  },
+  {
+   "name": "HashtagCommunityPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "C0U7IuIsVGabrwJ3AX6AZg",
+    "CjF-nTGTb5ZeP4dYYcVfvg"
+   ]
+  },
+  {
+   "name": "HomeLatestTimelineQuery",
+   "category": "tweet",
+   "queryId": [
+    "LLh9Eub6pmSgGJeKyoBNUg",
+    "eoFy19sp1Toec-sqR8PerQ"
+   ]
+  },
+  {
+   "name": "HomeTimelineQuery",
+   "category": "tweet",
+   "queryId": [
+    "RJhNNS4v3uv1ORegBvBWJA",
+    "yDwsE-rC78L641lMCBMP5Q"
+   ]
+  },
+  {
+   "name": "NCAAFBSchedule",
+   "category": "other",
+   "queryId": [
+    "O0EYlpY6rwJehWh1-2u8Rg",
+    "rZ4X4JPvmE-z6By_2qQOAw"
+   ],
+   "variables": {
+    "added": [
+     "includeOdds"
+    ],
+    "removed": []
+   }
+  },
+  {
+   "name": "NflTop100",
+   "category": "other",
+   "queryId": [
+    "Yw1XQXdE74hWMCTxkGaAMw",
+    "DzOlm1bs_uzaVOzlbHfEEw"
+   ]
+  },
+  {
+   "name": "NoteMatchPageQuery",
+   "category": "other",
+   "queryId": [
+    "DjHfKPNtilDaAURvnxQmcQ",
+    "6WM36wbbFFlw5kKb-1QHBQ"
+   ]
+  },
+  {
+   "name": "NotePageQuery",
+   "category": "other",
+   "queryId": [
+    "JUdOUHd7OJuK1Di6wBAPvA",
+    "36qaY9E5dQcHZeum4o-5hg"
+   ]
+  },
+  {
+   "name": "RevisionHistoryPageQuery",
+   "category": "other",
+   "queryId": [
+    "K94BnCJYDp8brc-p6oB9Qw",
+    "MK9YxQu1btTZBw20j5UKrQ"
+   ]
+  },
+  {
+   "name": "SearchByRawQuery",
+   "category": "other",
+   "queryId": [
+    "9M4BZxMtwL0gj54wMkf25g",
+    "DLBTehYgsrkANh5eenzgdA"
+   ]
+  },
+  {
+   "name": "SportsGameLatestTimeline",
+   "category": "tweet",
+   "queryId": [
+    "q2moml9WjAbRMfPUOWWJUQ",
+    "D9Kb_2I5TC5N37TipVoGsg"
+   ]
+  },
+  {
+   "name": "SportsGameTopTimeline",
+   "category": "tweet",
+   "queryId": [
+    "99qCOOM7wELQ3DFy2ooHpw",
+    "mvajitVVRnErMK4o0AQ1pw"
+   ]
+  },
+  {
+   "name": "SuggestionFeedbackPageQuery",
+   "category": "other",
+   "queryId": [
+    "vlMRRH1eM0xENufxozietw",
+    "_Oj2FglQi-PUHfGYcmkxmg"
+   ]
+  },
+  {
+   "name": "TweetDetail",
+   "category": "tweet",
+   "queryId": [
+    "miJ6flxXWU_V92YLFWPKaw",
+    "eeT2mF14Q5G7PSWcqJV8EA"
+   ]
+  },
+  {
+   "name": "TweetNotesPageQuery",
+   "category": "tweet",
+   "queryId": [
+    "jW0B86Mr61nANsqZQ0VAGA",
+    "dejfex1A1BWqafcKBP6iew"
+   ]
+  },
+  {
+   "name": "TweetResultByRestId",
+   "category": "tweet",
+   "queryId": [
+    "bIGsH2zg6mgeSliUbjdnmQ",
+    "gXQ7ZQTaOc9bm-_WuaJYGQ"
+   ]
+  },
+  {
+   "name": "UserArticlesTweets",
+   "category": "tweet",
+   "queryId": [
+    "RkvkxCZaZDw2lvjZPVeE5g",
+    "ZjKrCXpfyDHRbtmzOqsH7w"
+   ]
+  },
+  {
+   "name": "UserByScreenName",
+   "category": "user",
+   "queryId": [
+    "6qmpOVvyVUt2Y1TJ8NLCVg",
+    "QEZVpYuKRU9V5jj86lkkNw"
+   ],
+   "selectionChanged": [
+    159,
+    158
+   ],
+   "sdk_related": true
+  },
+  {
+   "name": "UserHighlightsTweets",
+   "category": "tweet",
+   "queryId": [
+    "dTyYBCbe1rmSCi6HlAslcA",
+    "7-QXeE5bMuTrAZXCQndhKQ"
+   ]
+  },
+  {
+   "name": "UserOriginalsTimeline",
+   "category": "tweet",
+   "queryId": [
+    "I2YelI93W1zT_bfkbPS6Sg",
+    "VXKAb3EmoJaMlYnmexWbew"
+   ]
+  },
+  {
+   "name": "UserRepliesTimeline",
+   "category": "tweet",
+   "queryId": [
+    "OniqZyHTM6Asl_FErnfsNg",
+    "mJSOmE-XagcBwzFONFMVXg"
+   ],
+   "sdk_related": true
+  },
+  {
+   "name": "UserRepostsTimeline",
+   "category": "tweet",
+   "queryId": [
+    "IeiTQmJD2fPyHLg5M0ybyg",
+    "4u8L4pTDzqK5gy3T68h5EQ"
+   ]
+  },
+  {
+   "name": "UserSuperFollowTweets",
+   "category": "follow",
+   "queryId": [
+    "L-ZJR7wZxAUet0MesWm8ZA",
+    "G9azCNrdZniXjJNE1_U72Q"
+   ]
+  },
+  {
+   "name": "UserTweets",
+   "category": "tweet",
+   "queryId": [
+    "FgJJ5Zrp-SJCeZ1ZnR1GSg",
+    "m9HcsFHTM5GbBAFd950aMw"
+   ],
+   "sdk_related": true
+  },
+  {
+   "name": "UserVideoTimeline",
+   "category": "tweet",
+   "queryId": [
+    "lCDvxfwXFk4UWUJ7TdBzZQ",
+    "NcuK7lFI8LHqwsEo0RvNHQ"
+   ]
+  },
+  {
+   "name": "WriteNoteFormQuery",
+   "category": "other",
+   "queryId": [
+    "FAb1WsLcQ9Wh6FadF2NZIA",
+    "83dFh99MzAR2x-yijmUPRg"
+   ]
+  },
+  {
+   "name": "affiliatesQuery",
+   "category": "other",
+   "queryId": [
+    "UIyGXG_JS-oMzeTlBdXwnA",
+    "bwVmoNTj0lLdl_2LsrZ3bg"
+   ]
+  },
+  {
+   "name": "articleMediaViewerQuery",
+   "category": "other",
+   "queryId": [
+    "ePjzdCpPlUJdpAvG94jsFw",
+    "WloVIWpIWarIdb1FgDctSA"
+   ]
+  },
+  {
+   "name": "articleReaderModeByTweetIdQuery",
+   "category": "tweet",
+   "queryId": [
+    "3SC-xUrWwv8kO1xbPYpzMg",
+    "UZMxphgkLDsKo4zPFNp7NA"
+   ]
+  },
+  {
+   "name": "blockedAccountsQuery",
+   "category": "account",
+   "queryId": [
+    "kVX4N3QYd3QqX44B4rQ9kQ",
+    "xxolwABT8978FArwBbj58A"
+   ]
+  },
+  {
+   "name": "bookmarkCollectionQuery",
+   "category": "tweet",
+   "queryId": [
+    "oC7CH97BQYy4BvZJezC_PQ",
+    "uk6ZiuzKP0_aVUlJpiLMOA"
+   ]
+  },
+  {
+   "name": "bookmarkSearchQuery",
+   "category": "tweet",
+   "queryId": [
+    "LzoWzoYpXwnL2-lnDZ6oKQ",
+    "vN2U_tzmgO4f3or2AmvLCg"
+   ]
+  },
+  {
+   "name": "bookmarksQuery",
+   "category": "tweet",
+   "queryId": [
+    "1XjwO3YKdOMHu88T2JWFzQ",
+    "_7lfWk9C5m5Yg1io7089Og"
+   ]
+  },
+  {
+   "name": "boostMyPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "OxiMTnwImpZ9j7khEpbyLg",
+    "sqNrcQxzl83-AaWfgdq50w"
+   ]
+  },
+  {
+   "name": "boostSearchQuery",
+   "category": "other",
+   "queryId": [
+    "RnT_Kb6Qgp9Xs-1v6LPZmg",
+    "3aFqGjRUBbNdB05LvvTiQQ"
+   ]
+  },
+  {
+   "name": "boostedPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "4yFhrjl5bsNtOb_j_bXz4w",
+    "1IpXRaqiqtNSXM1bDKuncg"
+   ]
+  },
+  {
+   "name": "businessInsightsGroupsTabSelectedClusterQuery",
+   "category": "other",
+   "queryId": [
+    "6DSh2DksLNuWY2Q1gBJ-RQ",
+    "KU8Hjwuh-yf5IE4hWLZtuA"
+   ]
+  },
+  {
+   "name": "businessInsightsMonitorTabPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "aNxb2e1dWQw5pZBJ-gwJ9g",
+    "9tT656XRlj5whIa82HXfQg"
+   ]
+  },
+  {
+   "name": "businessInsightsOverviewTabQuery",
+   "category": "other",
+   "queryId": [
+    "HziNyTlcjbvDME2XLMOLRw",
+    "CHKKBYzpmgkE-j0fU8qOQQ"
+   ]
+  },
+  {
+   "name": "communitiesExploreQuery",
+   "category": "other",
+   "queryId": [
+    "o_LZ4hBzLGT2Hft0ebXV0w",
+    "FGJhcekwX-QlRIdtQnJLeg"
+   ]
+  },
+  {
+   "name": "communitiesHomeQuery",
+   "category": "other",
+   "queryId": [
+    "OFP8JHGft5K3Zeey2K0UNw",
+    "2izcYinijT2Ichj6BDoRrw"
+   ]
+  },
+  {
+   "name": "communitiesMembershipsQuery",
+   "category": "other",
+   "queryId": [
+    "j36EmZSmsKRNcZ2BdcBCfw",
+    "PMYUXillQRiMZdSv4gU5Ig"
+   ]
+  },
+  {
+   "name": "communityMembersQuery",
+   "category": "other",
+   "queryId": [
+    "AV6s8n3gXe0INWf9IaOBDQ",
+    "u2D5Gti3Fiesl5YiR6I5gA"
+   ]
+  },
+  {
+   "name": "communityModeratorsQuery",
+   "category": "other",
+   "queryId": [
+    "FzkFsPyIAqK4ZLgMVwT2CA",
+    "fof0gXmRuNkMcL0suM6Tqw"
+   ]
+  },
+  {
+   "name": "communityReportedPostsNextPageQuery",
+   "category": "tweet",
+   "queryId": [
+    "elfw-ytzDORa8bKFXGErVg",
+    "HxYCC0IN59HBbnGJMo6Ulg"
+   ]
+  },
+  {
+   "name": "communityReportedPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "tWv2Ub3CX5CPCkVPvtUSgQ",
+    "uTzyTletsCdxmQmH8P1S4Q"
+   ]
+  },
+  {
+   "name": "communityTimelineQuery",
+   "category": "tweet",
+   "queryId": [
+    "42EiVhGA-245m-WYEj9BpA",
+    "vETxbjZlRNsUeyKfOGuSFw"
+   ]
+  },
+  {
+   "name": "communityTimelineRankedQuery",
+   "category": "tweet",
+   "queryId": [
+    "w6jgsUOCekwa1N3l8CzM6Q",
+    "eU9BLGnVKj2tiNj2XSbBQQ"
+   ]
+  },
+  {
+   "name": "composerQuotedTweetQuery",
+   "category": "tweet",
+   "queryId": [
+    "fqCOjpLmaZ6oASB_ypBgew",
+    "TzrkaOZjfSpDuqco5uiX2A"
+   ]
+  },
+  {
+   "name": "connectQuery",
+   "category": "other",
+   "queryId": [
+    "ud9afna2e13bwnTQ9bmScA",
+    "ONUDh67YuN5UNTXbs0UvjA"
+   ]
+  },
+  {
+   "name": "contributorNotesTabNextPageQuery",
+   "category": "other",
+   "queryId": [
+    "9RYUWpEIDdpFgoYy5GmrBA",
+    "aMxqjCVyQo0cTmgYRYOfUA"
+   ]
+  },
+  {
+   "name": "contributorSuggestionsTabNextPageQuery",
+   "category": "other",
+   "queryId": [
+    "LqALIgwdB_1qZs9YfKCBTg",
+    "Y0QMW0to_b5YlBfqWipZ6w"
+   ]
+  },
+  {
+   "name": "createTweetMutation",
+   "category": "tweet",
+   "queryId": [
+    "SuihTP_CPxtYLJpMMenEsw",
+    "zSZ3LDzp4RnQXSeIh6oZfA"
+   ]
+  },
+  {
+   "name": "createTweetNoteTweetMutation",
+   "category": "tweet",
+   "queryId": [
+    "tS8jjOUuDbKXWTOVLuFj-w",
+    "LJMEWJFZscZIF2g6N3cbcg"
+   ]
+  },
+  {
+   "name": "creatorSubscribersQuery",
+   "category": "other",
+   "queryId": [
+    "2nGjqlzPw-5NETNDuzmGbQ",
+    "atx2eDv3mjSN8yjKuWBA_Q"
+   ]
+  },
+  {
+   "name": "creatorSubscriptionsQuery",
+   "category": "other",
+   "queryId": [
+    "HubFvfjVzfAm4RRw_gLhcQ",
+    "TZa0cnCOotvnXT0eqWvS-A"
+   ]
+  },
+  {
+   "name": "deletedNotesNextPageQuery",
+   "category": "other",
+   "queryId": [
+    "e6CBjP0AOHDZvMJS0q7DDQ",
+    "DmjXSnlZhY5Eq2KqGiJYQg"
+   ]
+  },
+  {
+   "name": "deletedNotesQuery",
+   "category": "other",
+   "queryId": [
+    "HOBLmK_pb997hoaPiPAQfg",
+    "UtULbR6PHzJayTnsBsiKMQ"
+   ]
+  },
+  {
+   "name": "exploreForYouQuery",
+   "category": "other",
+   "queryId": [
+    "8gEO-wAbz-oxJirqXMlX1A",
+    "Z7XZNEQvleXn0DBje035sw"
+   ]
+  },
+  {
+   "name": "explorePageQuery",
+   "category": "other",
+   "queryId": [
+    "48KWhSQeoeMskXW2_uaAYQ",
+    "fLV4eRJtZI0oe2fno5gPqw"
+   ]
+  },
+  {
+   "name": "exploreSidebarQuery",
+   "category": "other",
+   "queryId": [
+    "fcPtBzNZRSHDmGrjEJNSDA",
+    "a9dCBcnudidnTQxytukceA"
+   ]
+  },
+  {
+   "name": "exploreTrendsQuery",
+   "category": "other",
+   "queryId": [
+    "DRhgpexFolRvU-WfaCy6zQ",
+    "Jjpc6btQ5_gsdy9MNzNn5A"
+   ]
+  },
+  {
+   "name": "followerRequestsQuery",
+   "category": "follow",
+   "queryId": [
+    "ne8H3PlaYZ5vc3ei_z-miQ",
+    "URqvV69o_N9q1hRnpfvLfA"
+   ]
+  },
+  {
+   "name": "followersQuery",
+   "category": "follow",
+   "queryId": [
+    "axoES9euAf0R0IZrHZVncw",
+    "TpqdG6O5voPm2BBREKDW-w"
+   ],
+   "sdk_related": true
+  },
+  {
+   "name": "followersYouFollowQuery",
+   "category": "follow",
+   "queryId": [
+    "Jz4NTZ-9kcOTgYKZovef8A",
+    "vJYUOIWPYihR5mAI4PoOLQ"
+   ]
+  },
+  {
+   "name": "followingQuery",
+   "category": "follow",
+   "queryId": [
+    "wnS_DcAQw5Z8EZiWTl28Sw",
+    "D5fs8fiuQvQgyblXrRugNQ"
+   ],
+   "sdk_related": true
+  },
+  {
+   "name": "genericTimelineQuery",
+   "category": "tweet",
+   "queryId": [
+    "iUE_VMexFCZ1vNXMNIHR0Q",
+    "pAM1-s5pexfl66wcPt3oBg"
+   ]
+  },
+  {
+   "name": "hiddenRepliesModeratedTimelineQuery",
+   "category": "tweet",
+   "queryId": [
+    "MToedzVS0Nt0MBIKwAwX6w",
+    "ZdO9bxl-Glx5eOKIUXuDLg"
+   ]
+  },
+  {
+   "name": "latestCommunitiesPostSearchQuery",
+   "category": "tweet",
+   "queryId": [
+    "gz6rdLPCghLmCz-qKCdvKg",
+    "BAc5uzn4NGfIYMgMKhFEEA"
+   ]
+  },
+  {
+   "name": "likesQuery",
+   "category": "tweet",
+   "queryId": [
+    "bz8BV29gGxA3LiqYiu2lIg",
+    "kfTGduiHTAUKb_l2fA1KSg"
+   ]
+  },
+  {
+   "name": "listCreationRecommendedUsersQuery",
+   "category": "user",
+   "queryId": [
+    "PbgxWBbCA_7OeqVkm6r5sg",
+    "7c0y5RuIADX6Fbr4vQHCUQ"
+   ]
+  },
+  {
+   "name": "listEditRecommendedUsersQuery",
+   "category": "user",
+   "queryId": [
+    "pkxmbny4OENu__A4wwBqKA",
+    "sBuh4dGIjI9Cp0BUCqeMVA"
+   ]
+  },
+  {
+   "name": "listMembersQuery",
+   "category": "other",
+   "queryId": [
+    "I2GiL3Hv1I0WmVo6sOc27w",
+    "1AjmhEqEndup7UcQGQF-GA"
+   ]
+  },
+  {
+   "name": "listSubscribersQuery",
+   "category": "other",
+   "queryId": [
+    "I47xKWEGBITd9zumOG3pRg",
+    "TpZiuGh7_rYZ9VNeANZ7XA"
+   ]
+  },
+  {
+   "name": "listTweetsQuery",
+   "category": "tweet",
+   "queryId": [
+    "vsUUXgrGpupaHxjbXN9cog",
+    "vLSKGmxgVJ2UKBKd2GohAw"
+   ]
+  },
+  {
+   "name": "listsDiscoveryQuery",
+   "category": "other",
+   "queryId": [
+    "tsds7kse5siAzqklOa0mWA",
+    "d6IrNQGlVpBh-QQ3V9EVSQ"
+   ]
+  },
+  {
+   "name": "listsManagementQuery",
+   "category": "other",
+   "queryId": [
+    "xE_2DDrddDFyYi2sv93duw",
+    "ybus3dfRdzM9UPX1kFEmOQ"
+   ]
+  },
+  {
+   "name": "listsMembershipsQuery",
+   "category": "other",
+   "queryId": [
+    "Q126omAotvSaKNdivj2tJA",
+    "ZfGA38iUyFdEz9bY2ogXXw"
+   ]
+  },
+  {
+   "name": "listsSearchQuery",
+   "category": "other",
+   "queryId": [
+    "pwD1JC5locq3TbtAJsSOpA",
+    "5hi97UhUn2bJah3UMlfY0w"
+   ]
+  },
+  {
+   "name": "liveEventTimelineQuery",
+   "category": "tweet",
+   "queryId": [
+    "0cYg6b1KSa4HYORn3cavIA",
+    "w5tuXN8jo_soXvSKpaObsg"
+   ]
+  },
+  {
+   "name": "mutedAccountsQuery",
+   "category": "account",
+   "queryId": [
+    "2ZmC0BVnupp1biNm5F4yTQ",
+    "XFyk5fC2-2ViyxMCCxiJeQ"
+   ]
+  },
+  {
+   "name": "noteMatchesNextPageQuery",
+   "category": "other",
+   "queryId": [
+    "ovveOqu7yX89ZrnbyvJHCQ",
+    "Hn0CkV8vQVEFmgXUH_FS4w"
+   ]
+  },
+  {
+   "name": "noteRequestCompleteSlotQuery",
+   "category": "other",
+   "queryId": [
+    "og9AU83Al_CDn3ifdzhhhQ",
+    "lw_nvrFVJrJ5_fahT1xi3A"
+   ]
+  },
+  {
+   "name": "notificationDetailQuery",
+   "category": "other",
+   "queryId": [
+    "KlrOm7foJZ32eMo19_kZ-g",
+    "G5rZMqlEMzHKPpLRW1XQeg"
+   ]
+  },
+  {
+   "name": "notificationsQuery",
+   "category": "other",
+   "queryId": [
+    "_y2zOmTNvithDAAV68EA6w",
+    "VKgRVHWY-OBVMUhBidlxTg"
+   ]
+  },
+  {
+   "name": "searchCommunityPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "IqtcPlRnGzKV9i_ZanTcrg",
+    "gNmKMKm4bW9ctL5rkDYjOg"
+   ]
+  },
+  {
+   "name": "sourceLinksNextPageQuery",
+   "category": "other",
+   "queryId": [
+    "semFYKZS8rAViAyr2mqezg",
+    "KsYkm6I7NWIJATa523NfBA"
+   ]
+  },
+  {
+   "name": "spaceDockSessionQuery",
+   "category": "other",
+   "queryId": [
+    "qlO8B39vtuZSamZFlTl9MQ",
+    "Ap37fQ91sMSJPk4NPfSMxg"
+   ]
+  },
+  {
+   "name": "topCommunitiesPostSearchQuery",
+   "category": "tweet",
+   "queryId": [
+    "motiJdqtaL9BSM2nF8hwmg",
+    "wqcicC2tHhQuVF9qPBJitg"
+   ]
+  },
+  {
+   "name": "trendingHistoryQuery",
+   "category": "other",
+   "queryId": [
+    "0VMFYuMLKi1RstTHMMWmWw",
+    "5mrvYMV9Gu8bQy-_bPV7OA"
+   ]
+  },
+  {
+   "name": "tweetEditHistoryQuery",
+   "category": "tweet",
+   "queryId": [
+    "6Ek9JGqc-_Ai24xQeMGK1A",
+    "SofO0fmSliTCrYUdR30ytw"
+   ]
+  },
+  {
+   "name": "tweetFavoritersQuery",
+   "category": "tweet",
+   "queryId": [
+    "_16_bmtZygGzOCxvYktEvg",
+    "VRlAvf_oBv4Ai8TTZBx6mg"
+   ]
+  },
+  {
+   "name": "tweetNotificationsQuery",
+   "category": "tweet",
+   "queryId": [
+    "5IgclyHA-PBXo52GbnLz-A",
+    "meM6fdGen1EvQKJK5IPcsw"
+   ]
+  },
+  {
+   "name": "tweetRetweetersQuery",
+   "category": "tweet",
+   "queryId": [
+    "X9pO4e7TgjFA7rBuoV57DQ",
+    "6qBtzTzYMe5t8wSUdZa79w"
+   ]
+  },
+  {
+   "name": "tweetSelectionUrtQuery",
+   "category": "tweet",
+   "queryId": [
+    "P6uLkkWZkt2C0lSIzWrf-A",
+    "BLNMFQWULC6oWa81KPPdbg"
+   ]
+  },
+  {
+   "name": "unsentPostQuotedPostQuery",
+   "category": "tweet",
+   "queryId": [
+    "D4iIpnqqHXUefeuNPV5Zbg",
+    "Fu7JpxE4PpLJhzuXF89fDg"
+   ]
+  },
+  {
+   "name": "userListsQuery",
+   "category": "user",
+   "queryId": [
+    "ud1iSGwLXMbIMA2hHGMcsg",
+    "eZM-lbWQG2M9fB1MCIOs3w"
+   ]
+  },
+  {
+   "name": "verifiedFollowersQuery",
+   "category": "follow",
+   "queryId": [
+    "krnnx12NDdPD89VGYQJbjA",
+    "KRWV_-mXmBgDI7dJdUsWag"
+   ],
+   "sdk_related": true
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switch_defaults": {
+   "switches_added": [
+    "scribe_api_error_sample_size",
+    "scribe_api_sample_size",
+    "scribe_cdn_host_list",
+    "scribe_cdn_sample_size",
+    "scribe_web_nav_sample_size"
+   ],
+   "switches_removed": [
+    "rweb_debugger_enabled"
+   ],
+   "default_changed": {
+    "scribe_cdn_host_list": [
+     null,
+     "[`si0.twimg.com`,`si1.twimg.com`,`si2.twimg.com`,`si3.twimg.com`,`a0.twimg.com`,`a1.twimg.com`,`a2.twimg.com`,`a3.twimg.com`,`abs.twimg.com`,`amp.twimg.com`,`o.twimg.com`,`pbs.twimg.com`,`pbs-eb.twimg.com`,`pbs-ec.twimg.com`,`pbs-v6.twimg.com`,`pbs-h1.twimg.com`,`pbs-h2.twimg.com`,`video.twimg.com`,`platform.twitter.com`,`cdn.api.twitter.com`,`ton.twimg.com`,`v.cdn.vine.co`,`mtc.cdn.vine.co`,`edge.vncdn.co`,`mid.vncdn.co`]"
+    ],
+    "scribe_web_nav_sample_size": [
+     null,
+     "100"
+    ],
+    "scribe_cdn_sample_size": [
+     null,
+     "50"
+    ],
+    "rweb_debugger_enabled": [
+     false,
+     null
+    ],
+    "scribe_api_error_sample_size": [
+     null,
+     "0"
+    ],
+    "scribe_api_sample_size": [
+     null,
+     "100"
+    ]
+   }
+  },
+  "js_files_added": 1543,
+  "js_files_removed": 1498,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-CGQKrFZa.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-CnIEHMJS.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [
+  {
+   "side": "web",
+   "sdk_op": "UserByScreenName",
+   "before": [
+    "changed",
+    "6qmpOVvyVUt2Y1TJ8NLCVg"
+   ],
+   "after": [
+    "changed",
+    "QEZVpYuKRU9V5jj86lkkNw"
+   ]
+  },
+  {
+   "side": "web",
+   "sdk_op": "Followers",
+   "before": [
+    "changed(name-variant)",
+    "axoES9euAf0R0IZrHZVncw"
+   ],
+   "after": [
+    "changed(name-variant)",
+    "TpqdG6O5voPm2BBREKDW-w"
+   ]
+  },
+  {
+   "side": "web",
+   "sdk_op": "Following",
+   "before": [
+    "changed(name-variant)",
+    "wnS_DcAQw5Z8EZiWTl28Sw"
+   ],
+   "after": [
+    "changed(name-variant)",
+    "D5fs8fiuQvQgyblXrRugNQ"
+   ]
+  },
+  {
+   "side": "android",
+   "sdk_op": "HomeTimeline",
+   "before": [
+    "changed(name-variant)",
+    "RJhNNS4v3uv1ORegBvBWJA"
+   ],
+   "after": [
+    "changed(name-variant)",
+    "yDwsE-rC78L641lMCBMP5Q"
+   ]
+  }
+ ],
+ "changed": true,
+ "status": "CHANGED"
+}
