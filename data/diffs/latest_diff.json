@@ -1,9 +1,9 @@
 {
- "from": "2026-10-23T01:19:09+08:00",
- "to": "2026-10-23T02:23:08+08:00",
+ "from": "2026-10-23T02:23:08+08:00",
+ "to": "2026-10-23T03:18:31+08:00",
  "app_version": [
-  "693c83504077527567ad9483aac2c6938eed3860",
-  "bd6a15c31b02bb23d9826e201adf0bdef23560cf"
+  "bd6a15c31b02bb23d9826e201adf0bdef23560cf",
+  "7a6eead7037ed7d50510fb984193a8d1c0a3db36"
  ],
  "ops_added": [],
  "ops_removed": [],
@@ -11,22 +11,38 @@
   {
    "name": "electionRacePageQuery",
    "category": "other",
+   "queryId": [
+    "G_yhr9KU-Exgu-INv09VEg",
+    "K8AuRzKidhAsggSedexo4w"
+   ],
    "alt_queryIds": {
-    "added": [
+    "added": [],
+    "removed": [
      "K8AuRzKidhAsggSedexo4w"
-    ],
-    "removed": []
-   }
+    ]
+   },
+   "selectionChanged": [
+    47,
+    49
+   ]
   },
   {
    "name": "electionRacesQuery",
    "category": "other",
+   "queryId": [
+    "BUZgLecW_MT7cWQkQTcERg",
+    "HJLGIWsQkMb6SU3KniShLQ"
+   ],
    "alt_queryIds": {
-    "added": [
+    "added": [],
+    "removed": [
      "HJLGIWsQkMb6SU3KniShLQ"
-    ],
-    "removed": []
-   }
+    ]
+   },
+   "selectionChanged": [
+    36,
+    38
+   ]
   }
  ],
  "rest_added": [],
@@ -34,32 +50,15 @@
  "tracked_fields_changed": [],
  "possible_renames": [],
  "info": {
-  "feature_switches_logged_out": {
-   "added": {},
-   "removed": [
-    "grok_xweb_voice_personality_enabled"
-   ],
-   "changed": {}
-  },
-  "feature_switch_defaults": {
-   "switches_added": [],
-   "switches_removed": [],
-   "default_changed": {
-    "grok_xweb_voice_personality_enabled": [
-     false,
-     true
-    ]
-   }
-  },
-  "js_files_added": 1824,
-  "js_files_removed": 0,
+  "js_files_added": 1339,
+  "js_files_removed": 3165,
   "txid_signer_scripts": [
-   [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-DueRd1gH.js"
-   ],
    [
     "https://abs.twimg.com/x-web/x-web/assets/sign.o-B668HxK3.js",
     "https://abs.twimg.com/x-web/x-web/assets/sign.o-DueRd1gH.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-fhWJ7JBd.js"
    ]
   ]
  },
@@ -80,6 +79,6 @@
   },
   "url": "https://x.com/home",
   "changed": false,
-  "at": "2026-10-23T02:23:09+08:00"
+  "at": "2026-10-23T03:18:31+08:00"
  }
 }

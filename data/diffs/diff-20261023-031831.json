@@ -1,0 +1,68 @@
+{
+ "from": "2026-10-23T02:23:08+08:00",
+ "to": "2026-10-23T03:18:31+08:00",
+ "app_version": [
+  "bd6a15c31b02bb23d9826e201adf0bdef23560cf",
+  "7a6eead7037ed7d50510fb984193a8d1c0a3db36"
+ ],
+ "ops_added": [],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "electionRacePageQuery",
+   "category": "other",
+   "queryId": [
+    "G_yhr9KU-Exgu-INv09VEg",
+    "K8AuRzKidhAsggSedexo4w"
+   ],
+   "alt_queryIds": {
+    "added": [],
+    "removed": [
+     "K8AuRzKidhAsggSedexo4w"
+    ]
+   },
+   "selectionChanged": [
+    47,
+    49
+   ]
+  },
+  {
+   "name": "electionRacesQuery",
+   "category": "other",
+   "queryId": [
+    "BUZgLecW_MT7cWQkQTcERg",
+    "HJLGIWsQkMb6SU3KniShLQ"
+   ],
+   "alt_queryIds": {
+    "added": [],
+    "removed": [
+     "HJLGIWsQkMb6SU3KniShLQ"
+    ]
+   },
+   "selectionChanged": [
+    36,
+    38
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "js_files_added": 1339,
+  "js_files_removed": 3165,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-B668HxK3.js",
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-DueRd1gH.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-fhWJ7JBd.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}
