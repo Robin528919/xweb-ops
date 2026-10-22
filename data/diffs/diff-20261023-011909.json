@@ -1,0 +1,162 @@
+{
+ "from": "2026-10-22T20:20:02+08:00",
+ "to": "2026-10-23T01:19:09+08:00",
+ "app_version": [
+  "297922e71230c984697f206448e9fd836cbb5d2c",
+  "693c83504077527567ad9483aac2c6938eed3860"
+ ],
+ "ops_added": [
+  {
+   "name": "SportsProductLeagueTeams",
+   "queryId": "7XwSiw8mNkogLtOXYIzxJA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "isNfl",
+    "league"
+   ],
+   "featureSwitches": []
+  }
+ ],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "MLBLeaders",
+   "category": "other",
+   "queryId": [
+    "FM9fpWxUwHFpTTQwQr2MDQ",
+    "K7KW41GvZiCTmp9cM72K9g"
+   ],
+   "selectionChanged": [
+    33,
+    20
+   ]
+  },
+  {
+   "name": "MLBScheduleDays",
+   "category": "other",
+   "queryId": [
+    "OvvdHWdMw2_QpTjYO0_5Wg",
+    "cJ8mSeYmoO7GvDx9GOkHDA"
+   ],
+   "selectionChanged": [
+    24,
+    7
+   ]
+  },
+  {
+   "name": "MLBStandings",
+   "category": "other",
+   "queryId": [
+    "TT0b1hig7ST6Cc3FH_BAFA",
+    "x1LQ0GtAtJbuAk-OhYlBhA"
+   ],
+   "selectionChanged": [
+    33,
+    22
+   ]
+  },
+  {
+   "name": "NFLSeasonStats",
+   "category": "other",
+   "queryId": [
+    "dZyvlswOMqOdVW_yTa4hiw",
+    "PGlkDlVM-pQCtWzDu1tE2Q"
+   ],
+   "selectionChanged": [
+    50,
+    47
+   ]
+  },
+  {
+   "name": "SportsProductLeagueMediaSeries",
+   "category": "other",
+   "queryId": [
+    "sM9LwnaKr7CszrOV8gPE4A",
+    "UZ3LxQtxqFxJzrH8Aic11w"
+   ],
+   "variables": {
+    "added": [],
+    "removed": [
+     "isMlb"
+    ]
+   },
+   "selectionChanged": [
+    92,
+    78
+   ]
+  },
+  {
+   "name": "SportsProductTeamFavorites",
+   "category": "tweet",
+   "queryId": [
+    "pOFy05_Vp52uAh7B7TEahQ",
+    "L9GYz2yyox79SGVy3wOqvw"
+   ],
+   "variables": {
+    "added": [],
+    "removed": [
+     "isMlb"
+    ]
+   },
+   "selectionChanged": [
+    38,
+    22
+   ]
+  },
+  {
+   "name": "mlbAthleteTrayQuery",
+   "category": "other",
+   "queryId": [
+    "uuAfC2pK05I2iGnMt9S2aQ",
+    "P4gOViRkylfxsrs7QtW7hw"
+   ],
+   "selectionChanged": [
+    78,
+    63
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switches_logged_out": {
+   "added": {
+    "grok_xweb_voice_personality_enabled": true
+   },
+   "removed": [],
+   "changed": {}
+  },
+  "feature_switch_defaults": {
+   "switches_added": [
+    "rweb_debugger_enabled"
+   ],
+   "switches_removed": [],
+   "default_changed": {
+    "rweb_debugger_enabled": [
+     null,
+     false
+    ],
+    "payments_web_advanced": [
+     null,
+     false
+    ]
+   }
+  },
+  "js_files_added": 1560,
+  "js_files_removed": 1554,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-Dk4aTgND.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-DueRd1gH.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}
