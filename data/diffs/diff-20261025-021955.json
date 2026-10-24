@@ -1,0 +1,314 @@
+{
+ "from": "2026-10-24T10:19:17+08:00",
+ "to": "2026-10-25T02:19:55+08:00",
+ "app_version": [
+  "e96747418e74bb7ee61c74a9c2d9f99b86427b02",
+  "cf4f4b242f6ac6393f96176e32e646d425b45f8a"
+ ],
+ "ops_added": [
+  {
+   "name": "MlbScoresSidebarLiveGame",
+   "queryId": "r2luVpNUgmNA76gSvnsPuw",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "rest_id"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "NBAMatchupSeason",
+   "queryId": "e-8Zuj-gKI0nN1vq9mk88Q",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "away_team_rest_id",
+    "home_team_rest_id",
+    "seasonYear",
+    "season_year"
+   ],
+   "featureSwitches": []
+  },
+  {
+   "name": "NbaScoresSidebarLiveGame",
+   "queryId": "Cnyubwa0xnsZlcg5kRYQMA",
+   "operationType": "query",
+   "category": "other",
+   "variables": [
+    "rest_id"
+   ],
+   "featureSwitches": []
+  }
+ ],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "MLBGameHydrate",
+   "category": "other",
+   "queryId": [
+    "IIR3v7oLBShIXJyTd4gyvg",
+    "XBhkku6goYPvSbGIOA8Fwg"
+   ],
+   "selectionChanged": [
+    141,
+    133
+   ]
+  },
+  {
+   "name": "MLBGameOdds",
+   "category": "other",
+   "queryId": [
+    "ROiXANCNUoqr28usraFW-Q",
+    "0l3XnLje14a6__OjryKCyw"
+   ],
+   "selectionChanged": [
+    15,
+    13
+   ]
+  },
+  {
+   "name": "MLBLiveGame",
+   "category": "other",
+   "queryId": [
+    "j5fMnGTC0k3_BGS6hH85tw",
+    "MR8w4e8aOtQlexn08xS2Vw"
+   ],
+   "variables": {
+    "added": [
+     "since_sequence"
+    ],
+    "removed": []
+   },
+   "selectionChanged": [
+    132,
+    115
+   ]
+  },
+  {
+   "name": "NBAMatchup",
+   "category": "other",
+   "queryId": [
+    "V7_XDhzknQnyjUQLsRG_MA",
+    "O3zQJPqVSpAjDVklER4Rnw"
+   ],
+   "variables": {
+    "added": [
+     "seasonYear"
+    ],
+    "removed": []
+   }
+  },
+  {
+   "name": "NBATeams",
+   "category": "other",
+   "queryId": [
+    "ckf6HVR1ZGFlHEn_nfksMQ",
+    "MnUUaw-ck-smU3Q3vKtUdA"
+   ],
+   "selectionChanged": [
+    21,
+    18
+   ]
+  },
+  {
+   "name": "NCAAFBGameHydrate",
+   "category": "other",
+   "queryId": [
+    "2LsrW6i4g3VvjH5duUQWwQ",
+    "Hli0g9XQSPgUrCcRnhSZnA"
+   ],
+   "selectionChanged": [
+    164,
+    157
+   ]
+  },
+  {
+   "name": "NCAAFBLiveGame",
+   "category": "other",
+   "queryId": [
+    "qfeWHk69QgOLtudBm5n3vA",
+    "looOYf5KoUC6ydvzuciSyg"
+   ],
+   "variables": {
+    "added": [
+     "includes_play",
+     "play_id"
+    ],
+    "removed": []
+   },
+   "selectionChanged": [
+    67,
+    141
+   ]
+  },
+  {
+   "name": "NFLGameDock",
+   "category": "other",
+   "queryId": [
+    "r9ySJN6_9PBYjnGHnWQpWA",
+    "ONid8Kb24GNCi--0F7Qkjw"
+   ],
+   "selectionChanged": [
+    94,
+    90
+   ]
+  },
+  {
+   "name": "NFLGameHydrate",
+   "category": "other",
+   "queryId": [
+    "o7odL4Wuc26ZgGrTbFz3ug",
+    "4lMDaP8d5zGqdlGK9uaWJg"
+   ],
+   "selectionChanged": [
+    161,
+    156
+   ]
+  },
+  {
+   "name": "NFLLiveGame",
+   "category": "other",
+   "queryId": [
+    "6lNnsFYSXqjTM11CmuWGFw",
+    "SB1m2mdkd24L9EnVrxSRCA"
+   ],
+   "variables": {
+    "added": [
+     "includes_play",
+     "includes_stats",
+     "play_id"
+    ],
+    "removed": []
+   },
+   "selectionChanged": [
+    67,
+    144
+   ]
+  },
+  {
+   "name": "NFLStandings",
+   "category": "other",
+   "queryId": [
+    "9zma-Yx91PbGgjuK45kDgw",
+    "RumOzUVqbXXE4iv84dxk7Q"
+   ],
+   "selectionChanged": [
+    25,
+    23
+   ]
+  },
+  {
+   "name": "NflTop100",
+   "category": "other",
+   "queryId": [
+    "tHFJGU6UsANkQIhAjQWh4A",
+    "Mh9uIr7VNStNvm4TBJ6x7g"
+   ],
+   "featureSwitches": {
+    "added": [],
+    "removed": [
+     "sportspostcontextenabled",
+     "xclientsfeaturesappviewerisloggedin",
+     "xclientsfeaturestranslationgroktranslatedpostenabled",
+     "xclientsfeaturestranslationnoteautotranslationenabled",
+     "xclientsfeaturestweetcomponentsgrokanalyzepost"
+    ]
+   }
+  },
+  {
+   "name": "SportsProductLeagueMediaSeries",
+   "category": "other",
+   "queryId": [
+    "QIA5EW_6Xm-St1tzDr8JJg",
+    "BRdDS4LeNgnsgOPWC_jH5g"
+   ],
+   "selectionChanged": [
+    79,
+    80
+   ]
+  },
+  {
+   "name": "TweetResultById",
+   "category": "tweet",
+   "queryId": [
+    "ZM7LeZoFwnj7QFZaHOgpMQ",
+    "UECplC_mh3SWNckOf1U3TA"
+   ],
+   "selectionChanged": [
+    11,
+    17
+   ]
+  },
+  {
+   "name": "UserSportsProfile",
+   "category": "user",
+   "queryId": [
+    "nGdjzH3gZsCaj9MaHKGAEg",
+    "eYXFzdztLWVsiT2vr-KRGA"
+   ],
+   "selectionChanged": [
+    94,
+    93
+   ]
+  },
+  {
+   "name": "playPostsQuery",
+   "category": "tweet",
+   "queryId": [
+    "yNW-ZtBjn3_tdsgMqq353g",
+    "3rF4-PpbRspVFxm7GyaqxQ"
+   ],
+   "variables": {
+    "added": [
+     "includesEngagement"
+    ],
+    "removed": []
+   },
+   "selectionChanged": [
+    78,
+    93
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switch_defaults": {
+   "switches_added": [
+    "responsive_web_mlb_hub_highlights_enabled",
+    "responsive_web_nba_hub_highlights_enabled",
+    "responsive_web_ncaafb_hub_highlights_enabled"
+   ],
+   "switches_removed": [],
+   "default_changed": {
+    "responsive_web_ncaafb_hub_highlights_enabled": [
+     null,
+     true
+    ],
+    "responsive_web_nba_hub_highlights_enabled": [
+     null,
+     true
+    ],
+    "responsive_web_mlb_hub_highlights_enabled": [
+     null,
+     true
+    ]
+   }
+  },
+  "js_files_added": 1591,
+  "js_files_removed": 1552,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-L60spEgy.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-CyfZsKHg.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}
