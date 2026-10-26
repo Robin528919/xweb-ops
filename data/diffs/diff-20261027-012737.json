@@ -1,0 +1,75 @@
+{
+ "from": "2026-10-26T12:16:04+08:00",
+ "to": "2026-10-27T01:27:37+08:00",
+ "app_version": [
+  "0085c57ce2d06b1a6b57a9e9a8a4ddd5ae90eab2",
+  "eb5246f3f5aa996d679550421bb4b22be3bd37ca"
+ ],
+ "ops_added": [],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "ArticleByTweetId",
+   "category": "tweet",
+   "queryId": [
+    "yX_y0GAdL6csxLJYK0Z5Tg",
+    "GaTLpWv6ib0uFK7qNdtXGw"
+   ]
+  },
+  {
+   "name": "articleReaderModeByTweetIdQuery",
+   "category": "tweet",
+   "queryId": [
+    "-cdajA5RVT8miPEKFPcedg",
+    "KFjXv1Ivva1QoWgUSGjn_g"
+   ]
+  },
+  {
+   "name": "creatorSubscribeSlotQuery",
+   "category": "other",
+   "queryId": [
+    "rQCjf1oO2g0Ctjc70hFehw",
+    "cLn_UXp8uu_8hhZC1rjrKA"
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "feature_switch_defaults": {
+   "switches_added": [
+    "premium_paywall_on_app_load_delay_ms",
+    "premium_paywall_on_app_load_journey_enabled",
+    "subscriptions_upsells_get_verified_profile_card",
+    "subscriptions_upsells_get_verified_profile_rotation_basic_upgrade_enabled",
+    "subscriptions_upsells_get_verified_profile_rotation_enabled"
+   ],
+   "switches_removed": [],
+   "default_changed": {
+    "premium_paywall_on_app_load_journey_enabled": [
+     null,
+     true
+    ],
+    "premium_paywall_on_app_load_delay_ms": [
+     null,
+     "1"
+    ]
+   }
+  },
+  "js_files_added": 1438,
+  "js_files_removed": 1436,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-OkAHSEIP.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-b0DumiIE.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}
