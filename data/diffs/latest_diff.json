@@ -1,35 +1,41 @@
 {
- "from": "2026-10-26T12:16:04+08:00",
- "to": "2026-10-27T01:27:37+08:00",
+ "from": "2026-10-27T01:27:37+08:00",
+ "to": "2026-10-27T05:22:26+08:00",
  "app_version": [
-  "0085c57ce2d06b1a6b57a9e9a8a4ddd5ae90eab2",
-  "eb5246f3f5aa996d679550421bb4b22be3bd37ca"
+  "eb5246f3f5aa996d679550421bb4b22be3bd37ca",
+  "9ff47593a65a43245442ba4fc0e8e40979ecb0ca"
  ],
  "ops_added": [],
  "ops_removed": [],
  "ops_changed": [
   {
-   "name": "ArticleByTweetId",
-   "category": "tweet",
-   "queryId": [
-    "yX_y0GAdL6csxLJYK0Z5Tg",
-    "GaTLpWv6ib0uFK7qNdtXGw"
-   ]
-  },
-  {
-   "name": "articleReaderModeByTweetIdQuery",
-   "category": "tweet",
-   "queryId": [
-    "-cdajA5RVT8miPEKFPcedg",
-    "KFjXv1Ivva1QoWgUSGjn_g"
-   ]
-  },
-  {
-   "name": "creatorSubscribeSlotQuery",
+   "name": "NFLSchedule",
    "category": "other",
    "queryId": [
-    "rQCjf1oO2g0Ctjc70hFehw",
-    "cLn_UXp8uu_8hhZC1rjrKA"
+    "-NTqnDpsyVM78vjCFSnOnQ",
+    "mUZ2EfkZ3immHRVSppsWRA"
+   ],
+   "selectionChanged": [
+    39,
+    41
+   ]
+  },
+  {
+   "name": "threadSidebarUsersQuery",
+   "category": "user",
+   "queryId": [
+    "hjeIfKDMU9CzxltnUyHgeQ",
+    "VhwX4y4WgWZQDPHpHwXZDQ"
+   ],
+   "variables": {
+    "added": [],
+    "removed": [
+     "participantRestIds"
+    ]
+   },
+   "selectionChanged": [
+    26,
+    25
    ]
   }
  ],
@@ -40,32 +46,30 @@
  "info": {
   "feature_switch_defaults": {
    "switches_added": [
-    "premium_paywall_on_app_load_delay_ms",
-    "premium_paywall_on_app_load_journey_enabled",
-    "subscriptions_upsells_get_verified_profile_card",
-    "subscriptions_upsells_get_verified_profile_rotation_basic_upgrade_enabled",
-    "subscriptions_upsells_get_verified_profile_rotation_enabled"
+    "complat_wallet_sheet_address_arm",
+    "responsive_web_user_badge_education_get_verified_button_enabled",
+    "subscriptions_upsells_get_verified_profile"
    ],
    "switches_removed": [],
    "default_changed": {
-    "premium_paywall_on_app_load_journey_enabled": [
+    "complat_wallet_sheet_address_arm": [
+     null,
+     ""
+    ],
+    "responsive_web_user_badge_education_get_verified_button_enabled": [
      null,
      true
-    ],
-    "premium_paywall_on_app_load_delay_ms": [
-     null,
-     "1"
     ]
    }
   },
-  "js_files_added": 1438,
-  "js_files_removed": 1436,
+  "js_files_added": 1716,
+  "js_files_removed": 1712,
   "txid_signer_scripts": [
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-OkAHSEIP.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-b0DumiIE.js"
    ],
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-b0DumiIE.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-BU_YHNAF.js"
    ]
   ]
  },
@@ -86,6 +90,6 @@
   },
   "url": "https://x.com/home",
   "changed": false,
-  "at": "2026-10-27T01:27:38+08:00"
+  "at": "2026-10-27T05:22:26+08:00"
  }
 }
