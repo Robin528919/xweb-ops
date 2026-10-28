@@ -1,0 +1,99 @@
+{
+ "from": "2026-10-28T07:17:49+08:00",
+ "to": "2026-10-28T09:21:09+08:00",
+ "app_version": [
+  "501072dc0d0bef8e07217b922667ff5401d3caa9",
+  "48b5752348548714dec23027c43898b8e83c51cb"
+ ],
+ "ops_added": [],
+ "ops_removed": [],
+ "ops_changed": [
+  {
+   "name": "AudioSpaceById",
+   "category": "other",
+   "queryId": [
+    "7dld22DDgmMfGSyjHT01RQ",
+    "NZyo_AjJCeyc4XirkoUk-g"
+   ]
+  },
+  {
+   "name": "electionKeyRacesQuery",
+   "category": "other",
+   "queryId": [
+    "hEIQ2max4_aqZ2k5g1wYog",
+    "O73HVeB9NTOP5evMDwouoA"
+   ]
+  },
+  {
+   "name": "electionPollAveragesQuery",
+   "category": "other",
+   "queryId": [
+    "sxYyToG6-cglQQUXvcpZmw",
+    "Yo00dyBKAtI3VaOX3nHYCw"
+   ],
+   "selectionChanged": [
+    15,
+    14
+   ]
+  },
+  {
+   "name": "electionRaceForecastQuery",
+   "category": "other",
+   "queryId": [
+    "w9wZdaBmQVN1HBDX50kyIA",
+    "t2NaABoOqpNum5fuypZ9Dg"
+   ]
+  },
+  {
+   "name": "electionRaceLivePulseQuery",
+   "category": "other",
+   "queryId": [
+    "qkkFi6FEEcjGAUODVDXV5Q",
+    "hp3LK5EZxG2GF8VVCmePzg"
+   ],
+   "selectionChanged": [
+    10,
+    11
+   ]
+  },
+  {
+   "name": "electionRacePageQuery",
+   "category": "other",
+   "queryId": [
+    "zMinRNzt8bY5mFBNz9ltpA",
+    "V7wQDuKDdyrz9707XpBluQ"
+   ],
+   "selectionChanged": [
+    60,
+    61
+   ]
+  },
+  {
+   "name": "electionRacesQuery",
+   "category": "other",
+   "queryId": [
+    "XTMgJEjGg6izBdOwBlpZ0Q",
+    "s2O-bwCpwE4bLuC1K1EmJw"
+   ]
+  }
+ ],
+ "rest_added": [],
+ "rest_removed": [],
+ "tracked_fields_changed": [],
+ "possible_renames": [],
+ "info": {
+  "js_files_added": 1736,
+  "js_files_removed": 1733,
+  "txid_signer_scripts": [
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-DHGTHbTB.js"
+   ],
+   [
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-BCGPfXAZ.js"
+   ]
+  ]
+ },
+ "sdk_status_changes": [],
+ "changed": true,
+ "status": "CHANGED"
+}
