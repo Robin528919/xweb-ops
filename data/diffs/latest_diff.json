@@ -1,29 +1,27 @@
 {
- "from": "2026-10-29T21:19:37+08:00",
- "to": "2026-10-30T02:16:31+08:00",
+ "from": "2026-10-30T02:16:31+08:00",
+ "to": "2026-10-30T03:24:03+08:00",
  "app_version": [
-  "846552a4051f2afbba2a3a532ad9c411149064c9",
-  "359d7279d908e449dbd03a606113c1b0f9621341"
+  "359d7279d908e449dbd03a606113c1b0f9621341",
+  "bee26783eb42b576e759a8984c351758d6a9ba3d"
  ],
  "ops_added": [],
  "ops_removed": [],
  "ops_changed": [
   {
-   "name": "editProfileSlotQuery",
+   "name": "NBAPlayerProfile",
    "category": "other",
    "queryId": [
-    "hFit5vT4f0Ul-TRan6VZeg",
-    "SORB5k7AsyGSnh33HyfR-g"
-   ],
-   "featureSwitches": {
-    "added": [
-     "xclientsfeaturesappviewerisloggedin"
-    ],
-    "removed": []
-   },
-   "selectionChanged": [
-    45,
-    74
+    "46Hc2g2n9Le2DoYOnt_cYg",
+    "_XNupKvElZB9nYJz0QwxHQ"
+   ]
+  },
+  {
+   "name": "athleteTrayUserQuery",
+   "category": "user",
+   "queryId": [
+    "rj961dQuvIL6wbgLN-XyFw",
+    "E5yY1mxeUM-lw1epbOnw-g"
    ]
   }
  ],
@@ -32,14 +30,14 @@
  "tracked_fields_changed": [],
  "possible_renames": [],
  "info": {
-  "js_files_added": 1912,
-  "js_files_removed": 1903,
+  "js_files_added": 1478,
+  "js_files_removed": 1477,
   "txid_signer_scripts": [
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-Bx5-tKNE.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-xsXBzUFu.js"
    ],
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-xsXBzUFu.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-DyZQgZoG.js"
    ]
   ]
  },
@@ -60,6 +58,6 @@
   },
   "url": "https://x.com/home",
   "changed": false,
-  "at": "2026-10-30T02:16:32+08:00"
+  "at": "2026-10-30T03:24:04+08:00"
  }
 }
