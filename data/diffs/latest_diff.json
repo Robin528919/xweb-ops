@@ -1,32 +1,51 @@
 {
  "from": "2026-10-29T21:19:37+08:00",
- "to": "2026-10-30T01:18:13+08:00",
+ "to": "2026-10-30T02:16:31+08:00",
  "app_version": [
   "846552a4051f2afbba2a3a532ad9c411149064c9",
-  "b56fabba35c17c81c4c57944df3d33faebe6ca22"
+  "359d7279d908e449dbd03a606113c1b0f9621341"
  ],
  "ops_added": [],
  "ops_removed": [],
- "ops_changed": [],
+ "ops_changed": [
+  {
+   "name": "editProfileSlotQuery",
+   "category": "other",
+   "queryId": [
+    "hFit5vT4f0Ul-TRan6VZeg",
+    "SORB5k7AsyGSnh33HyfR-g"
+   ],
+   "featureSwitches": {
+    "added": [
+     "xclientsfeaturesappviewerisloggedin"
+    ],
+    "removed": []
+   },
+   "selectionChanged": [
+    45,
+    74
+   ]
+  }
+ ],
  "rest_added": [],
  "rest_removed": [],
  "tracked_fields_changed": [],
  "possible_renames": [],
  "info": {
-  "js_files_added": 1442,
-  "js_files_removed": 1442,
+  "js_files_added": 1912,
+  "js_files_removed": 1903,
   "txid_signer_scripts": [
    [
     "https://abs.twimg.com/x-web/x-web/assets/sign.o-Bx5-tKNE.js"
    ],
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-BGhplGXw.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-xsXBzUFu.js"
    ]
   ]
  },
  "sdk_status_changes": [],
- "changed": false,
- "status": "NO_CHANGE",
+ "changed": true,
+ "status": "CHANGED",
  "logged_in_client": {
   "status": "OK",
   "client": "old",
@@ -41,6 +60,6 @@
   },
   "url": "https://x.com/home",
   "changed": false,
-  "at": "2026-10-30T01:18:15+08:00"
+  "at": "2026-10-30T02:16:32+08:00"
  }
 }
