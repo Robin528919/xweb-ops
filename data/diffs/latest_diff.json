@@ -1,191 +1,32 @@
 {
- "from": "2026-10-29T08:16:16+08:00",
- "to": "2026-10-29T21:19:37+08:00",
+ "from": "2026-10-29T21:19:37+08:00",
+ "to": "2026-10-30T01:18:13+08:00",
  "app_version": [
-  "5df094d9d04e895515fed10aa809985e31ebea59",
-  "846552a4051f2afbba2a3a532ad9c411149064c9"
+  "846552a4051f2afbba2a3a532ad9c411149064c9",
+  "b56fabba35c17c81c4c57944df3d33faebe6ca22"
  ],
- "ops_added": [
-  {
-   "name": "NHLTeams",
-   "queryId": "UGyGGbayTa5mcBxljKlXDA",
-   "operationType": "query",
-   "category": "other",
-   "variables": [],
-   "featureSwitches": []
-  }
- ],
+ "ops_added": [],
  "ops_removed": [],
- "ops_changed": [
-  {
-   "name": "SportsProductCreateGameReminder",
-   "category": "other",
-   "queryId": [
-    "3IjSKIyWh2bODuEZMaG-Bg",
-    "MHjYF4B6bLRhZpGz4Jk4Dg"
-   ],
-   "selectionChanged": [
-    13,
-    14
-   ]
-  },
-  {
-   "name": "SportsProductDeleteGameReminder",
-   "category": "other",
-   "queryId": [
-    "0S8CP0jdCq1OIL8Kes5DOg",
-    "2G168weljtZBSrDNe1sZyw"
-   ],
-   "selectionChanged": [
-    13,
-    14
-   ]
-  },
-  {
-   "name": "SportsProductGameReminders",
-   "category": "other",
-   "queryId": [
-    "CTM8-g8OHrKdEisi9k6tVQ",
-    "qDiDk5ztV7KHRENYQaX2kw"
-   ],
-   "selectionChanged": [
-    13,
-    14
-   ]
-  },
-  {
-   "name": "SportsProductLeagueTeams",
-   "category": "other",
-   "queryId": [
-    "yi4ysNgxFaXcUPMirSrdGQ",
-    "2HeESjq0m1dV0iCmp5FNig"
-   ],
-   "selectionChanged": [
-    23,
-    24
-   ]
-  },
-  {
-   "name": "SportsProductSnoozeGameReminder",
-   "category": "other",
-   "queryId": [
-    "2Aaahl0kllXOyMYek2xDVg",
-    "sn_s5M-xeje5OPaiQio4Og"
-   ],
-   "selectionChanged": [
-    13,
-    14
-   ]
-  },
-  {
-   "name": "SportsProductTeamFavorites",
-   "category": "tweet",
-   "queryId": [
-    "KGoU_l4m40YGmuQ0KSVuxQ",
-    "-fXBWNxR5NhQqF8KeMJqmQ"
-   ],
-   "selectionChanged": [
-    23,
-    24
-   ]
-  },
-  {
-   "name": "UserByScreenName",
-   "category": "user",
-   "queryId": [
-    "_lHus5e3QWJgnBLk3HDJ4Q",
-    "MyoLREkUGIBW4cYH2v8g1w"
-   ],
-   "sdk_related": true
-  },
-  {
-   "name": "UserSportsProfile",
-   "category": "user",
-   "queryId": [
-    "eYXFzdztLWVsiT2vr-KRGA",
-    "SQrCChZyq8LmXOGi2YYQMQ"
-   ],
-   "selectionChanged": [
-    93,
-    94
-   ]
-  },
-  {
-   "name": "intentFollowUserByRestIdQuery",
-   "category": "follow",
-   "queryId": [
-    "0gttJqkKTTw4eW4D0vuiRg",
-    "CuehBOPlrGqWpV17vSL_OQ"
-   ],
-   "selectionChanged": [
-    7,
-    6
-   ],
-   "sdk_related": true
-  },
-  {
-   "name": "intentFollowUserByScreenNameQuery",
-   "category": "follow",
-   "queryId": [
-    "iSVTAv0jACQfQvFhCsDRSg",
-    "pZG7tZgVXSwqNVHXUmRtgA"
-   ],
-   "selectionChanged": [
-    9,
-    8
-   ]
-  }
- ],
+ "ops_changed": [],
  "rest_added": [],
  "rest_removed": [],
  "tracked_fields_changed": [],
  "possible_renames": [],
  "info": {
-  "feature_switch_defaults": {
-   "switches_added": [
-    "responsive_web_nhl_enabled",
-    "responsive_web_nhl_profile_sports_enabled",
-    "x_elections_post_context_enabled"
-   ],
-   "switches_removed": [],
-   "default_changed": {
-    "responsive_web_nhl_enabled": [
-     null,
-     false
-    ],
-    "responsive_web_nhl_profile_sports_enabled": [
-     null,
-     false
-    ]
-   }
-  },
-  "js_files_added": 1484,
-  "js_files_removed": 1469,
+  "js_files_added": 1442,
+  "js_files_removed": 1442,
   "txid_signer_scripts": [
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-JPvk--OA.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-Bx5-tKNE.js"
    ],
    [
-    "https://abs.twimg.com/x-web/x-web/assets/sign.o-Bx5-tKNE.js"
+    "https://abs.twimg.com/x-web/x-web/assets/sign.o-BGhplGXw.js"
    ]
   ]
  },
- "sdk_status_changes": [
-  {
-   "side": "web",
-   "sdk_op": "UserByScreenName",
-   "before": [
-    "changed",
-    "_lHus5e3QWJgnBLk3HDJ4Q"
-   ],
-   "after": [
-    "changed",
-    "MyoLREkUGIBW4cYH2v8g1w"
-   ]
-  }
- ],
- "changed": true,
- "status": "CHANGED",
+ "sdk_status_changes": [],
+ "changed": false,
+ "status": "NO_CHANGE",
  "logged_in_client": {
   "status": "OK",
   "client": "old",
@@ -200,6 +41,6 @@
   },
   "url": "https://x.com/home",
   "changed": false,
-  "at": "2026-10-29T21:19:38+08:00"
+  "at": "2026-10-30T01:18:15+08:00"
  }
 }
