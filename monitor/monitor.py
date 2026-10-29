@@ -832,6 +832,10 @@ PROVIDERS = {
         ("fs", "responsive_web_grok_show_grok_translated_post", True),
     "xclientsfeaturestweetcomponentsgrokanalyzepost":
         ("fs", "grok_xweb_analyze_post_enabled", True),
+    # 帖子上下文卡片：startup 里 IU=lc(`x_elections_post_context_enabled`)、LU=lc(`rweb_sports_post_context_enabled`)
+    # （liveevent 的 switch 名不在 known_switches 列表里，自动解析会空候选，必须手登）
+    "liveeventpostcontextenabled": ("fs", "x_elections_post_context_enabled", False),
+    "sportspostcontextenabled": ("fs", "rweb_sports_post_context_enabled", False),
 }
 
 # 变量集合必须和 go-twitter-api 内置请求一致，否则服务端拒绝该条并让发布验收失败。
@@ -873,7 +877,12 @@ def build_manifest(snap, previous=None, warnings=None):
     for name in MANIFEST_OPS:
         o = snap["api"]["graphql"].get(name)
         if not o:
-            warnings.append(f"{name}: not found in web client; dropped from manifest")
+            old = prev_ops.get(name)
+            if old:
+                warnings.append(f"{name}: not found in web client; kept previous entry {old.get('query_id')}")
+                ops[name] = old
+            else:
+                warnings.append(f"{name}: not found in web client; dropped from manifest")
             continue
         variables = sorted(o.get("variables") or [])
         held = HELD_VARIABLES.get(name)
