@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-29T11:31:52+08:00",
+  "generated_at": "2026-10-29T21:19:38+08:00",
   "ops": {
     "UserByScreenName": {
       "provided_variables": {
         "__relay_internal__pv__xclientsfeaturesappviewerisloggedinrelayprovider": true
       },
-      "query_id": "_lHus5e3QWJgnBLk3HDJ4Q",
+      "query_id": "MyoLREkUGIBW4cYH2v8g1w",
       "type": "query",
       "variables": [
         "screenName",
@@ -78,7 +78,7 @@
       ]
     },
     "intentFollowUserByRestIdQuery": {
-      "query_id": "0gttJqkKTTw4eW4D0vuiRg",
+      "query_id": "CuehBOPlrGqWpV17vSL_OQ",
       "type": "query",
       "variables": [
         "userId"
@@ -93,5 +93,5 @@
     }
   },
   "schema": 1,
-  "snapshot": "5df094d9d0"
+  "snapshot": "846552a405"
 }
