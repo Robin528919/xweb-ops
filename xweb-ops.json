@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T21:20:06+08:00",
+  "generated_at": "2026-10-30T22:22:40+08:00",
   "ops": {
     "UserByScreenName": {
       "provided_variables": {
@@ -21,7 +21,7 @@
         "__relay_internal__pv__xclientsfeaturestranslationnoteautotranslationenabledrelayprovider": true,
         "__relay_internal__pv__xclientsfeaturestweetcomponentsgrokanalyzepostrelayprovider": true
       },
-      "query_id": "qEXmfP2aBJNnNd9NqiHvyQ",
+      "query_id": "ZDruFnr8O5OZ08S35HF9Kw",
       "type": "query",
       "variables": [
         "count",
@@ -93,5 +93,5 @@
     }
   },
   "schema": 1,
-  "snapshot": "b5d619d59f"
+  "snapshot": "877722ec10"
 }
